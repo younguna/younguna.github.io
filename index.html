@@ -138,23 +138,20 @@
 <script type="math/tex; mode=display">(A^T)_{i,j} = A_{j,i}</script></li>
 <li><p>벡터는 하나의 열로만 이루어진 매트릭스로 볼 수 있으며 벡터에 Transpose를 가하면 하나의 행을 가지는 매트릭스가 된다.</p>
 </li>
-<li><p>행으로 이루어진 매트릭스를 가끔씩 식에서 볼 수 있으며 그럴땐 다시 transpose를 적용해 column vector로 변형할 수 있다</p>
-<script type="math/tex; mode=display">\mathbf{x} = [x_1,x_2, ... x_n]^T</script><h2 id="2-2-Multiplying-Matrices-and-Vectors"><a href="#2-2-Multiplying-Matrices-and-Vectors" class="headerlink" title="2.2 Multiplying Matrices and Vectors"></a>2.2 Multiplying Matrices and Vectors</h2></li>
-<li><p><strong>matrix product</strong> : 매트릭스 곱의 결과물 A가 $m \times n$, B가 $n \times p$ 매트릭스의 경우 처럼 A의 열 차수와 B의 행 차수가 같아야 $AB = C$의 경우처럼 $C (m \times p)$ 매트릭스를 가질 수 있다.</p>
-</li>
+<li>행으로 이루어진 매트릭스를 가끔씩 식에서 볼 수 있으며 그럴땐 다시 transpose를 적용해 column vector로 변형할 수 있다</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{x} = [x_1,x_2, ... x_n]^T</script><h2 id="2-2-Multiplying-Matrices-and-Vectors"><a href="#2-2-Multiplying-Matrices-and-Vectors" class="headerlink" title="2.2 Multiplying Matrices and Vectors"></a>2.2 Multiplying Matrices and Vectors</h2><ul>
+<li><strong>matrix product</strong> : 매트릭스 곱의 결과물 A가 $m \times n$, B가 $n \times p$ 매트릭스의 경우 처럼 A의 열 차수와 B의 행 차수가 같아야 $AB = C$의 경우처럼 $C (m \times p)$ 매트릭스를 가질 수 있다.</li>
 <li><p>AB = C가 성립된다고 BA 의 곱이 성립되는 것이 아니다.</p>
 <script type="math/tex; mode=display">C_{i,j} = \sum_kA_{i,k}B_{k,j}</script></li>
 <li><p>매트릭스의 각 element끼리 곱하여 매트릭스를 생성하는 것은 element-wise product 혹은 Hadamard product라고 한다.</p>
 </li>
 <li>벡터 계산에서 쓰이는 dot product는 같은 차수의 벡터 x와 y를 x를 transpose하여 매트릭스 곱을 하는 것과 같다.<br>매트릭스의 곱은 다음과 같은 특징을 가진다.</li>
-<li><p>Distributive</p>
-<p>  <em>A</em>(<em>B</em> + <em>C</em>) = <em>AB</em> + <em>AC</em></p>
+<li><p>Distributive<br>$A(B+C) = AB + AC$</p>
 </li>
-<li><p>Associative</p>
-<p>  <em>A</em>(<em>BC</em>) = (<em>AB</em>)<em>C</em></p>
+<li><p>Associative<br>$A(BC) = (AB)C$</p>
 </li>
-<li><p>단 commutative하지 않다.</p>
-<p>  <em>AB</em> != <em>BA</em></p>
+<li><p>단 commutative하지 않다.<br>$AB != BA$</p>
 </li>
 <li><p>하지만 vector의 dot product는 commutative하다.</p>
 <script type="math/tex; mode=display">x^Ty = y^Tx</script></li>
@@ -235,9 +232,9 @@
 <li>수를 인수분해하는 것 처럼 매트릭스를 분해하여 매트릭스의 특징을 한번에 나타내는 형태로 분해한다.</li>
 <li><strong>eigendecomposition</strong> : 매트릭스를 eigenvector와 eigenvalue로 분해 하는 것</li>
 <li><p><strong>eigenvector</strong>: non-zero벡터인 v가 다음을 만족하는 것을 의미한다.</p>
-<script type="math/tex; mode=display">\bold{A}v = \lambda v</script><p>  여기서 lambda는 eigenvalue이며 eigenvector v와 매칭한다.</p>
+<script type="math/tex; mode=display">\mathbf{A}v = \lambda v</script><p>  여기서 lambda는 eigenvalue이며 eigenvector v와 매칭한다.</p>
 <p>  Eigendecomposition</p>
-<script type="math/tex; mode=display">\bold{A} = \bold{V}diag(\lambda)\bold{V}^{-1}</script><p>  V는 Linearly independent한 eigenvector을 옆으로 붙여 구성한 매트릭스이며 diag(lambda)는 각 eigenvector에 매칭하는 eigenvalue를 main diagonal로 가지는 매트릭스이다.</p>
+<script type="math/tex; mode=display">\mathbf{A} = \mathbf{V}diag(\lambda)\mathbf{V}^{-1}</script><p>  V는 Linearly independent한 eigenvector을 옆으로 붙여 구성한 매트릭스이며 diag(lambda)는 각 eigenvector에 매칭하는 eigenvalue를 main diagonal로 가지는 매트릭스이다.</p>
 <ul>
 <li>모든 매트리스가 eigendecomposition이 가능 한 것은 아니다.</li>
 </ul>
@@ -280,7 +277,7 @@
 <li>square matrix가 가지며 det(A)라고 표현된다. 혹은 |A|라고 표현한다.</li>
 <li>det(A)는 product of all eigenvalues와 같다.</li>
 </ul>
-<script type="math/tex; mode=display">|\bold{A}| = \left| \begin{bmatrix} a\ \ b  \\   c\ \ d \end{bmatrix} \right| = ad - bc</script><h2 id="2-12-Example-Principal-Component-Analysis"><a href="#2-12-Example-Principal-Component-Analysis" class="headerlink" title="2.12 Example: Principal Component Analysis"></a>2.12 Example: Principal Component Analysis</h2><p>Continue…</p>
+<script type="math/tex; mode=display">| \mathbf{A}| = \left| \begin{bmatrix} a\ \ b  \\   c\ \ d \end{bmatrix} \right| = ad - bc</script><h2 id="2-12-Example-Principal-Component-Analysis"><a href="#2-12-Example-Principal-Component-Analysis" class="headerlink" title="2.12 Example: Principal Component Analysis"></a>2.12 Example: Principal Component Analysis</h2><p>Continue…</p>
 
       
     </div>
