@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Linear Algebra for ML | Hexo</title>
 
   
   <meta name="author" content="John Doe">
   
 
   
+  <meta name="description" content="Linear Algebra2 Linear Algebra2.1 Scalars, Vectors, Matrices and Tensors
+Scalars : 스칼라는 선형수학에서 보는 형태와 달리 하나의 단어로 표현되며 주로 이탈릭체를 사용한다. 실수인지 자연수인지 등의 어떤 ">
+  
 
+  
+  
+  <meta name="keywords" content="Machine Learning,Artificial Intelligence,Math,Linear Algebra,수학,선형대수학">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="Linear Algebra for ML"/>
 
   <meta property="og:site_name" content="Hexo"/>
 
@@ -54,57 +60,11 @@
 </header>
 
     <main class="site-main posts-loop">
-    
-  <article>
+    <article>
 
   
     
-    <h3 class="article-title"><a href="/2019/04/17/Algorithm-Kth-number/"><span>Algorithm-Kth number</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/17/Algorithm-Kth-number/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-17T14:01:55.000Z">
-          2019-04-17
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/04/17/Linear-Algebra-for-ML/"><span>Linear Algebra for ML</span></a></h3>
+    <h3 class="article-title"><span>Linear Algebra for ML</span></h3>
     
   
 
@@ -308,133 +268,6 @@
 </article>
 
 
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/"><span>Algorithm - Player who did not finish</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-16T10:27:41.000Z">
-          2019-04-16
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="알고리즘-Python-완주하지-못한-선수"><a href="#알고리즘-Python-완주하지-못한-선수" class="headerlink" title="알고리즘(Python) - 완주하지 못한 선수"></a>알고리즘(Python) - 완주하지 못한 선수</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">participant = [<span class="string">"John"</span>, <span class="string">"David"</span>, <span class="string">"Becky"</span>]</span><br><span class="line">finisher = [<span class="string">"Becky"</span>, <span class="string">"David"</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = &quot;John&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><p>참가자 리스트와 완주자 리스트가 주어지고 그 두 리스트를 비교하여 어떤 선수가 완주하지 못하였는지 구하는 것</p>
-<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
-<li>선수의 수는 1명 이상 100,000명 이하.</li>
-<li>finisher의 길이는 participants의 길이보다 1 작다.</li>
-<li>선수 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어짐.</li>
-<li>선수 중에는 동명이인이 있을 수 있음.</li>
-</ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(participant, completion)</span>:</span></span><br><span class="line">    </span><br><span class="line">    participant.sort()</span><br><span class="line">    completion.sort()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> p,c <span class="keyword">in</span> zip(participant, completion):</span><br><span class="line">        <span class="keyword">if</span> i != j:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> participant[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
-<li>두 리스트를 set으로 변경하고 차이를 구한 뒤 다시 리스트로 변경하는 것은 동명이인이 있는 경우를 통과 할 수 없음</li>
-<li>두 리스트를 정렬하고 함께 재귀하는 동안 다른 이름이 재귀하게되면 participant의 이름이 완주하지 못한 선수이다.</li>
-<li>만약 정렬에서 완주하지 못한 선수가 가장 끝으로 정렬된 경우 그 선수까지 재귀하기전에 재귀가 끝나므로 그 후에는 participant의 마지막 선수를 return하면 된다.</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/05/24/hello-world/"><span>Hello World</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/05/24/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-05-23T15:28:04.254Z">
-          2018-05-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
     </main>
 
     <footer class="site-footer">
