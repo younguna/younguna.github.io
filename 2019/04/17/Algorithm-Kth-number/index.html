@@ -10,10 +10,16 @@
   
 
   
+  <meta name="description" content="알고리즘(Python) - K번재 수
+
+Input12array = [1, 5, 2, 6, 3, 7, 4]	commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
+Expected Output1output = [5, 6, 3]
+목표배열 array에">
+  
 
   
   
-  <meta name="keywords" content="">
+  <meta name="keywords" content="algorithm,알고리즘,카카오,프로그래머스,파이썬,python">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -81,7 +87,26 @@
   <div class="article-content">
     <div class="entry">
       
-        
+        <p><hr></p>
+<h1 id="알고리즘-Python-K번재-수"><a href="#알고리즘-Python-K번재-수" class="headerlink" title="알고리즘(Python) - K번재 수"></a>알고리즘(Python) - K번재 수</h1><hr>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = [1, 5, 2, 6, 3, 7, 4]	</span><br><span class="line">commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]</span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = [5, 6, 3]</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><p>배열 array에서 [i, j, k]를 원소로 가진 2차원 배열 commands가 매개변수로 주어질 때, commands의 모든 원소에 대해 array의 i번째 원소에서 j번째 원소까지를 추출한 후 그 중 k번째 원소를 찾아내어 리스트에 넣어 리턴하는 것</p>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>array의 길이는 1 이상 100 이하</li>
+<li>array의 각 원소는 1 이상 100 이하</li>
+<li>commands의 길이는 1 이상 50 이하</li>
+<li>commands의 각 원소는 길이가 3</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    </span><br><span class="line">    origin = array</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> commands:</span><br><span class="line">        _array = array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]]</span><br><span class="line">        _array.sort()</span><br><span class="line">        result.append(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>array를 i와 j까지의 인덱스로 잘라냅니다. (1번째 원소의 인덱스는 0)</li>
+<li>잘라낸 배열을 정렬합니다.</li>
+<li>정렬된 배열에서 k번째의 인덱스를 리턴합니다.</li>
+<li>위의 과정을 commands배열의 원소 수 만큼 반복합니다.</li>
+</ul>
+
       
     </div>
 
@@ -92,6 +117,13 @@
 
     
 
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
+    </span>
     
 
     </div>
