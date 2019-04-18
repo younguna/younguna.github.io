@@ -59,6 +59,205 @@
 
   
     
+    <h3 class="article-title"><a href="/2019/04/18/Probability-and-Information-Theory/"><span>Probability and Information Theory</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/18/Probability-and-Information-Theory/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-18T13:07:41.000Z">
+          2019-04-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="3-Probability-and-Information-Theory"><a href="#3-Probability-and-Information-Theory" class="headerlink" title="3. Probability and Information Theory"></a>3. Probability and Information Theory</h1><hr>
+
+<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><ul>
+<li>Probability theory is mathmatical framework for representing uncertain statements.</li>
+<li>Usage in AI<ul>
+<li>the laws of probability tells us how AI systems should reason, so we design our algorithms to compute or approximate various expressions derived using probability theory</li>
+<li>we can use probability and statistics to theoretically analyze the behavior of proposed AI systems.</li>
+</ul>
+</li>
+<li>While prob theory allows us to make uncertain statements and reason in the presence of uncertainty, <strong>information theory</strong> allows us to quantify the amount of uncertainty in a prob distribution.</li>
+</ul>
+<h2 id="3-1-Why-Probability"><a href="#3-1-Why-Probability" class="headerlink" title="3.1 Why Probability"></a>3.1 Why Probability</h2><ul>
+<li>ML must always deal with uncertain quantities, and sometimes may also need to deal with stochastic(non-deterministic) quantities.</li>
+<li>Beyond mathematical statements that are true by definition, it is difficult to think of any proposition that is absolutely true or any event that is absolutely guaranteed to occur.</li>
+<li><p>Three possible sources of uncertainty</p>
+<ul>
+<li><ol>
+<li>Inherent stochasticity in the system being modeled</li>
+</ol>
+</li>
+<li><ol>
+<li>Incomplete observability - we cannot observe all of the variables that drive the behavior of the system. Monty Hall problem</li>
+</ol>
+</li>
+<li><ol>
+<li>Incomplete modeling - When we use a model that must discard some of the information we have observed, the discarded information results in uncertainty in the model’s prediction.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>In many cases, it is more practical to use a simple but uncertain rule rather than a complex but certain one, even if the true rule is deterministic and our modeling system has the fidelity to accommodate a complex rule.</p>
+<ul>
+<li>Most birds fly VS Birds fly, except for very young birds that have not yet learned to fly, sick or injured birds that have lost the ability to fly, fllightless species of birds including the cassowary, ostrich, and kiwi.</li>
+<li>The second one is expensive to develop, maintain and communicate, and after all of this effort is still brittle and prone to failure.</li>
+</ul>
+</li>
+<li>When we say that an outcome has a probability <em>p</em> of occurring, it means that if we repeated the experiment infinitely many times, then proportion <em>p</em> of the repetitions would result in that outcome.</li>
+<li>degree of belief</li>
+<li>The former kind of prob, related directly to the rates at which events occur, is known as <strong>frequentist probability</strong>, while the latter, related to qualitative levels of certainty, is known <strong>as Baysian probability</strong>.</li>
+<li>probability theory provides a set of formal rules for determining the likelihood of a proposition being true given the likelihood of other propositions.</li>
+</ul>
+<h2 id="3-2-Random-Variables"><a href="#3-2-Random-Variables" class="headerlink" title="3.2 Random Variables"></a>3.2 Random Variables</h2><ul>
+<li><p><strong>random variable</strong> is a variable that can take on different values randomly.</p>
+<script type="math/tex; mode=display">\text{For example, } x_1\ and\ x_2\text{ are both possible values that the random variable x can take on.}</script></li>
+<li><p>for vector-valued variables, we would write the random variable as x(arial font) and one of its values as <strong>x(times new roman font).</strong></p>
+</li>
+<li>random variables my be discrete or continuous.</li>
+<li>discrete rv is one that has a finite or countably infinite number of states. Not necessarily the integers.</li>
+<li>a continuous rv is associated with a real value.</li>
+</ul>
+<h2 id="3-3-Probability-Distribution"><a href="#3-3-Probability-Distribution" class="headerlink" title="3.3 Probability Distribution"></a>3.3 Probability Distribution</h2><ul>
+<li>A probability distribution is a description of how likely a rv or set of rvs is to take on each of its possible states.</li>
+</ul>
+<h3 id="3-3-1-Discrete-Variables-and-Probability-Mass-Functions"><a href="#3-3-1-Discrete-Variables-and-Probability-Mass-Functions" class="headerlink" title="3.3.1 Discrete Variables and Probability Mass Functions"></a>3.3.1 Discrete Variables and Probability Mass Functions</h3><ul>
+<li>Probability Mass Function (PMF)<ul>
+<li>denotes with $P$</li>
+<li>The domain of P must be the set of all possible states of x.</li>
+<li>For all x in x, $0 \leq P(x) \leq 1$.</li>
+<li>Sum of all probabilities P(x) is one. This means being normalized.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-2-Continuous-Variables-and-Probability-Density-Functions"><a href="#3-3-2-Continuous-Variables-and-Probability-Density-Functions" class="headerlink" title="3.3.2 Continuous Variables and Probability Density Functions"></a>3.3.2 Continuous Variables and Probability Density Functions</h3><ul>
+<li><p>Probability Density Function (PDF)</p>
+<ul>
+<li>The domain of p must be the set of all possible states of x.</li>
+<li><p>For all x in x, p(x) ≥ 0. Note that we do not require p(x) ≤ 1.</p>
+<script type="math/tex; mode=display">\int{p(x)dx}=1</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-4-Marginal-Probability"><a href="#3-4-Marginal-Probability" class="headerlink" title="3.4 Marginal Probability"></a>3.4 Marginal Probability</h2><ul>
+<li><p>The probability distribution over the subset is known as the marginal probability distribution.</p>
+<ul>
+<li><p>For example, suppose that we have discrete random variables x and y, and we know P(x,y). We can find P(x) with the sum rule:</p>
+<script type="math/tex; mode=display">\forall x \in x, P(x=x) = \sum_y P(x=x, y=y)</script></li>
+<li><p>The name comes from the process of computing marginal probabilities on paper.</p>
+<script type="math/tex; mode=display">p(x) = \int p(x,y)dy</script><h2 id="3-5-Conditional-Probability"><a href="#3-5-Conditional-Probability" class="headerlink" title="3.5 Conditional Probability"></a>3.5 Conditional Probability</h2></li>
+<li><p>Conditional Probability is the probability of some event, given that some other event has happened.</p>
+</li>
+<li><p>We denote the conditional probability that y=y given x=x as P(y=y | x=x).</p>
+<script type="math/tex; mode=display">P(y=y|x=x) = \frac{P(y=y, x=x)}{P(x=x)}</script></li>
+<li><p>The conditional probability is only defined when $P(x=x) &gt; 0$.</p>
+</li>
+<li><p>Important not to confuse conditional probability with computing what would happen if some action were undertaken.</p>
+<h2 id="3-6-The-chain-Rule-of-Conditional-Probabilities"><a href="#3-6-The-chain-Rule-of-Conditional-Probabilities" class="headerlink" title="3.6 The chain Rule of Conditional Probabilities"></a>3.6 The chain Rule of Conditional Probabilities</h2></li>
+<li><p>Any joint probability distribution over many random variables may be decomposed into conditional distributions over only one variable.</p>
+</li>
+<li><p>This observation is known as the Chain rule or product rule of probability.</p>
+<script type="math/tex; mode=display">P(a,b,c) = P(a\ |\ b,c)P(b,c)</script><script type="math/tex; mode=display">P(b,c) = P(b\ |\ c)P(c)</script><script type="math/tex; mode=display">P(a,b,c) = P(a\ |\ b,c)P(b\ |\ c)P(c)</script><h2 id="3-7-Independence-and-Conditional-Independence"><a href="#3-7-Independence-and-Conditional-Independence" class="headerlink" title="3.7 Independence and Conditional Independence"></a>3.7 Independence and Conditional Independence</h2></li>
+<li><p>Two random variables x and y are independent if their probability distribution can be expressed as a product of two factors, one involving only x and one involving only y.</p>
+<script type="math/tex; mode=display">\forall x \in x, y \in y, p(x=x, y=y) = p(x=x)p(y=y)</script></li>
+<li><p>Two random variables x and y are conditionally independent given a random variable z if the conditional probability distribution over x and y factorizes in this way for every value of z.</p>
+<script type="math/tex; mode=display">\forall x \in x, y \in y, z \in z, p(x=x,y=y|z=z)=p(x=x|z=z)p(y=y|z=z)</script><script type="math/tex; mode=display">notiation \ x \perp y|z</script><h2 id="3-8-Expectation-Variance-and-Covariance"><a href="#3-8-Expectation-Variance-and-Covariance" class="headerlink" title="3.8 Expectation, Variance, and Covariance"></a>3.8 Expectation, Variance, and Covariance</h2></li>
+<li><p>The expectation or expected value of some function f(x) with respect to a probability distribution P(x) is the average or mean value that f takes on when x is drawn from P. For discrete variables this can be computed with a summation</p>
+<script type="math/tex; mode=display">E_{X \sim P}[f(x)] = \sum_xP(x)f(x)</script><script type="math/tex; mode=display">\text{For continuous variables}</script><script type="math/tex; mode=display">E_{x \sim p}[f(x)] = \int p(x)f(x)dx</script></li>
+<li><p>The <strong>variance</strong> gives a measure of how much the values of a function of a random variable x vary as we sample different values of x from its probability distribution.</p>
+<script type="math/tex; mode=display">Var(f(X)) = E[(f(x)-E[f(x)])^2]</script></li>
+<li><p>The <strong>covariance</strong> gives some sense of how much two values are linearly related to each other, as well as the scale of these variables.</p>
+<script type="math/tex; mode=display">Cov(f(x),g(y)) = E[(f(x) - E[f(X)])(g(y)-E[g(y)])</script></li>
+<li><p>High absolute values of the covariance mean that the values change very much and are both far from their respective means at the same time.</p>
+</li>
+<li>$Cov = 0$ means there is no linear relationship, $y=x^2$ has Cov of 0 but they are not independent.</li>
+<li><p><strong>Correlation</strong> normalize the contribution of each variable in order to measure only how much the variables are related, rather than also being affected by the scale of the separate variables.</p>
+<h2 id="3-9-Common-Probability-Distributions"><a href="#3-9-Common-Probability-Distributions" class="headerlink" title="3.9 Common Probability Distributions"></a>3.9 Common Probability Distributions</h2><h3 id="3-9-1-Bernoulli-Distribution"><a href="#3-9-1-Bernoulli-Distribution" class="headerlink" title="3.9.1 Bernoulli Distribution"></a>3.9.1 Bernoulli Distribution</h3></li>
+<li><p>It is a distribution over a single binary random variable.</p>
+<script type="math/tex; mode=display">
+  P(x=1) = \phi</script><script type="math/tex; mode=display">
+  P(x=0) = 1 - \phi</script><script type="math/tex; mode=display">
+  P(x=x) = \phi^x(1-\phi)^{1-x}</script><script type="math/tex; mode=display">
+  E_x[x] = \phi</script><script type="math/tex; mode=display">
+  Var_x(x) = \phi(1-\phi)</script><h3 id="3-9-2-Multinoulli-Distribution"><a href="#3-9-2-Multinoulli-Distribution" class="headerlink" title="3.9.2 Multinoulli Distribution"></a>3.9.2 Multinoulli Distribution</h3><ul>
+<li>Later</li>
+</ul>
+<h3 id="3-9-3-Gaussian-Distribution"><a href="#3-9-3-Gaussian-Distribution" class="headerlink" title="3.9.3 Gaussian Distribution"></a>3.9.3 Gaussian Distribution</h3><ul>
+<li>The most commonly used distribution over real numbers is the normal distribution, also known as the Gaussian distribution.</li>
+</ul>
+<script type="math/tex; mode=display">\mathcal{N}(x;\mu,\sigma^2) = \sqrt{\frac{1}{2\pi\sigma^2}}exp(-\frac{1}{2\sigma^2}(x-\mu)^2)</script></li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+    \mu \in \mathbf{R}\ and\ \sigma \in (0, \infty)</script><script type="math/tex; mode=display">E[x] = \mu</script><ul>
+<li><p>When absence of prior knowledge about what form a distribution over real numbers, Normal Distribution is good choice for two major reason.</p>
+<ul>
+<li>First, many distributions we wish to model are truly close to being normal distribution. The central limit theorem(CLT) shows that the sum of many independent random variables is approximately normally distributed<ul>
+<li>Second, out of all possible probability distributions with the same variance, the normal distribution encodes the maximum amount of uncertainty over the real number.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-10-Useful-Properties-of-Common-Functions"><a href="#3-10-Useful-Properties-of-Common-Functions" class="headerlink" title="3.10 Useful Properties of Common Functions"></a>3.10 Useful Properties of Common Functions</h2><ul>
+<li>logistic sigmoid</li>
+</ul>
+<script type="math/tex; mode=display">\sigma(x) = \frac{1}{1+exp(-x)}</script><ul>
+<li>The logistic sigmoid is commonly used to produce the \phi parameter of a Bernoulli distribution because its range is (0,1)</li>
+<li>The sigmoid function sturates when its argument is very positive or very negative, meaning that the function becomes very flat and insensitive to smal changes in the inputs.</li>
+<li>Another commonly encountered function is the softplus function.</li>
+</ul>
+<script type="math/tex; mode=display">\zeta(x) = log(1+exp(x))</script><ul>
+<li>The softplus function can be useful for producing the Beta or sigma parameter of a normal distribution because its range is (0, infinity).</li>
+</ul>
+<h2 id="3-11-Bayes’-Rule"><a href="#3-11-Bayes’-Rule" class="headerlink" title="3.11 Bayes’ Rule"></a>3.11 Bayes’ Rule</h2><ul>
+<li>We often find ourselves in a situation where we know P(y|x) and need to know P(x|y). Fortunately, if we also know P(x), we can compute the desired quantity using Bayes’ rule.</li>
+</ul>
+<script type="math/tex; mode=display">P(x|y) = \frac{P(x)P(y|x)}{P(y)}</script></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/통계/">통계</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2019/04/17/Algorithm-Kth-number/"><span>Algorithm-Kth number</span></a></h3>
     
   
