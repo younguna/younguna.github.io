@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Probability and Information Theory | younguna</title>
+  <title>Probability and Information Theory | hexo</title>
 
   
-  <meta name="author" content="younguna">
+  <meta name="author" content="John Doe">
   
 
   
@@ -29,14 +29,14 @@ the laws">
 
   <meta property="og:title" content="Probability and Information Theory"/>
 
-  <meta property="og:site_name" content="younguna"/>
+  <meta property="og:site_name" content="hexo"/>
 
   
   <meta property="og:image" content="/favicon.ico"/>
   
 
   <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="hexo" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
@@ -48,7 +48,7 @@ the laws">
     <header>
   <div class="site-branding">
     <h1 class="site-title">
-      <a href="/">younguna</a>
+      <a href="/">hexo</a>
     </h1>
     <p class="site-description"></p>
   </div>
@@ -104,11 +104,11 @@ the laws">
 <li>ML must always deal with uncertain quantities, and sometimes may also need to deal with stochastic(non-deterministic) quantities.</li>
 <li>Beyond mathematical statements that are true by definition, it is difficult to think of any proposition that is absolutely true or any event that is absolutely guaranteed to occur.</li>
 <li><p>Three possible sources of uncertainty</p>
-<ol>
+<ul>
 <li>Inherent stochasticity in the system being modeled</li>
 <li>Incomplete observability - we cannot observe all of the variables that drive the behavior of the system. Monty Hall problem</li>
 <li>Incomplete modeling - When we use a model that must discard some of the information we have observed, the discarded information results in uncertainty in the model’s prediction.</li>
-</ol>
+</ul>
 </li>
 <li><p>In many cases, it is more practical to use a simple but uncertain rule rather than a complex but certain one, even if the true rule is deterministic and our modeling system has the fidelity to accommodate a complex rule.</p>
 <ul>
@@ -261,12 +261,30 @@ the laws">
     Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
     </br>
     
-    &copy; 2019 younguna
+    &copy; 2019 John Doe
     
   </p>
 </footer>
     
   </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
 </body>
 </html>
