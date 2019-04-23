@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo</title>
+  <title>younguna</title>
 
   
-  <meta name="author" content="John Doe">
+  <meta name="author" content="younguna">
   
 
   
@@ -19,14 +19,14 @@
 
   
 
-  <meta property="og:site_name" content="hexo"/>
+  <meta property="og:site_name" content="younguna"/>
 
   
   <meta property="og:image" content="/favicon.ico"/>
   
 
   <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="hexo" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
@@ -38,7 +38,7 @@
     <header>
   <div class="site-branding">
     <h1 class="site-title">
-      <a href="/">hexo</a>
+      <a href="/">younguna</a>
     </h1>
     <p class="site-description"></p>
   </div>
@@ -243,7 +243,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <p><hr></p>
+        <hr>
+
 <h1 id="3-Probability-and-Information-Theory"><a href="#3-Probability-and-Information-Theory" class="headerlink" title="3. Probability and Information Theory"></a>3. Probability and Information Theory</h1><hr>
 
 <h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><ul>
@@ -273,13 +274,16 @@
 </li>
 <li>When we say that an outcome has a probability <em>p</em> of occurring, it means that if we repeated the experiment infinitely many times, then proportion <em>p</em> of the repetitions would result in that outcome.</li>
 <li>degree of belief</li>
-<li>The former kind of prob, related directly to the rates at which events occur, is known as <strong>frequentist probability</strong>, while the latter, related to qualitative levels of certainty, is known <strong>as Baysian probability</strong>.</li>
+<li>The former kind of prob, related directly to the rates at which events occur, is known as <strong>frequentist probability</strong>, while the latter, related to qualitative levels of certainty, is known as <strong>Baysian probability</strong>.</li>
 <li>probability theory provides a set of formal rules for determining the likelihood of a proposition being true given the likelihood of other propositions.</li>
 </ul>
 <h2 id="3-2-Random-Variables"><a href="#3-2-Random-Variables" class="headerlink" title="3.2 Random Variables"></a>3.2 Random Variables</h2><ul>
-<li><p><strong>random variable</strong> is a variable that can take on different values randomly.</p>
-<script type="math/tex; mode=display">\text{For example, } x_1\ and\ x_2\text{ are both possible values that the random variable x can take on.}</script></li>
-<li><p>for vector-valued variables, we would write the random variable as x(arial font) and one of its values as <strong>x(times new roman font).</strong></p>
+<li><strong>random variable</strong> is a variable that can take on different values randomly.</li>
+</ul>
+<ul>
+<li><p>For example, $x_1$ and $x_2$ are both possible values that the random variable $x$ can take on.</p>
+</li>
+<li><p>for vector-valued variables, we would write the random variable as x(arial font) and one of its values as $\mathbf{x}$.</p>
 </li>
 <li>random variables my be discrete or continuous.</li>
 <li>discrete rv is one that has a finite or countably infinite number of states. Not necessarily the integers.</li>
@@ -293,7 +297,7 @@
 <li>denotes with $P$</li>
 <li>The domain of P must be the set of all possible states of x.</li>
 <li>For all x in x, $0 \leq P(x) \leq 1$.</li>
-<li>Sum of all probabilities P(x) is one. This means being normalized.</li>
+<li>Sum of all probabilities $P(x)$ is one. This means being normalized.</li>
 </ul>
 </li>
 </ul>
@@ -301,7 +305,7 @@
 <li><p>Probability Density Function (PDF)</p>
 <ul>
 <li>The domain of p must be the set of all possible states of x.</li>
-<li><p>For all x in x, p(x) â‰¥ 0. Note that we do not require p(x) â‰¤ 1.</p>
+<li><p>$\forall x \in x, p(x) \geq 0$. Note that we do not require $p(x) \leq 1$.</p>
 <script type="math/tex; mode=display">\int{p(x)dx}=1</script></li>
 </ul>
 </li>
@@ -309,13 +313,13 @@
 <h2 id="3-4-Marginal-Probability"><a href="#3-4-Marginal-Probability" class="headerlink" title="3.4 Marginal Probability"></a>3.4 Marginal Probability</h2><ul>
 <li><p>The probability distribution over the subset is known as the marginal probability distribution.</p>
 <ul>
-<li><p>For example, suppose that we have discrete random variables x and y, and we know P(x,y). We can find P(x) with the sum rule:</p>
+<li><p>For example, suppose that we have discrete random variables x and y, and we know $P(x,y)$. We can find $P(x)$ with the sum rule:</p>
 <script type="math/tex; mode=display">\forall x \in x, P(x=x) = \sum_y P(x=x, y=y)</script></li>
 <li><p>The name comes from the process of computing marginal probabilities on paper.</p>
 <script type="math/tex; mode=display">p(x) = \int p(x,y)dy</script><h2 id="3-5-Conditional-Probability"><a href="#3-5-Conditional-Probability" class="headerlink" title="3.5 Conditional Probability"></a>3.5 Conditional Probability</h2></li>
 <li><p>Conditional Probability is the probability of some event, given that some other event has happened.</p>
 </li>
-<li><p>We denote the conditional probability that y=y given x=x as P(y=y | x=x).</p>
+<li><p>We denote the conditional probability that $y=y$ given $x=x$ as $P(y=y | x=x)$.</p>
 <script type="math/tex; mode=display">P(y=y|x=x) = \frac{P(y=y, x=x)}{P(x=x)}</script></li>
 <li><p>The conditional probability is only defined when $P(x=x) &gt; 0$.</p>
 </li>
@@ -328,7 +332,8 @@
 <li><p>Two random variables x and y are independent if their probability distribution can be expressed as a product of two factors, one involving only x and one involving only y.</p>
 <script type="math/tex; mode=display">\forall x \in x, y \in y, p(x=x, y=y) = p(x=x)p(y=y)</script></li>
 <li><p>Two random variables x and y are conditionally independent given a random variable z if the conditional probability distribution over x and y factorizes in this way for every value of z.</p>
-<script type="math/tex; mode=display">\forall x \in x, y \in y, z \in z, p(x=x,y=y|z=z)=p(x=x|z=z)p(y=y|z=z)</script><script type="math/tex; mode=display">notiation \ x \perp y|z</script><h2 id="3-8-Expectation-Variance-and-Covariance"><a href="#3-8-Expectation-Variance-and-Covariance" class="headerlink" title="3.8 Expectation, Variance, and Covariance"></a>3.8 Expectation, Variance, and Covariance</h2></li>
+<script type="math/tex; mode=display">\forall x \in x, y \in y, z \in z, p(x=x,y=y|z=z)=p(x=x|z=z)p(y=y|z=z)</script><p>$notiation : \ x \perp y\ |\ z$</p>
+<h2 id="3-8-Expectation-Variance-and-Covariance"><a href="#3-8-Expectation-Variance-and-Covariance" class="headerlink" title="3.8 Expectation, Variance, and Covariance"></a>3.8 Expectation, Variance, and Covariance</h2></li>
 <li><p>The expectation or expected value of some function f(x) with respect to a probability distribution P(x) is the average or mean value that f takes on when x is drawn from P. For discrete variables this can be computed with a summation</p>
 <script type="math/tex; mode=display">E_{X \sim P}[f(x)] = \sum_xP(x)f(x)</script><script type="math/tex; mode=display">\text{For continuous variables}</script><script type="math/tex; mode=display">E_{x \sim p}[f(x)] = \int p(x)f(x)dx</script></li>
 <li><p>The <strong>variance</strong> gives a measure of how much the values of a function of a random variable x vary as we sample different values of x from its probability distribution.</p>
@@ -374,7 +379,7 @@
 <li>Another commonly encountered function is the softplus function.</li>
 </ul>
 <script type="math/tex; mode=display">\zeta(x) = log(1+exp(x))</script><ul>
-<li>The softplus function can be useful for producing the Beta or sigma parameter of a normal distribution because its range is (0, infinity).</li>
+<li>The softplus function can be useful for producing the Beta or sigma parameter of a normal distribution because its range is $(0, \infty)$.</li>
 </ul>
 <h2 id="3-11-Bayes’-Rule"><a href="#3-11-Bayes’-Rule" class="headerlink" title="3.11 Bayes’ Rule"></a>3.11 Bayes’ Rule</h2><ul>
 <li>We often find ourselves in a situation where we know P(y|x) and need to know P(x|y). Fortunately, if we also know P(x), we can compute the desired quantity using Bayes’ rule.</li>
@@ -397,7 +402,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/Math/">Math</a><a href="/tags/i†µe³„/">í†µê³„</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/Math/">Math</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
     </span>
     
 
@@ -824,7 +829,7 @@
     Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
     </br>
     
-    &copy; 2019 John Doe
+    &copy; 2019 younguna
     
   </p>
 </footer>
