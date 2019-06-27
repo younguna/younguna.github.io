@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Algorithm - Spicier | younguna</title>
+
+  
+  <meta name="author" content="younguna">
+  
+
+  
+  <meta name="description" content="알고리즘(Python) - 더 맵게
+
+Input12scoville = [1, 2, 3, 9, 10, 12]K = 7
+Expected Output1return = 2
+목표
+모든 음식의 스코빌 지수를 K 이상으로 만드는 것
+위의 목표를 이루기 위해 하는 작업
+
+(섞은 음식">
+  
+
+  
+  
+  <meta name="keywords" content="algorithm,알고리즘,카카오,프로그래머스,파이썬,python">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Algorithm - Spicier"/>
+
+  <meta property="og:site_name" content="younguna"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">younguna</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Algorithm - Spicier</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/06/28/Algorithm-Spicier/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-06-27T16:38:51.000Z">
+          2019-06-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="알고리즘-Python-더-맵게"><a href="#알고리즘-Python-더-맵게" class="headerlink" title="알고리즘(Python) - 더 맵게"></a>알고리즘(Python) - 더 맵게</h1><hr>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoville = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">12</span>]</span><br><span class="line">K = <span class="number">7</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return = 2</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
+<li>모든 음식의 스코빌 지수를 K 이상으로 만드는 것</li>
+<li><p>위의 목표를 이루기 위해 하는 작업</p>
+<ul>
+<li>(섞은 음식의 스코빌 지수) = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)</li>
+</ul>
+</li>
+<li><p>모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복</p>
+</li>
+<li>배열 scoville과 원하는 스코빌 지수 K가 주어질 때, 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return하는 함수를 작성</li>
+</ul>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>1 &lt;= length(scoville) &lt;= 1,000,000</li>
+<li>0 &lt;= K &lt;= 1,000,000,000</li>
+<li>0 &lt;= each element of scoville &lt;= 1,000,000</li>
+<li>모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(scoville, K)</span>:</span></span><br><span class="line">    heap = []</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    [heapq.heappush(heap, i) <span class="keyword">for</span> i <span class="keyword">in</span> scoville]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(K &gt; heap[<span class="number">0</span>]):</span><br><span class="line">        smallest, second_smallest = heapq.heappop(heap), heapq.heappop(heap)</span><br><span class="line">        heapq.heappush(heap, smallest + (second_smallest * <span class="number">2</span>))</span><br><span class="line">        <span class="keyword">if</span> len(heap) == <span class="number">1</span> <span class="keyword">and</span> K &gt; heap[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>항상 배열의 정렬을 유지하는 힙을 이용한다.</li>
+<li>가장 작은 스코빌과 두 번째로 작은 스코빌을 뽑아내어 새로운 스코빌을 만든다.</li>
+<li>만약 배열에 원소가 하나만 남고 그 원소마저 K 보다 작다면 -1을 리턴한다.</li>
+<li>위의 상황이 아니라면 count를 늘린다.</li>
+<li>while 루프는 가장 작은 스코빌이 K 보다 작은지 점검한다.</li>
+<li>만약 가장 작은 스코빌이 K 보다 크다면 루프에 진입하지 않고 count를 리턴한다.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2019 younguna
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
