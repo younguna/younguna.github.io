@@ -102,9 +102,13 @@ Expected Output123output_one = 8output_two = 4output_three ">
 <li>최고 500번 수행</li>
 </ul>
 <h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
-<p>Python3<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
-<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Python3</p>
 </blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
 <li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
 <li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
@@ -153,23 +157,5 @@ Expected Output123output_one = 8output_two = 4output_three ">
     
   </div>
 </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
 </body>
 </html>

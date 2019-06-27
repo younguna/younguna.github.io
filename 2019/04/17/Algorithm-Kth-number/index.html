@@ -10,11 +10,10 @@
   
 
   
-  <meta name="description" content="알고리즘(Python) - K번재 수
+  <meta name="description" content="알고리즘(Python, JavaScript) - K번재 수
 
 Input12array = [1, 5, 2, 6, 3, 7, 4]	commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
-Expected Output1output = [5, 6, 3]
-목표배열 array에">
+Expected Output1output = [5, 6, 3]">
   
 
   
@@ -88,7 +87,7 @@ Expected Output1output = [5, 6, 3]
     <div class="entry">
       
         <p><hr></p>
-<h1 id="알고리즘-Python-K번재-수"><a href="#알고리즘-Python-K번재-수" class="headerlink" title="알고리즘(Python) - K번재 수"></a>알고리즘(Python) - K번재 수</h1><hr>
+<h1 id="알고리즘-Python-JavaScript-K번재-수"><a href="#알고리즘-Python-JavaScript-K번재-수" class="headerlink" title="알고리즘(Python, JavaScript) - K번재 수"></a>알고리즘(Python, JavaScript) - K번재 수</h1><hr>
 
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = [1, 5, 2, 6, 3, 7, 4]	</span><br><span class="line">commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]</span><br></pre></td></tr></table></figure>
 <h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = [5, 6, 3]</span><br></pre></td></tr></table></figure>
@@ -99,7 +98,14 @@ Expected Output1output = [5, 6, 3]
 <li>commands의 길이는 1 이상 50 이하</li>
 <li>commands의 각 원소는 길이가 3</li>
 </ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    </span><br><span class="line">    origin = array</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> commands:</span><br><span class="line">        _array = array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]]</span><br><span class="line">        _array.sort()</span><br><span class="line">        result.append(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Long</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> commands:</span><br><span class="line">        _array = array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]]</span><br><span class="line">        _array.sort()</span><br><span class="line">        result.append(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="comment"># Short</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [sorted(array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]])[i[<span class="number">2</span>]<span class="number">-1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> commands]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">array, commands</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    commands.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> _array = array.slice(i[<span class="number">0</span>]<span class="number">-1</span>, i[<span class="number">1</span>])</span><br><span class="line">        _array.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">        result.push(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
 <li>array를 i와 j까지의 인덱스로 잘라냅니다. (1번째 원소의 인덱스는 0)</li>
 <li>잘라낸 배열을 정렬합니다.</li>
@@ -148,23 +154,5 @@ Expected Output1output = [5, 6, 3]
     
   </div>
 </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
 </body>
 </html>
