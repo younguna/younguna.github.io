@@ -59,109 +59,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2019/04/26/Algorithm-friends4blocks/"><span>Algorithm-friends4blocks</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/26/Algorithm-friends4blocks/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-26T10:39:46.000Z">
-          2019-04-26
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><hr></p>
-<h1 id="알고리즘-Python-프렌즈-4-블록"><a href="#알고리즘-Python-프렌즈-4-블록" class="headerlink" title="알고리즘(Python) - 프렌즈 4 블록"></a>알고리즘(Python) - 프렌즈 4 블록</h1><hr>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">board2table</span><span class="params">(m,n, board)</span>:</span></span><br><span class="line">    table = []</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        col = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            col.append(board[i][j])                 </span><br><span class="line">        col = <span class="string">''</span>.join(col[::<span class="number">-1</span>])</span><br><span class="line">        table.append(col)</span><br><span class="line">    <span class="keyword">return</span> table</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crash</span><span class="params">(m,n,table)</span>:</span></span><br><span class="line">    crash_indexes = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> table[i][j] != <span class="string">"X"</span>:</span><br><span class="line">                <span class="keyword">if</span> table[i][j] == table[i+<span class="number">1</span>][j] == table[i][j+<span class="number">1</span>] == table[i+<span class="number">1</span>][j+<span class="number">1</span>] <span class="keyword">and</span> table[i][j]: </span><br><span class="line">                    crash_indexes.append([(i,j), (i+<span class="number">1</span>,j), (i,j+<span class="number">1</span>), (i+<span class="number">1</span>,j+<span class="number">1</span>)])</span><br><span class="line">    crash_indexes = list(set(sum(crash_indexes, [])))</span><br><span class="line">    count = len(crash_indexes)</span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> count, table, <span class="keyword">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> crash_indexes:</span><br><span class="line">        table[row[<span class="number">0</span>]] = table[row[<span class="number">0</span>]][:row[<span class="number">1</span>]] + <span class="string">'X'</span> + table[row[<span class="number">0</span>]][row[<span class="number">1</span>]+<span class="number">1</span>:]</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> idx,val <span class="keyword">in</span> enumerate(table):</span><br><span class="line">        x_count = val.count(<span class="string">'X'</span>)</span><br><span class="line">        table[idx] = table[idx].replace(<span class="string">"X"</span>, <span class="string">""</span>) + <span class="string">"X"</span>*x_count</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> count, table, <span class="keyword">True</span></span><br><span class="line">            </span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(m, n, board)</span>:</span></span><br><span class="line">    table = board2table(m,n,board)</span><br><span class="line">    flag = <span class="keyword">True</span></span><br><span class="line">    total_count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> flag:</span><br><span class="line">        count, table, flag = crash(m,m,table)</span><br><span class="line">        total_count += count</span><br><span class="line">    <span class="keyword">return</span> total_count</span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/04/25/Numerical-computation/"><span>Numerical computation</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/25/Numerical-computation/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-25T14:38:59.000Z">
-          2019-04-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2019/04/25/Algoritm-Collatz/"><span>Algoritm-Collatz</span></a></h3>
     
   
@@ -183,12 +80,31 @@
     <div class="entry">
       
         <p><hr></p>
-<h1 id="알고리즘-Python-콜라츠-추측"><a href="#알고리즘-Python-콜라츠-추측" class="headerlink" title="알고리즘(Python) - 콜라츠 추측"></a>알고리즘(Python) - 콜라츠 추측</h1><hr>
+<h1 id="알고리즘-Python-JavaScript-콜라츠-추측"><a href="#알고리즘-Python-JavaScript-콜라츠-추측" class="headerlink" title="알고리즘(Python, JavaScript) - 콜라츠 추측"></a>알고리즘(Python, JavaScript) - 콜라츠 추측</h1><hr>
 
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">collatz</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">500</span>):</span><br><span class="line">        num = num / <span class="number">2</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> num*<span class="number">3</span> + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input_one = <span class="number">6</span></span><br><span class="line">input_two = <span class="number">16</span></span><br><span class="line">input_three = <span class="number">626331</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output_one = 8</span><br><span class="line">output_two = 4</span><br><span class="line">output_three = -1</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
+<li>입력된 수가 짝수라면 2로 나눕니다. </li>
+<li>입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
+<li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
+<li>최고 500번을 수행하며 그 안에 성공하면 수행 횟수를, 불가능하면 -1을 리턴한다.</li>
+</ul>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>1 &lt;= 입력 &lt;= 8,000,000</li>
+<li>최고 500번 수행</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python3<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
+<li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
+<li>입력 값이 1이면 0인 answer을 리턴한다.</li>
+<li>while 루프로 진입하면 입력 값을 바꾸는 작업을 수행하고 입력 값이 1이 되지 않는다면 500회만 수행하고 그 전에 1이 되면 while 루프로 진입하지 않고 수행한 횟수를 answer에 기록하고 그것을 리턴한다.</li>
+</ul>
+
       
     </div>
 
@@ -368,7 +284,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/수학/">수학</a><a href="/tags/통계/">통계</a><a href="/tags/LaTeX/">LaTeX</a><a href="/tags/레이텍/">레이텍</a><a href="/tags/기호/">기호</a><a href="/tags/Mathematics/">Mathematics</a><a href="/tags/논문/">논문</a>
+        <a href="/tags/LaTeX/">LaTeX</a><a href="/tags/수학/">수학</a><a href="/tags/레이텍/">레이텍</a><a href="/tags/기호/">기호</a><a href="/tags/Mathematics/">Mathematics</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/논문/">논문</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a>
     </span>
     
 
@@ -563,7 +479,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/수학/">수학</a><a href="/tags/통계/">통계</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/Math/">Math</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
     </span>
     
 
@@ -842,7 +758,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/수학/">수학</a><a href="/tags/Linear-Algebra/">Linear Algebra</a><a href="/tags/선형대수학/">선형대수학</a>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Linear-Algebra/">Linear Algebra</a><a href="/tags/선형대수학/">선형대수학</a>
     </span>
     
 

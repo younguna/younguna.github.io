@@ -10,11 +10,10 @@
   
 
   
-  <meta name="description" content="알고리즘(Python) - 콜라츠 추측
+  <meta name="description" content="알고리즘(Python, JavaScript) - 콜라츠 추측
 
-Input1	
-Expected Output12
-목표조건코드123456def collatz(num):    for i in range(500):        num = num / 2 if num % 2 == 0 else num*3">
+Input123input_one = 6input_two = 16input_three = 626331
+Expected Output123output_one = 8output_two = 4output_three ">
   
 
   
@@ -88,12 +87,31 @@ Expected Output12
     <div class="entry">
       
         <p><hr></p>
-<h1 id="알고리즘-Python-콜라츠-추측"><a href="#알고리즘-Python-콜라츠-추측" class="headerlink" title="알고리즘(Python) - 콜라츠 추측"></a>알고리즘(Python) - 콜라츠 추측</h1><hr>
+<h1 id="알고리즘-Python-JavaScript-콜라츠-추측"><a href="#알고리즘-Python-JavaScript-콜라츠-추측" class="headerlink" title="알고리즘(Python, JavaScript) - 콜라츠 추측"></a>알고리즘(Python, JavaScript) - 콜라츠 추측</h1><hr>
 
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">collatz</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">500</span>):</span><br><span class="line">        num = num / <span class="number">2</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> num*<span class="number">3</span> + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input_one = <span class="number">6</span></span><br><span class="line">input_two = <span class="number">16</span></span><br><span class="line">input_three = <span class="number">626331</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output_one = 8</span><br><span class="line">output_two = 4</span><br><span class="line">output_three = -1</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
+<li>입력된 수가 짝수라면 2로 나눕니다. </li>
+<li>입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
+<li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
+<li>최고 500번을 수행하며 그 안에 성공하면 수행 횟수를, 불가능하면 -1을 리턴한다.</li>
+</ul>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>1 &lt;= 입력 &lt;= 8,000,000</li>
+<li>최고 500번 수행</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python3<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
+<li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
+<li>입력 값이 1이면 0인 answer을 리턴한다.</li>
+<li>while 루프로 진입하면 입력 값을 바꾸는 작업을 수행하고 입력 값이 1이 되지 않는다면 500회만 수행하고 그 전에 1이 되면 while 루프로 진입하지 않고 수행한 횟수를 answer에 기록하고 그것을 리턴한다.</li>
+</ul>
+
       
     </div>
 
