@@ -59,6 +59,94 @@
 
   
     
+    <h3 class="article-title"><a href="/2019/06/28/Algorithm-Laser-and-sticks/"><span>Algorithm - Laser and sticks</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/06/28/Algorithm-Laser-and-sticks/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-06-27T17:15:57.000Z">
+          2019-06-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="알고리즘-Python-JavaScript-쇠막대기"><a href="#알고리즘-Python-JavaScript-쇠막대기" class="headerlink" title="알고리즘(Python, JavaScript) - 쇠막대기"></a>알고리즘(Python, JavaScript) - 쇠막대기</h1><hr>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrangement = <span class="string">"()(((()())(())()))(())"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return = 17</span><br></pre></td></tr></table></figure>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><ul>
+<li>A stick can be placed on a stick that is longer.</li>
+<li>Endpoints cannot be overlapped.</li>
+<li>Each stick has at least one laser cut.</li>
+<li>Laser does not cut at the endpoint.</li>
+<li>Parentheses that are closed right after opened represent lasers.</li>
+</ul>
+<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><ul>
+<li>arrangement.length &lt;= 100,000</li>
+<li>opening.length == closing.length</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(arrangement)</span>:</span></span><br><span class="line">    opened_count, final_count = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    arrangement = arrangement.replace(<span class="string">"()"</span>, <span class="string">"0"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> arrangement:</span><br><span class="line">        <span class="keyword">if</span> val == <span class="string">"0"</span>:</span><br><span class="line">            final_count += opened_count</span><br><span class="line">        <span class="keyword">elif</span> val == <span class="string">"("</span>:</span><br><span class="line">            opened_count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            opened_count -= <span class="number">1</span></span><br><span class="line">            final_count += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> final_count</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">arrangement</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> opened_count = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">var</span> final_count = <span class="number">0</span>;</span><br><span class="line">	arrangement = arrangement.replace(<span class="regexp">/\(\)/g</span>, <span class="string">"0"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> arrangement) &#123;</span><br><span class="line">        <span class="keyword">var</span> val = arrangement.charAt(i);</span><br><span class="line">        <span class="keyword">if</span> (val === <span class="string">"0"</span>)&#123;</span><br><span class="line">            final_count += opened_count;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (val === <span class="string">"("</span>) &#123;</span><br><span class="line">            opened_count++;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            opened_count--;</span><br><span class="line">            final_count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> final_count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><ul>
+<li>()는 반드시 레이저를 표현하기때문에 ()를 하나의 원소로 표현하기 위히해 “0”으로 치환합니다.</li>
+<li>() represents laser so replace them with one length element such as 0.</li>
+<li>arrangement를 하나씩 탐색할때 괄호는 여는 (를 만날때마다 쇠막대기가 하나씩 쌓이는 행위를 의미합니다.</li>
+<li>Exploring each element of arrangement, opening paranthsis represent stacking  one layer of stick.</li>
+<li>쌓임이 유지되다 레이저를 만나면 쌓인 레이어만큼 총 조각이 늘어나게 됩니다.</li>
+<li>While exploring and stacking layers, when you meet laser, as manay as current layer, you will gain total pieces.</li>
+<li>쌓임이 유지되다 )를 만나면 유지되고 있는 레이어가 줄어듭니다.</li>
+<li>While stakcing layers, when you meet ), current number of layers loses 1.</li>
+<li>(를 만나면 레이어수인 opened_count를 늘리고 레이져를 만나면 만난 당시의 opened_count 만큼 총 조각 수인 final_count를 늘립니다.</li>
+<li>When you meet (, increase opened_count(current number of layers). When you meet “)”, decrease opened_count. When you meet “0”(laser), incrase final_count as much as opened_count.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2019/06/28/Algorithm-Spicier/"><span>Algorithm-Spicier</span></a></h3>
     
   
@@ -210,7 +298,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/javascript/">javascript</a>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
     </span>
     
 
@@ -374,7 +462,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/수학/">수학</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/통계/">통계</a><a href="/tags/LaTeX/">LaTeX</a><a href="/tags/레이텍/">레이텍</a><a href="/tags/기호/">기호</a><a href="/tags/Mathematics/">Mathematics</a><a href="/tags/논문/">논문</a>
+        <a href="/tags/LaTeX/">LaTeX</a><a href="/tags/수학/">수학</a><a href="/tags/레이텍/">레이텍</a><a href="/tags/기호/">기호</a><a href="/tags/Mathematics/">Mathematics</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/논문/">논문</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a>
     </span>
     
 
@@ -569,7 +657,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/수학/">수학</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/통계/">통계</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/Math/">Math</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
     </span>
     
 
@@ -647,7 +735,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/javascript/">javascript</a>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
     </span>
     
 
@@ -855,7 +943,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Linear-Algebra/">Linear Algebra</a><a href="/tags/수학/">수학</a><a href="/tags/선형대수학/">선형대수학</a>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Linear-Algebra/">Linear Algebra</a><a href="/tags/선형대수학/">선형대수학</a>
     </span>
     
 
@@ -931,7 +1019,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/javascript/">javascript</a>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
     </span>
     
 
@@ -1017,23 +1105,5 @@
     
   </div>
 </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
 </body>
 </html>
