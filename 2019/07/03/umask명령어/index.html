@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>umask 명령어 | younguna</title>
+
+  
+  <meta name="author" content="younguna">
+  
+
+  
+  <meta name="description" content="umask 명령어
+
+umask는 the free dictionary에 의하면 user’s file creation mask입니다.
+umask만을 입력하면 숫자 4개가 나타나게 되는데그 중 앞의 한글자를 제외하고 나머지 숫자를 이용하여 앞으로 해당 유저가 생성할 파일이나">
+  
+
+  
+  
+  <meta name="keywords" content="ubuntu,linux,명령어,umask">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="umask 명령어"/>
+
+  <meta property="og:site_name" content="younguna"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">younguna</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>umask 명령어</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/07/03/umask명령어/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-07-03T10:08:30.000Z">
+          2019-07-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <hr>
+
+<h1 id="umask-명령어"><a href="#umask-명령어" class="headerlink" title="umask 명령어"></a>umask 명령어</h1><hr>
+
+<p><br><br><code>umask</code>는 the free dictionary에 의하면 user’s file creation mask입니다.</p>
+<p><code>umask</code>만을 입력하면 숫자 4개가 나타나게 되는데<br>그 중 앞의 한글자를 제외하고 나머지 숫자를 이용하여 <u><strong>앞으로 해당 유저가 생성할 파일이나 디렉토리(폴더)의 접근 권한</strong></u>을 설정하거나 알 수 있습니다.</p>
+<p>예를 들어</p>
+<p>umask를 입력했을 시 0022를 얻었다면<br>앞으로 해당 유저가 파일을 생성했을 시 666-022 = 644<br>디렉토리를 생성했을 시 777-022 = 755를 얻을 수 있습니다.<br>여기서 644와 755가 의미하는 바는 다음과 같습니다.</p>
+<p>먼저 644는 6 | 4 | 4 로 각 자리의 수를 나누어 볼 수 있는데 그 각 자리의 수를 이진법으로 바꾸어 보면 110 | 010 | 010 으로 알 수 있습니다.</p>
+<p>저 세가지 이진수 중 첫 번째인 110은 rwx의 on/off를 의미하는 것으로써<br>첫 번째 1은 첫 번째 r이 on 이라는 의미고 두 번째 1은 두 번째 w가 on이라는 의미고<br>세 번째 0은 x가 off라는 의미 입니다. 이렇게 010을 해석하면 w만 on이 되었다는 것을 알 수 있습니다.<br>여기서 r이 on, w가 on, x가 off 되었다는 것을 rw-라고 표현 할 수 있으며 010에서 w만 on되었다는 것은 -w-로 표현 할 수 있습니다.</p>
+<p>정리하여 644는 110 | 010 | 010 으로 표현 할 수 있으며 그것은  <code>rw--w--w-</code> 로 표현 할 수 있습니다.<br><code>rw--w--w-</code> 은 리눅스 CLI환경에서  <code>ls -al</code> 로 디렉토리의 내부를 자세히 보았을 때 볼 수 있는 그것이 맞으며<br>의미는 첫 번째 세 개의 rwx는 소유자의 r(읽기 권한), w(쓰기 권한), x(실행 권한)의 유무를 의미하며<br>두 번째 세 개의 rwx는 소유자 소속 그룹의 사용자들의 읽기, 쓰기, 실행 권한의 유무를 의미하고<br>세 번째 세 개의 rwx는 모든 사용자의 읽기, 쓰기, 실행 권한의 유무를 의미 합니다.</p>
+<p>디렉토리의 경우도 다르지 않습니다.</p>
+<p>umask 설정을 바꾸고 싶다면  <code>umask [변경하고 싶은 값]</code>  을 입력하시면 됩니다.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/linux/">linux</a><a href="/tags/명령어/">명령어</a><a href="/tags/umask/">umask</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2019 younguna
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+</html>

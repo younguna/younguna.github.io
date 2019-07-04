@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 2 | younguna</title>
+
+  
+  <meta name="author" content="younguna">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="younguna"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">younguna</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/04/17/Algorithm-Kth-number/"><span>Algorithm - Kth number</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/17/Algorithm-Kth-number/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-17T14:01:55.000Z">
+          2019-04-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="알고리즘-Python-JavaScript-K번재-수"><a href="#알고리즘-Python-JavaScript-K번재-수" class="headerlink" title="알고리즘(Python, JavaScript) - K번재 수"></a>알고리즘(Python, JavaScript) - K번재 수</h1><hr>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = [1, 5, 2, 6, 3, 7, 4]	</span><br><span class="line">commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]</span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = [5, 6, 3]</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><p>배열 array에서 [i, j, k]를 원소로 가진 2차원 배열 commands가 매개변수로 주어질 때, commands의 모든 원소에 대해 array의 i번째 원소에서 j번째 원소까지를 추출한 후 그 중 k번째 원소를 찾아내어 리스트에 넣어 리턴하는 것</p>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>array의 길이는 1 이상 100 이하</li>
+<li>array의 각 원소는 1 이상 100 이하</li>
+<li>commands의 길이는 1 이상 50 이하</li>
+<li>commands의 각 원소는 길이가 3</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Long</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> commands:</span><br><span class="line">        _array = array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]]</span><br><span class="line">        _array.sort()</span><br><span class="line">        result.append(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="comment"># Short</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [sorted(array[i[<span class="number">0</span>]<span class="number">-1</span>:i[<span class="number">1</span>]])[i[<span class="number">2</span>]<span class="number">-1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> commands]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">array, commands</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    commands.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> _array = array.slice(i[<span class="number">0</span>]<span class="number">-1</span>, i[<span class="number">1</span>])</span><br><span class="line">        _array.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">        result.push(_array[i[<span class="number">2</span>]<span class="number">-1</span>])</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>array를 i와 j까지의 인덱스로 잘라냅니다. (1번째 원소의 인덱스는 0)</li>
+<li>잘라낸 배열을 정렬합니다.</li>
+<li>정렬된 배열에서 k번째의 인덱스를 리턴합니다.</li>
+<li>위의 과정을 commands배열의 원소 수 만큼 반복합니다.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/04/17/Linear-Algebra-for-ML/"><span>Linear Algebra for ML</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/17/Linear-Algebra-for-ML/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-17T11:46:55.000Z">
+          2019-04-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="2-Linear-Algebra"><a href="#2-Linear-Algebra" class="headerlink" title="2. Linear Algebra"></a>2. Linear Algebra</h1><p><hr></p>
+<h2 id="2-1-Scalars-Vectors-Matrices-and-Tensors"><a href="#2-1-Scalars-Vectors-Matrices-and-Tensors" class="headerlink" title="2.1 Scalars, Vectors, Matrices and Tensors"></a>2.1 Scalars, Vectors, Matrices and Tensors</h2><ul>
+<li><strong>Scalars</strong> : 스칼라는 선형수학에서 보는 형태와 달리 하나의 단어로 표현되며 주로 이탈릭체를 사용한다. 실수인지 자연수인지 등의 어떤 형태의 수인지 주로 함께 서술하여 준다. 예) <em>a</em></li>
+<li><strong>Vectors</strong> : 수의 열로 되어있는 형태를 가진다. 각 수(element)는 인덱스로 그 순서를 표현하며 벡터는 주로 소문자에 굵은체를 사용한다.</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{x} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}</script><ul>
+<li><p><strong>Matrices</strong> : 매트릭스는 벡터를 옆으로 붙인 형태로 2차원의 배열을 가진다. 각 수(element)는 두개의 인덱스로 구분될수 있다. <em>A</em> = 3 &gt; 매트릭스 A의 첫 번째 행과 두 번째 열의 수는 3이라는 것을 의미한다.</p>
+<script type="math/tex; mode=display">\mathbf{A} = \begin{bmatrix} A_{1,1}\ A_{1,2} \\ A_{2,1}\ A_{2,2} \\ \vdots \\ A_{n,1}\ A_{n,2} \end{bmatrix}</script></li>
+<li><p><strong>Tensors</strong> : 어떤 경우에는 우리는 2차원 이상으로 이루어진 수의 형태가 필요하다. 텐서를 쉽게 생각하기 위해서는 각 매트릭스가 element로 이루어진 vector를 생각하면 상상하기 쉽다. 선형대수학에서 스칼라는 rank 0의 텐서, 벡터는 rank 1의 텐서, 매트릭스는 rank 2의 텐서이다. Arial 폰트의 굵은 굵기로 텐서를 표현한다.</p>
+</li>
+<li><strong>main diagonal</strong> : 매트릭스에서 가장 왼쪽, 가장 위쪽부터 하나씩 내려오며 하나씩 오른쪽으로 이동하며 만나는 element들의 집합을 main diagonal이라고 한다.</li>
+<li><p><strong>transpose</strong> : 매트릭스에서 가장 중요한 operation중 하나이며 main diagonal를 기준으로 반사된 형태를 만드는 작업이다.</p>
+<script type="math/tex; mode=display">(A^T)_{i,j} = A_{j,i}</script></li>
+<li><p>벡터는 하나의 열로만 이루어진 매트릭스로 볼 수 있으며 벡터에 Transpose를 가하면 하나의 행을 가지는 매트릭스가 된다.</p>
+</li>
+<li>행으로 이루어진 매트릭스를 가끔씩 식에서 볼 수 있으며 그럴땐 다시 transpose를 적용해 column vector로 변형할 수 있다</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{x} = [x_1,x_2, ... x_n]^T</script><h2 id="2-2-Multiplying-Matrices-and-Vectors"><a href="#2-2-Multiplying-Matrices-and-Vectors" class="headerlink" title="2.2 Multiplying Matrices and Vectors"></a>2.2 Multiplying Matrices and Vectors</h2><ul>
+<li><strong>matrix product</strong> : 매트릭스 곱의 결과물 A가 $m \times n$, B가 $n \times p$ 매트릭스의 경우 처럼 A의 열 차수와 B의 행 차수가 같아야 $AB = C$의 경우처럼 $C (m \times p)$ 매트릭스를 가질 수 있다.</li>
+<li><p>AB = C가 성립된다고 BA 의 곱이 성립되는 것이 아니다.</p>
+<script type="math/tex; mode=display">C_{i,j} = \sum_kA_{i,k}B_{k,j}</script></li>
+<li><p>매트릭스의 각 element끼리 곱하여 매트릭스를 생성하는 것은 element-wise product 혹은 Hadamard product라고 한다.</p>
+</li>
+<li>벡터 계산에서 쓰이는 dot product는 같은 차수의 벡터 x와 y를 x를 transpose하여 매트릭스 곱을 하는 것과 같다.<br>매트릭스의 곱은 다음과 같은 특징을 가진다.</li>
+<li><p>Distributive<br>$A(B+C) = AB + AC$</p>
+</li>
+<li><p>Associative<br>$A(BC) = (AB)C$</p>
+</li>
+<li><p>단 commutative하지 않다.<br>$AB != BA$</p>
+</li>
+<li><p>하지만 vector의 dot product는 commutative하다.</p>
+<script type="math/tex; mode=display">x^Ty = y^Tx</script></li>
+<li><p>Transpose of a matrix product has a simple form</p>
+<script type="math/tex; mode=display">(AB)^T = B^TA^T</script></li>
+<li><p>on vector</p>
+<script type="math/tex; mode=display">x^Ty = (x^Ty)^T = y^Tx</script></li>
+<li><p>a system of linear equation</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">Ax=b</script><p><small>$\text{where A is m x n matrix, b is m x 1 vector, and x is n x 1 vector}$</small></p>
+<h2 id="2-3-Identity-and-Inverse-Matrices"><a href="#2-3-Identity-and-Inverse-Matrices" class="headerlink" title="2.3 Identity and Inverse Matrices"></a>2.3 Identity and Inverse Matrices</h2><ul>
+<li>matrix inversion 으로 matrix equation 을 풀 수 있다.</li>
+<li>matrix inversino을 이해하기 위해서는 Identity matrix에 대한 이해가 필요하다.</li>
+<li><strong>Identity matrix</strong> : square marix이며 main diagonal의 모든 element에는 1이 값으로 존재하며 나머지 element는 0인 매트릭스다.</li>
+</ul>
+<p>Matrix Inverse </p>
+<script type="math/tex; mode=display">A^{-1}A = I_n</script><p>solving matrix equation with inverse </p>
+<script type="math/tex; mode=display">Ax=b</script><script type="math/tex; mode=display">A^{-1}Ax = A^{-1}b</script><script type="math/tex; mode=display">I_nx = A^{-1}b</script><script type="math/tex; mode=display">x = A^{-1}b</script><ul>
+<li>강력한 tool이지만 software engineering에서는 사용하는 것이 제한적인 것이 현실이다.</li>
+</ul>
+<h2 id="2-4-Linear-Dependence-and-Span"><a href="#2-4-Linear-Dependence-and-Span" class="headerlink" title="2.4 Linear Dependence and Span"></a>2.4 Linear Dependence and Span</h2><ul>
+<li>Inverse가 존재하기위해선 Ax=b의 식에서 반드시 단 하나의 solution이 존재해야 한다.</li>
+<li><strong>Linear combination</strong> : set에 존재하는 vector의 조합 혹은 scalar를 곱하여 조합하여 만들어낸 vector</li>
+<li><strong>Span</strong> : Linear combination의 모든 point들의 집합이다.</li>
+<li><strong>Column space / Range of A</strong> : matrix equation에서 column들의 span을 의미한다.</li>
+<li><strong>Linear dependence</strong> : vector들이 각각 서로서로 Linear combination이 아닌 상태를 의미한다.</li>
+</ul>
+<p>종합적으로 매트릭스가 inverse가 되려면… </p>
+<ul>
+<li>solution이 하나만 존재</li>
+<li>A 매트릭스가 최대 m column이 존재</li>
+<li>종합하면 매트릭스가 square의 형태여야 한다 ⇒ m = n</li>
+<li><strong>Singular matrix</strong> : square matrix with linear independence</li>
+<li>singular가 아니더라도 solution을 구할 수 는 있지만 matrix inversion을 쓸 수 없다.</li>
+</ul>
+<h2 id="2-5-Norms"><a href="#2-5-Norms" class="headerlink" title="2.5 Norms"></a>2.5 Norms</h2><ul>
+<li><strong>Norm</strong> : one of measuring size of vector.</li>
+</ul>
+<script type="math/tex; mode=display">L_pnorm = ||x||_p = \left( \sum_i|x_i|^p \right)^{1/p}</script><p>$\text{for p in }\mathbb{R},\ p \geq 1$</p>
+<ul>
+<li>a norm is any function f that staisfies the following properties<ul>
+<li>f(x) = 0 ⇒ x = 0</li>
+<li>f(x+y) ≤ f(x) + f(y) (the Triangle Inequality)</li>
+<li>for all alpha, f(alpha x) = |x|f(x)</li>
+</ul>
+</li>
+</ul>
+<p>L2 norm (Euclidean norm) </p>
+<script type="math/tex; mode=display">L_2norm = ||x||_2 = \left(\sum_i |x_i|^2\right)^{1/2}</script><p>자주 쓰이기 때문에 ||x||로 많이 표기됨 </p>
+<ul>
+<li>squared L2 norm이 수학적으로 컴퓨터로 처리하기 수월하다.</li>
+<li>the derivatives of the squared L2 norm with respect to each element of x each depend only on the corresponding element of x, while all of the derivatives of the L2 norm depend on the entire vector.</li>
+</ul>
+<p><strong>L1 norm</strong></p>
+<script type="math/tex; mode=display">L_1norm = ||x||_1 = \sum_i|x_i|</script><ul>
+<li>L1 norm 은 zero와 nonzero의 차이가 중요할때 ML에서 자주 쓰인다.</li>
+</ul>
+<p><strong>Max norm</strong> </p>
+<script type="math/tex; mode=display">||x||_\infty = \max_i|x_i|</script><p>||<em>x</em>||∞ = max<em>i</em>|<em>xi</em>| </p>
+<p><strong>Frobenius norm</strong> - size of matrix</p>
+<script type="math/tex; mode=display">||A||_F = \sqrt{\sum_{i,j}A^{2}_{i,j}}</script><ul>
+<li>벡터의 L2 norm과 비슷한 형태를 가진다.</li>
+</ul>
+<p>두 벡터의 dot product를 norm의 형태로 다시 쓴 형태 </p>
+<script type="math/tex; mode=display">x^Ty = ||x||_2||y||_2cos\theta</script><ul>
+<li><em>θ</em> 는 x와 y 사이의 각도이다.</li>
+</ul>
+<h2 id="2-6-Sepcial-Kinds-of-Matrices-and-Vectors"><a href="#2-6-Sepcial-Kinds-of-Matrices-and-Vectors" class="headerlink" title="2.6 Sepcial Kinds of Matrices and Vectors"></a>2.6 Sepcial Kinds of Matrices and Vectors</h2><ul>
+<li><strong>unit vector</strong> : unit norm을 가지는 벡터</li>
+</ul>
+<script type="math/tex; mode=display">||x||_2 = 1</script><ul>
+<li>orthogonal : 벡터 x와 벡터y가 x^Ty = 0의 값을 가지면 orthogonal 하다고 한다. 직관적으로 벡터 차원에서 직각을 이루는 것을 의미한다. orthogonal을 이루고 unit norm을 가지면 <strong>orthonormal</strong>이라고 한다.</li>
+<li>orthogonal matrix: 매트릭스의 행들이 orthonormal하고 열들이 orthonormal한 square 매트릭스를 의미한다.</li>
+</ul>
+<script type="math/tex; mode=display">A^TA = AA^T = I</script><p>this implies that</p>
+<script type="math/tex; mode=display">A^{-1} = A^T</script><h2 id="2-7-Eigendecomposition-고유값-분해"><a href="#2-7-Eigendecomposition-고유값-분해" class="headerlink" title="2.7 Eigendecomposition(고유값 분해)"></a>2.7 Eigendecomposition(고유값 분해)</h2><ul>
+<li>수를 인수분해하는 것 처럼 매트릭스를 분해하여 매트릭스의 특징을 한번에 나타내는 형태로 분해한다.</li>
+<li><strong>eigendecomposition</strong> : 매트릭스를 eigenvector와 eigenvalue로 분해 하는 것</li>
+<li><p><strong>eigenvector</strong>: non-zero벡터인 v가 다음을 만족하는 것을 의미한다.</p>
+<script type="math/tex; mode=display">\mathbf{A}v = \lambda v</script><p>  여기서 lambda는 eigenvalue이며 eigenvector v와 매칭한다.</p>
+<p>  Eigendecomposition</p>
+<script type="math/tex; mode=display">\mathbf{A} = \mathbf{V}diag(\lambda)\mathbf{V}^{-1}</script><p>  V는 Linearly independent한 eigenvector을 옆으로 붙여 구성한 매트릭스이며 diag(lambda)는 각 eigenvector에 매칭하는 eigenvalue를 main diagonal로 가지는 매트릭스이다.</p>
+<ul>
+<li>모든 매트리스가 eigendecomposition이 가능 한 것은 아니다.</li>
+</ul>
+</li>
+</ul>
+<p>하지만 이 책에서는 간단한 분해가 가능한 매트릭스만 다룬다. 실수 + symmetric 한 매트릭스는 실수로만 구성된 eigenvector와 eigenvalue로 분해할 수 있다. </p>
+<script type="math/tex; mode=display">A = QΛQ^T</script><p>여기서 Q는 eigenvector로 이루어진 orthogonal matrix이며 Lambda는 eigenvalue의 diagonal matrix이다.</p>
+<ul>
+<li>여기서 symmetric한 매트릭스 A는 eigendecomposition이 보장되어있지만 분해가 고유하지는 않을 수 있다.</li>
+</ul>
+<h2 id="2-8-Singular-Value-Decomposition-SVD"><a href="#2-8-Singular-Value-Decomposition-SVD" class="headerlink" title="2.8 Singular Value Decomposition (SVD)"></a>2.8 Singular Value Decomposition (SVD)</h2><ul>
+<li>Eigendecomposition과 같은 성격을 가지며 Singular Value Decomposition은 매트릭스를 singular vector와 singular value로 분해한다.</li>
+<li>eigendecomposition보다 좀 더 일반적으로 적용이 가능하다.</li>
+<li>모든 실수의 매트릭스는 SVD가 가능하다.</li>
+</ul>
+<script type="math/tex; mode=display">A=UDV^T</script><ul>
+<li>U와 V는 orthogonal matrix이다.</li>
+<li>D는 diagonal 매트릭스이며 반드시 square 매트릭스는 아니다.</li>
+<li>U의 벡터들은 <strong>left-singular vector</strong> V의 colmn 벡터들은 <strong>right-sigular vector</strong>라고 불린다.</li>
+<li>SVD의 가장 유용한 기능은 부분적으로 non-square matrix로의 매트릭스 inversion을 generalize 하는 것이다.</li>
+</ul>
+<h2 id="2-9-The-Moore-Penrose-Pseudoinverse"><a href="#2-9-The-Moore-Penrose-Pseudoinverse" class="headerlink" title="2.9 The Moore-Penrose Pseudoinverse"></a>2.9 The Moore-Penrose Pseudoinverse</h2><ul>
+<li>Ax = y를 풀기 위해 A의 inverse인 B를 구한다고 가정하자.</li>
+<li>x = By의 형태를 가져야하는데 이것이 불가능한 경우 적용하는 것이 Moore-Penrose Pseudoinverse이다.</li>
+</ul>
+<script type="math/tex; mode=display">A^+ = VD^+U^T</script><ul>
+<li>여기서 U,D,B는 A의 SVD를 이용하여 구한다.</li>
+<li>D+는 D의 non-zero element를 reciprocal을 취한후 transpose하여 구한다.</li>
+</ul>
+<h2 id="2-10-The-Trace-Operator"><a href="#2-10-The-Trace-Operator" class="headerlink" title="2.10 The Trace Operator"></a>2.10 The Trace Operator</h2><ul>
+<li>trace opearator는 diagonal entry들의 합을 쉽게 표현해 준다.</li>
+</ul>
+<script type="math/tex; mode=display">Tr(A)  = \sum_iA_{i,i}</script><ul>
+<li>Frobenius norm</li>
+</ul>
+<script type="math/tex; mode=display">||A||_F = \sqrt{Tr(AA^T)}</script><ul>
+<li>특징</li>
+</ul>
+<script type="math/tex; mode=display">Tr(A) = Tr(A^T) \\ Tr(ABC) = Tr(CAB) = Tr(BCA)</script><h2 id="2-11-The-Determinant"><a href="#2-11-The-Determinant" class="headerlink" title="2.11 The Determinant"></a>2.11 The Determinant</h2><ul>
+<li>square matrix가 가지며 det(A)라고 표현된다. 혹은 |A|라고 표현한다.</li>
+<li>det(A)는 product of all eigenvalues와 같다.</li>
+</ul>
+<script type="math/tex; mode=display">| \mathbf{A}| = \left| \begin{bmatrix} a\ \ b  \\   c\ \ d \end{bmatrix} \right| = ad - bc</script><h2 id="2-12-Example-Principal-Component-Analysis"><a href="#2-12-Example-Principal-Component-Analysis" class="headerlink" title="2.12 Example: Principal Component Analysis"></a>2.12 Example: Principal Component Analysis</h2><p>Continue…</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/Math/">Math</a><a href="/tags/Linear-Algebra/">Linear Algebra</a><a href="/tags/선형대수학/">선형대수학</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/"><span>Algorithm - Player who did not finish</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-16T10:27:41.000Z">
+          2019-04-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="알고리즘-Python-JavaScript-완주하지-못한-선수"><a href="#알고리즘-Python-JavaScript-완주하지-못한-선수" class="headerlink" title="알고리즘(Python, JavaScript) - 완주하지 못한 선수"></a>알고리즘(Python, JavaScript) - 완주하지 못한 선수</h1><p><hr></p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">participant = [<span class="string">"John"</span>, <span class="string">"David"</span>, <span class="string">"Becky"</span>]</span><br><span class="line">finisher = [<span class="string">"Becky"</span>, <span class="string">"David"</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = &quot;John&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><p>참가자 리스트와 완주자 리스트가 주어지고 그 두 리스트를 비교하여 어떤 선수가 완주하지 못하였는지 구하는 것</p>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>선수의 수는 1명 이상 100,000명 이하.</li>
+<li>finisher의 길이는 participants의 길이보다 1 작다.</li>
+<li>선수 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어짐.</li>
+<li>선수 중에는 동명이인이 있을 수 있음.</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(participant, completion)</span>:</span></span><br><span class="line">    participant.sort()</span><br><span class="line">    completion.sort()</span><br><span class="line">    <span class="keyword">for</span> p,c <span class="keyword">in</span> zip(participant, completion):</span><br><span class="line">        <span class="keyword">if</span> i != j:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> participant[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">participant, completion</span>) </span>&#123;</span><br><span class="line">    participant.sort();</span><br><span class="line">    completion.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> participant) &#123;</span><br><span class="line">        <span class="keyword">if</span> (participant[i] !== completion[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> participant[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>두 리스트를 set으로 변경하고 차이를 구한 뒤 다시 리스트로 변경하는 것은 동명이인이 있는 경우를 통과 할 수 없음</li>
+<li>두 리스트를 정렬하고 함께 재귀하는 동안 다른 이름이 재귀하게되면 participant의 이름이 완주하지 못한 선수이다.</li>
+<li>만약 정렬에서 완주하지 못한 선수가 가장 끝으로 정렬된 경우 그 선수까지 재귀하기전에 재귀가 끝나므로 그 후에는 participant의 마지막 선수를 return하면 된다.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/09/11/객체지향에서의-Attribute-Python의-property와-속성-setter/"><span>객체지향에서의 Attribute, Python의 @property와 @속성.setter</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/09/11/객체지향에서의-Attribute-Python의-property와-속성-setter/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-09-11T09:54:33.000Z">
+          2018-09-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <hr>
+
+<h1 id="객체지향에서의-Attribute-Python의-property와-속성-setter"><a href="#객체지향에서의-Attribute-Python의-property와-속성-setter" class="headerlink" title="객체지향에서의 Attribute, Python의 @property와 @속성.setter"></a>객체지향에서의 Attribute, Python의 @property와 @속성.setter</h1><hr>
+
+<p>객체지향 프로그래밍에서는 객체의 속성 (attribute)을 행위 (method)를 통하여 객체를 나타냅니다.<br>자동차를 객체로 생각한다면 한 자동차에서 속성중 하나인 기름의 양을 oil_amount 변수로 또 자동차의 행위중 하나인 앞으로 나아간다를 go_forward라는  행위 (method)로 표현하여 자동차를 “객체화” 할 수 있습니다.<br>자동차라는 개념을 우리의 프로그래밍안에 나타내고자 자동차에서 우리가 필요한 속성과 행위만 끄집어내어 추상화 한 것입니다.<br>파이썬의 @property는 이 중 속성에 대해 더 깊이 들여다볼 주제입니다.</p>
+<h4 id="예를-들어"><a href="#예를-들어" class="headerlink" title="예를 들어"></a>예를 들어</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>라는 객체를 표현했다고 생각해봅시다.</p>
+<p>우선 Car라는 객체의 속성값들이 표현되어있는 __init__안을 보면 self로 하여 표현한다는 것을 알겠는데 왜 __(double underscore, dunder, 던더, 더블 밑줄)을 앞에 붙여서 선언했을까요?</p>
+<p>저것은 일종의 약속입니다. 이 속성값은 이 객체의 밖에서 함부로 접근할 수 없다라고 “파이썬”에서 사용하는 약속입니다. 저 약속과 관계없이 얼마든지 바꿀 수는 있습니다. 하지만 그러면 지금부터 알아볼 @property의 의미가 무색해지겠죠.</p>
+<p>왜 이런식의 약속이 필요한지에 대한 질문은 여기서는 생략하도록 하겠습니다.</p>
+<p>자 그렇다면 self.__oil_amount를 바꾸고 싶다면, 예를 들어 차에 기름을 충전하는 객체가 한 Car객체에 기름을 충전하여 기름의 양 속성이 외부에서 더 해져야 한다면 어떻게 해야할 까? (물론 self.__oil_amount를 직접 바꾸지 않는다는 약속하에)</p>
+<p>이때 @property가 들어옵니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__oil_amount</span><br><span class="line"></span><br><span class="line"><span class="meta">    @oil_amount.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self, new_oil_amount)</span>:</span></span><br><span class="line"></span><br><span class="line">        self.__oil_amount += new_oil_amount</span><br></pre></td></tr></table></figure></p>
+<p>이렇게 정의하게 되면</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">car = Car(<span class="number">5</span>)</span><br><span class="line">car.oil_amount()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span></span><br><span class="line"></span><br><span class="line">car.go_forward()</span><br><span class="line">car.oil_amount()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span></span><br><span class="line"></span><br><span class="line">car.oil_amount(<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span></span><br></pre></td></tr></table></figure>
+<p>위 처럼 car.oil_amount()는 self.__oil_amount의 getter 처럼,<br>car.oil_amount(variable)은 self.__oil_amount의 setter처럼 작동하게 됩니다.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/파이썬/">파이썬</a><a href="/tags/Python/">Python</a><a href="/tags/property/">property</a><a href="/tags/property/">\@property</a><a href="/tags/getter/">getter</a><a href="/tags/setter/">setter</a><a href="/tags/객체지향/">객체지향</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/" class="pagination-prev">Prev</a>
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2019 younguna
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+</html>
