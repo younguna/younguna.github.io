@@ -59,6 +59,446 @@
 
   
     
+    <h3 class="article-title"><a href="/2019/04/25/Algoritm-Collatz/"><span>Algoritm - Collatz</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/25/Algoritm-Collatz/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-25T14:36:42.000Z">
+          2019-04-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="알고리즘-Python-JavaScript-콜라츠-추측"><a href="#알고리즘-Python-JavaScript-콜라츠-추측" class="headerlink" title="알고리즘(Python, JavaScript) - 콜라츠 추측"></a>알고리즘(Python, JavaScript) - 콜라츠 추측</h1><hr>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input_one = <span class="number">6</span></span><br><span class="line">input_two = <span class="number">16</span></span><br><span class="line">input_three = <span class="number">626331</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output_one = 8</span><br><span class="line">output_two = 4</span><br><span class="line">output_three = -1</span><br></pre></td></tr></table></figure>
+<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
+<li>입력된 수가 짝수라면 2로 나눕니다. </li>
+<li>입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
+<li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
+<li>최고 500번을 수행하며 그 안에 성공하면 수행 횟수를, 불가능하면 -1을 리턴한다.</li>
+</ul>
+<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
+<li>1 &lt;= 입력 &lt;= 8,000,000</li>
+<li>최고 500번 수행</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<p>Python3</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
+<li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
+<li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
+<li>입력 값이 1이면 0인 answer을 리턴한다.</li>
+<li>while 루프로 진입하면 입력 값을 바꾸는 작업을 수행하고 입력 값이 1이 되지 않는다면 500회만 수행하고 그 전에 1이 되면 while 루프로 진입하지 않고 수행한 횟수를 answer에 기록하고 그것을 리턴한다.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/04/19/LaTeX-Math-symbols-레이텍-수학-기호/"><span>LaTeX - Math symbols 레이텍 수학 기호</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/19/LaTeX-Math-symbols-레이텍-수학-기호/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-19T12:09:43.000Z">
+          2019-04-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><hr></p>
+<h1 id="LaTeX-Math-symbols-레이텍-수학-기호"><a href="#LaTeX-Math-symbols-레이텍-수학-기호" class="headerlink" title="LaTeX - Math symbols 레이텍 수학 기호"></a>LaTeX - Math symbols 레이텍 수학 기호</h1><p><hr></p>
+<h2 id="Greek-Letters-그리스-문자"><a href="#Greek-Letters-그리스-문자" class="headerlink" title="Greek Letters 그리스 문자"></a>Greek Letters 그리스 문자</h2><p>$\alpha$ \alpha $\theta$ \theta $\tau$ \tau $\beta$ \beta</p>
+<p>$\vartheta$ \vartheta $\pi$ \pi $\upsilon$ \upsilon \gamma $\gamma$            </p>
+<p>\varpi $\varpi$ \phi $\phi$ \delta $\delta$ \kappa $\kappa$ </p>
+<p>\rho $\rho$ \varphi $\varphi$ \epsilon $\epsilon$ \lambda $\lambda$</p>
+<p>\varrho $\varrho$ \chi $\chi$ \varepsilon $\varepsilon$</p>
+<p>\mu $\mu$ \sigma $\sigma$ \psi $\psi$ \zeta $\zeta$</p>
+<p>\nu $\nu$ \varsigma $\varsigma$ \omega $\omega$ \eta $\eta$</p>
+<p>\xi $\xi$ \Gamma $\Gamma$ \Lambda $\Lambda$ \Sigma $\Sigma$</p>
+<p>\Psi $\Psi$ \Delta $\Delta$ \Xi $\Xi$ \Upsilon $\Upsilon$</p>
+<p>\Omega $\Omega$ \Theta $\Theta$ \Pi $\Pi$ \Phi $\Phi$</p>
+<ul>
+<li>문자 그대로 쓰는 것<ul>
+<li>$o$ o</li>
+</ul>
+</li>
+</ul>
+<h2 id="Binary-Operation-Symbols-바이너리-연산-기호"><a href="#Binary-Operation-Symbols-바이너리-연산-기호" class="headerlink" title="Binary Operation Symbols 바이너리 연산 기호"></a>Binary Operation Symbols 바이너리 연산 기호</h2><p>$\pm$ \pm $\cap$ \cap $\diamond$ \diamond $\oplus$ \oplus</p>
+<p>$\mp$ \mp $\cup$ \cup $\bigtriangleup$ \bigtriangleup $\ominus$ \ominus</p>
+<p>$\times$ \times $\uplus$ \uplus $\bigtriangledown$ \bigtriangledown $\otimes$ \otimes</p>
+<p>$\div$ \div $\sqcap$ \sqcap $\triangleleft$ \triangleleft $\oslash$ \oslash</p>
+<p>$\ast$ \ast $\sqcup$ \sqcup $\triangleright$ \triangleright $\odot$ \odot</p>
+<p>$\star$ \star $\vee$ \vee $\lhd$ \lhd $\bigcirc$ \bigcirc</p>
+<p>$\circ$ \circ $\wedge$ \wedge $\rhd$ \rhd $\dagger$ \dagger</p>
+<p>$\bullet$ \bullet $\setminus$ \setminus $\unlhd$ \unlhd $\ddagger$ \ddagger</p>
+<p>$\cdot$ \cdot $\wr$ \wr $\unrhd$ \unrhd $\amalg$ \amalg </p>
+<h2 id="relation-symbol-관계-기호"><a href="#relation-symbol-관계-기호" class="headerlink" title="relation symbol 관계 기호"></a>relation symbol 관계 기호</h2><p>$\leq$ \leq $\geq$ \geq $\equiv$ \equiv $\models$ \models</p>
+<p>$\prec$ \prec $\succ$ \succ $\sim$ \sim $\perp$ \perp</p>
+<p>$\preceq$ \preceq $\succeq$ \succeq $\simeq$ \simeq $\mid$ \mid </p>
+<p>$\ll$ \ll $\gg$ \gg $\asymp$ \asymp $\parallel$ \parallel</p>
+<p>$\subset$ \subset $\supset$ \supset $\approx$ \approx $\bowtie$ \bowtie </p>
+<p>$\subseteq$ \subseteq $\supseteq$ \supseteq $\cong$ \cong $\Join$ \Join </p>
+<p>$\sqsubset$ \sqsubset $\sqsupset$ \sqsupset $\neq$ \neq $\smile$ \smile </p>
+<p>$\sqsubseteq$ \sqsubseteq $\sqsupseteq$ \sqsupseteq $\doteq$ \doteq $\frown$ \frown </p>
+<p>$\in$ \in $\ni$ \ni $\propto$ \propto $\vdash$ \vdash $\dashv$ \dashv</p>
+<ul>
+<li>문자 그대로 쓰는 것<ul>
+<li>$=$ =</li>
+<li>$&lt;$ &lt;</li>
+<li>$&gt;$ ></li>
+<li>$:$ :</li>
+</ul>
+</li>
+</ul>
+<h2 id="Punctuation-Symbols-구두점-기호"><a href="#Punctuation-Symbols-구두점-기호" class="headerlink" title="Punctuation Symbols 구두점 기호"></a>Punctuation Symbols 구두점 기호</h2><p>$\colon$  \colon $\ldotp$ \ldotp $\cdotp$ \cdotp</p>
+<ul>
+<li>문자 그대로 쓰는 것<ul>
+<li>$,$ , 콤마</li>
+<li>$;$ ; 세미콜른</li>
+</ul>
+</li>
+</ul>
+<h2 id="Arrow-symbols-화살표-기호"><a href="#Arrow-symbols-화살표-기호" class="headerlink" title="Arrow symbols 화살표 기호"></a>Arrow symbols 화살표 기호</h2><p>$\leftarrow$ \leftarrow $\longleftarrow$ \longleftarrow $\uparrow$ \uparrow $\Leftarrow$ \Leftarrow </p>
+<p>$\Longleftarrow$ \Longleftarrow $\Uparrow$ \Uparrow $\rightarrow$ \rightarrow $\longrightarrow$ \longrightarrow </p>
+<p>$\downarrow$ \downarrow $\Rightarrow$ \Rightarrow $\Longrightarrow$ \Longrightarrow $\Downarrow$ \Downarrow</p>
+<p>$\leftrightarrow$ \leftrightarrow $\longleftrightarrow$ \longleftrightarrow $\updownarrow$ \updownarrow $\Leftrightarrow$ \Leftrightarrow </p>
+<p>$\Longleftrightarrow$ \Longleftrightarrow $\Updownarrow$ \Updownarrow $\mapsto$ \mapsto $\longmapsto$ \longmapsto </p>
+<p>$\nearrow$ \nearrow $\hookleftarrow$ \hookleftarrow $\hookrightarrow$ \hookrightarrow $\searrow$ \searrow </p>
+<p>$\leftharpoonup$ \leftharpoonup $\rightharpoonup$ \rightharpoonup $\swarrow$ \swarrow $\leftharpoondown$ \leftharpoondown </p>
+<p>$\rightharpoondown$ \rightharpoondown $\nwarrow$ \nwarrow $\rightleftharpoons$ \rightleftharpoons $\leadsto$ \leadsto </p>
+<h2 id="Miscellaneous-Symbols-기타-기호들"><a href="#Miscellaneous-Symbols-기타-기호들" class="headerlink" title="Miscellaneous Symbols 기타 기호들"></a>Miscellaneous Symbols 기타 기호들</h2><p>$\ldots$ \ldots $\cdots$ \cdots $\vdots$ \vdots $\ddots$ \ddots </p>
+<p>$\aleph$ \aleph $\prime$ \prime $\forall$ \forall $\infty$ \infty </p>
+<p>$\hbar$ \hbar $\emptyset$ \emptyset $\exists$ \exists $\Box$ \Box </p>
+<p>$\imath$ \imath $\nabla$ \nabla $\neg$ \neg $\Diamond$ \Diamond </p>
+<p>$\jmath$ \jmath $\surd$ \surd $\flat$ \flat $\triangle$ \triangle </p>
+<p>$\ell$ \ell $\top$ \top $\natural$ \natural $\clubsuit$ \clubsuit </p>
+<p>$\wp$ \wp $\bot$ \bot $\sharp$ \sharp $\diamondsuit$ \diamondsuit </p>
+<p>$\Re$ \Re $|$ | $\backslash$ \backslash $\heartsuit$ \heartsuit </p>
+<p>$\Im$ \Im $\angle$ \angle $\partial$ \partial $\spadesuit$ \spadesuit </p>
+<p>$\mho$ \mho</p>
+<ul>
+<li>문자 그대로 쓰는 것<ul>
+<li>$.$ .</li>
+<li>$|$ | </li>
+</ul>
+</li>
+</ul>
+<h2 id="Variable-sized-Symbols-변수크기-기호"><a href="#Variable-sized-Symbols-변수크기-기호" class="headerlink" title="Variable-sized Symbols 변수크기 기호"></a>Variable-sized Symbols 변수크기 기호</h2><p>$\sum$ \sum $\bigcap$ \bigcap $\bigodot$ \bigodot $\prod$ \prod</p>
+<p>$\bigcup$ \bigcup $\bigotimes$ \bigotimes $\coprod$ \coprod $\bigsqcup$ \bigsqcup </p>
+<p>$\bigoplus$ \bigoplus $\int$ \int $\bigvee$ \bigvee $\biguplus$ \biguplus </p>
+<p>$\oint$ \oint $\bigwedge$ \bigwedge </p>
+<h2 id="Log-like-Symbols-로그관련-기호"><a href="#Log-like-Symbols-로그관련-기호" class="headerlink" title="Log-like Symbols 로그관련 기호"></a>Log-like Symbols 로그관련 기호</h2><p>$\arccos$ \arccos $\cos$ \cos $\csc$ \csc $\exp$ \exp</p>
+<p>$\ker$ \ker $\limsup$ \limsup $\min$ \min $\sinh$ \sinh</p>
+<p>$\arcsin$ \arcsin $\cosh$ \cosh $\deg$ \deg $\gcd$ \gcd</p>
+<p>$\lg$ \lg $\ln$ \ln     $\Pr$ \Pr $\sup$ \sup</p>
+<p>$\arctan$ \arctan $\cot$ \cot $\det$ \det $\hom$ \hom</p>
+<p>$\lim$ \lim $\log$ \log $\sec$ \sec $\tan$ \tan</p>
+<p>$\arg$ \arg $\coth$ \coth $\dim$ \dim $\inf$ \inf</p>
+<p>$\liminf$ \liminf $\max$ \max $\sin$ \sin $\tanh$ \tanh </p>
+<h2 id="Delimiters-구획-기호"><a href="#Delimiters-구획-기호" class="headerlink" title="Delimiters 구획 기호"></a>Delimiters 구획 기호</h2><p>$\uparrow$ \uparrow $\Uparrow$ \Uparrow $\downarrow$ \downarrow $\Downarrow$ \Downarrow</p>
+<p>$\{$ \{ $\}$ \} $\updownarrow$ \updownarrow $\Updownarrow$ \Updownarrow</p>
+<p>$\lfloor$ \lfloor $\rfloor$ rfloor $\lceil$ \lceil $\rceil$ \rceil</p>
+<p>$\langle$ \langle$\rangle$ \rangle $\backslash$ \backslash</p>
+<ul>
+<li>문자 그대로 쓰는 것<ul>
+<li>$($ (</li>
+<li>$)$ ) </li>
+<li>$[$ [</li>
+<li>$]$ ]</li>
+<li>$/$ /</li>
+<li>$|$ |</li>
+<li>$|$ |</li>
+</ul>
+</li>
+</ul>
+<h2 id="Math-mode-accents-문자-마크-기호"><a href="#Math-mode-accents-문자-마크-기호" class="headerlink" title="Math mode accents 문자 마크 기호"></a>Math mode accents 문자 마크 기호</h2><p>$\hat{a}$ \hat{a} $\acute{a}$ \acute{a} $\bar{a}$ \bar{a} $\dot{a}$ \dot{a} </p>
+<p>$\breve{a}$ \breve{a} $\check{a}$ \check{a} $\grave{a}$ \grave{a} $\vec{a}$ \vec{a} </p>
+<p>$\ddot{a}$ \ddot{a} $\tilde{a}$ \tilde{a} </p>
+<h2 id="Some-other-constructions-not-stable-기타-기호-불안정"><a href="#Some-other-constructions-not-stable-기타-기호-불안정" class="headerlink" title="Some other constructions (not stable) 기타 기호 (불안정)"></a>Some other constructions (not stable) 기타 기호 (불안정)</h2><p>$\widetilde{abc}$ \widetilde{abc} $\widehat{abc}$ \widehat{abc} $\overleftarrow{abc}$ \overleftarrow{abc}<br>$\overrightarrow{abc}$ \overrightarrow{abc} </p>
+<p>$\overline{abc}$ \overline{abc} $\underline{abc}$ \underline{abc} $\overbrace{abc}$ \overbrace{abc} $\underbrace{abc}$ \underbrace{abc} </p>
+<p>$\sqrt{abc}$ \sqrt{abc} $\sqrt[n]{abc}$ \sqrt[n]{abc} $f’$ f’ $\frac{abc}{xyz}$ \frac{abc}{xyz}</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/LaTeX/">LaTeX</a><a href="/tags/수학/">수학</a><a href="/tags/레이텍/">레이텍</a><a href="/tags/기호/">기호</a><a href="/tags/Mathematics/">Mathematics</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/논문/">논문</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/04/18/Probability-and-Information-Theory/"><span>Probability and Information Theory</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/18/Probability-and-Information-Theory/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-18T13:07:41.000Z">
+          2019-04-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <hr>
+
+<h1 id="3-Probability-and-Information-Theory"><a href="#3-Probability-and-Information-Theory" class="headerlink" title="3. Probability and Information Theory"></a>3. Probability and Information Theory</h1><hr>
+
+<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><ul>
+<li>Probability theory is mathmatical framework for representing uncertain statements.</li>
+<li>Usage in AI<ul>
+<li>the laws of probability tells us how AI systems should reason, so we design our algorithms to compute or approximate various expressions derived using probability theory</li>
+<li>we can use probability and statistics to theoretically analyze the behavior of proposed AI systems.</li>
+</ul>
+</li>
+<li>While prob theory allows us to make uncertain statements and reason in the presence of uncertainty, <strong>information theory</strong> allows us to quantify the amount of uncertainty in a prob distribution.</li>
+</ul>
+<h2 id="3-1-Why-Probability"><a href="#3-1-Why-Probability" class="headerlink" title="3.1 Why Probability"></a>3.1 Why Probability</h2><ul>
+<li>ML must always deal with uncertain quantities, and sometimes may also need to deal with stochastic(non-deterministic) quantities.</li>
+<li>Beyond mathematical statements that are true by definition, it is difficult to think of any proposition that is absolutely true or any event that is absolutely guaranteed to occur.</li>
+<li><p>Three possible sources of uncertainty</p>
+<ul>
+<li>Inherent stochasticity in the system being modeled</li>
+<li>Incomplete observability - we cannot observe all of the variables that drive the behavior of the system. Monty Hall problem</li>
+<li>Incomplete modeling - When we use a model that must discard some of the information we have observed, the discarded information results in uncertainty in the model’s prediction.</li>
+</ul>
+</li>
+<li><p>In many cases, it is more practical to use a simple but uncertain rule rather than a complex but certain one, even if the true rule is deterministic and our modeling system has the fidelity to accommodate a complex rule.</p>
+<ul>
+<li>Most birds fly VS Birds fly, except for very young birds that have not yet learned to fly, sick or injured birds that have lost the ability to fly, fllightless species of birds including the cassowary, ostrich, and kiwi.</li>
+<li>The second one is expensive to develop, maintain and communicate, and after all of this effort is still brittle and prone to failure.</li>
+</ul>
+</li>
+<li>When we say that an outcome has a probability <em>p</em> of occurring, it means that if we repeated the experiment infinitely many times, then proportion <em>p</em> of the repetitions would result in that outcome.</li>
+<li>degree of belief</li>
+<li>The former kind of prob, related directly to the rates at which events occur, is known as <strong>frequentist probability</strong>, while the latter, related to qualitative levels of certainty, is known as <strong>Baysian probability</strong>.</li>
+<li>probability theory provides a set of formal rules for determining the likelihood of a proposition being true given the likelihood of other propositions.</li>
+</ul>
+<h2 id="3-2-Random-Variables"><a href="#3-2-Random-Variables" class="headerlink" title="3.2 Random Variables"></a>3.2 Random Variables</h2><ul>
+<li><strong>random variable</strong> is a variable that can take on different values randomly.</li>
+</ul>
+<ul>
+<li><p>For example, $x_1$ and $x_2$ are both possible values that the random variable $x$ can take on.</p>
+</li>
+<li><p>for vector-valued variables, we would write the random variable as x(arial font) and one of its values as $\mathbf{x}$.</p>
+</li>
+<li>random variables my be discrete or continuous.</li>
+<li>discrete rv is one that has a finite or countably infinite number of states. Not necessarily the integers.</li>
+<li>a continuous rv is associated with a real value.</li>
+</ul>
+<h2 id="3-3-Probability-Distribution"><a href="#3-3-Probability-Distribution" class="headerlink" title="3.3 Probability Distribution"></a>3.3 Probability Distribution</h2><ul>
+<li>A probability distribution is a description of how likely a rv or set of rvs is to take on each of its possible states.</li>
+</ul>
+<h3 id="3-3-1-Discrete-Variables-and-Probability-Mass-Functions"><a href="#3-3-1-Discrete-Variables-and-Probability-Mass-Functions" class="headerlink" title="3.3.1 Discrete Variables and Probability Mass Functions"></a>3.3.1 Discrete Variables and Probability Mass Functions</h3><ul>
+<li>Probability Mass Function (PMF)<ul>
+<li>denotes with $P$</li>
+<li>The domain of P must be the set of all possible states of x.</li>
+<li>For all x in x, $0 \leq P(x) \leq 1$.</li>
+<li>Sum of all probabilities $P(x)$ is one. This means being normalized.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-2-Continuous-Variables-and-Probability-Density-Functions"><a href="#3-3-2-Continuous-Variables-and-Probability-Density-Functions" class="headerlink" title="3.3.2 Continuous Variables and Probability Density Functions"></a>3.3.2 Continuous Variables and Probability Density Functions</h3><ul>
+<li><p>Probability Density Function (PDF)</p>
+<ul>
+<li>The domain of p must be the set of all possible states of x.</li>
+<li><p>$\forall x \in x, p(x) \geq 0$. Note that we do not require $p(x) \leq 1$.</p>
+<script type="math/tex; mode=display">\int{p(x)dx}=1</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-4-Marginal-Probability"><a href="#3-4-Marginal-Probability" class="headerlink" title="3.4 Marginal Probability"></a>3.4 Marginal Probability</h2><ul>
+<li><p>The probability distribution over the subset is known as the marginal probability distribution.</p>
+<ul>
+<li><p>For example, suppose that we have discrete random variables x and y, and we know $P(x,y)$. We can find $P(x)$ with the sum rule:</p>
+<script type="math/tex; mode=display">\forall x \in x, P(x=x) = \sum_y P(x=x, y=y)</script></li>
+<li><p>The name comes from the process of computing marginal probabilities on paper.</p>
+<script type="math/tex; mode=display">p(x) = \int p(x,y)dy</script><h2 id="3-5-Conditional-Probability"><a href="#3-5-Conditional-Probability" class="headerlink" title="3.5 Conditional Probability"></a>3.5 Conditional Probability</h2></li>
+<li><p>Conditional Probability is the probability of some event, given that some other event has happened.</p>
+</li>
+<li><p>We denote the conditional probability that $y=y$ given $x=x$ as $P(y=y | x=x)$.</p>
+<script type="math/tex; mode=display">P(y=y|x=x) = \frac{P(y=y, x=x)}{P(x=x)}</script></li>
+<li><p>The conditional probability is only defined when $P(x=x) &gt; 0$.</p>
+</li>
+<li><p>Important not to confuse conditional probability with computing what would happen if some action were undertaken.</p>
+<h2 id="3-6-The-chain-Rule-of-Conditional-Probabilities"><a href="#3-6-The-chain-Rule-of-Conditional-Probabilities" class="headerlink" title="3.6 The chain Rule of Conditional Probabilities"></a>3.6 The chain Rule of Conditional Probabilities</h2></li>
+<li><p>Any joint probability distribution over many random variables may be decomposed into conditional distributions over only one variable.</p>
+</li>
+<li><p>This observation is known as the Chain rule or product rule of probability.</p>
+<script type="math/tex; mode=display">P(a,b,c) = P(a\ |\ b,c)P(b,c)</script><script type="math/tex; mode=display">P(b,c) = P(b\ |\ c)P(c)</script><script type="math/tex; mode=display">P(a,b,c) = P(a\ |\ b,c)P(b\ |\ c)P(c)</script><h2 id="3-7-Independence-and-Conditional-Independence"><a href="#3-7-Independence-and-Conditional-Independence" class="headerlink" title="3.7 Independence and Conditional Independence"></a>3.7 Independence and Conditional Independence</h2></li>
+<li><p>Two random variables x and y are independent if their probability distribution can be expressed as a product of two factors, one involving only x and one involving only y.</p>
+<script type="math/tex; mode=display">\forall x \in x, y \in y, p(x=x, y=y) = p(x=x)p(y=y)</script></li>
+<li><p>Two random variables x and y are conditionally independent given a random variable z if the conditional probability distribution over x and y factorizes in this way for every value of z.</p>
+<script type="math/tex; mode=display">\forall x \in x, y \in y, z \in z, p(x=x,y=y|z=z)=p(x=x|z=z)p(y=y|z=z)</script><p>$notiation : \ x \perp y\ |\ z$</p>
+<h2 id="3-8-Expectation-Variance-and-Covariance"><a href="#3-8-Expectation-Variance-and-Covariance" class="headerlink" title="3.8 Expectation, Variance, and Covariance"></a>3.8 Expectation, Variance, and Covariance</h2></li>
+<li><p>The expectation or expected value of some function f(x) with respect to a probability distribution P(x) is the average or mean value that f takes on when x is drawn from P. For discrete variables this can be computed with a summation</p>
+<script type="math/tex; mode=display">E_{X \sim P}[f(x)] = \sum_xP(x)f(x)</script><script type="math/tex; mode=display">\text{For continuous variables}</script><script type="math/tex; mode=display">E_{x \sim p}[f(x)] = \int p(x)f(x)dx</script></li>
+<li><p>The <strong>variance</strong> gives a measure of how much the values of a function of a random variable x vary as we sample different values of x from its probability distribution.</p>
+<script type="math/tex; mode=display">Var(f(X)) = E[(f(x)-E[f(x)])^2]</script></li>
+<li><p>The <strong>covariance</strong> gives some sense of how much two values are linearly related to each other, as well as the scale of these variables.</p>
+<script type="math/tex; mode=display">Cov(f(x),g(y)) = E[(f(x) - E[f(X)])(g(y)-E[g(y)])</script></li>
+<li><p>High absolute values of the covariance mean that the values change very much and are both far from their respective means at the same time.</p>
+</li>
+<li>$Cov = 0$ means there is no linear relationship, $y=x^2$ has Cov of 0 but they are not independent.</li>
+<li><p><strong>Correlation</strong> normalize the contribution of each variable in order to measure only how much the variables are related, rather than also being affected by the scale of the separate variables.</p>
+<h2 id="3-9-Common-Probability-Distributions"><a href="#3-9-Common-Probability-Distributions" class="headerlink" title="3.9 Common Probability Distributions"></a>3.9 Common Probability Distributions</h2><h3 id="3-9-1-Bernoulli-Distribution"><a href="#3-9-1-Bernoulli-Distribution" class="headerlink" title="3.9.1 Bernoulli Distribution"></a>3.9.1 Bernoulli Distribution</h3></li>
+<li><p>It is a distribution over a single binary random variable.</p>
+<script type="math/tex; mode=display">
+  P(x=1) = \phi</script><script type="math/tex; mode=display">
+  P(x=0) = 1 - \phi</script><script type="math/tex; mode=display">
+  P(x=x) = \phi^x(1-\phi)^{1-x}</script><script type="math/tex; mode=display">
+  E_x[x] = \phi</script><script type="math/tex; mode=display">
+  Var_x(x) = \phi(1-\phi)</script><h3 id="3-9-2-Multinoulli-Distribution"><a href="#3-9-2-Multinoulli-Distribution" class="headerlink" title="3.9.2 Multinoulli Distribution"></a>3.9.2 Multinoulli Distribution</h3><ul>
+<li>Later</li>
+</ul>
+<h3 id="3-9-3-Gaussian-Distribution"><a href="#3-9-3-Gaussian-Distribution" class="headerlink" title="3.9.3 Gaussian Distribution"></a>3.9.3 Gaussian Distribution</h3><ul>
+<li>The most commonly used distribution over real numbers is the normal distribution, also known as the Gaussian distribution.</li>
+</ul>
+<script type="math/tex; mode=display">\mathcal{N}(x;\mu,\sigma^2) = \sqrt{\frac{1}{2\pi\sigma^2}}exp(-\frac{1}{2\sigma^2}(x-\mu)^2)</script></li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+    \mu \in \mathbf{R}\ and\ \sigma \in (0, \infty)</script><script type="math/tex; mode=display">E[x] = \mu</script><ul>
+<li><p>When absence of prior knowledge about what form a distribution over real numbers, Normal Distribution is good choice for two major reason.</p>
+<ul>
+<li>First, many distributions we wish to model are truly close to being normal distribution. The central limit theorem(CLT) shows that the sum of many independent random variables is approximately normally distributed<ul>
+<li>Second, out of all possible probability distributions with the same variance, the normal distribution encodes the maximum amount of uncertainty over the real number.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-10-Useful-Properties-of-Common-Functions"><a href="#3-10-Useful-Properties-of-Common-Functions" class="headerlink" title="3.10 Useful Properties of Common Functions"></a>3.10 Useful Properties of Common Functions</h2><ul>
+<li>logistic sigmoid</li>
+</ul>
+<script type="math/tex; mode=display">\sigma(x) = \frac{1}{1+exp(-x)}</script><ul>
+<li>The logistic sigmoid is commonly used to produce the \phi parameter of a Bernoulli distribution because its range is (0,1)</li>
+<li>The sigmoid function sturates when its argument is very positive or very negative, meaning that the function becomes very flat and insensitive to smal changes in the inputs.</li>
+<li>Another commonly encountered function is the softplus function.</li>
+</ul>
+<script type="math/tex; mode=display">\zeta(x) = log(1+exp(x))</script><ul>
+<li>The softplus function can be useful for producing the Beta or sigma parameter of a normal distribution because its range is $(0, \infty)$.</li>
+</ul>
+<h2 id="3-11-Bayes’-Rule"><a href="#3-11-Bayes’-Rule" class="headerlink" title="3.11 Bayes’ Rule"></a>3.11 Bayes’ Rule</h2><ul>
+<li>We often find ourselves in a situation where we know P(y|x) and need to know P(x|y). Fortunately, if we also know P(x), we can compute the desired quantity using Bayes’ rule.</li>
+</ul>
+<script type="math/tex; mode=display">P(x|y) = \frac{P(x)P(y|x)}{P(y)}</script></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/수학/">수학</a><a href="/tags/Machine-Learning/">Machine Learning</a><a href="/tags/Artificial-Intelligence/">Artificial Intelligence</a><a href="/tags/통계/">통계</a><a href="/tags/Statistics/">Statistics</a><a href="/tags/Math/">Math</a><a href="/tags/Probability/">Probability</a><a href="/tags/Information-Theory/">Information Theory</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2019/04/17/Algorithm-Kth-number/"><span>Algorithm - Kth number</span></a></h3>
     
   
