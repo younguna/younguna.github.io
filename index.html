@@ -59,15 +59,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2019/07/04/알고리즘-소수-찾기/"><span>알고리즘 - 소수 찾기</span></a></h3>
+    <h3 class="article-title"><a href="/2019/07/18/JavaScript-Array-methods/"><span>JavaScript Array methods</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2019/07/04/알고리즘-소수-찾기/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-07-04T06:45:46.000Z">
-          2019-07-04
+      <a href="/2019/07/18/JavaScript-Array-methods/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-07-18T08:42:53.000Z">
+          2019-07-18
         </time>
       </a>
     </span>
@@ -79,31 +79,216 @@
   <div class="article-content">
     <div class="entry">
       
-        <hr>
-
-<h1 id="알고리즘-Python-JavaScript-소수-찾기"><a href="#알고리즘-Python-JavaScript-소수-찾기" class="headerlink" title="알고리즘(Python, JavaScript) - 소수 찾기"></a>알고리즘(Python, JavaScript) - 소수 찾기</h1><hr>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input =</span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output =</span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
-<li>1</li>
-<li>2</li>
+        <h1 id="JavaScript-Array-Methods"><a href="#JavaScript-Array-Methods" class="headerlink" title="JavaScript Array Methods"></a>JavaScript Array Methods</h1><h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><ul>
+<li>이 메소드는 단순히 배열의 모든 원소에 대해 콜백함수를 실행합니다.</li>
+<li>forEach의 콜백함수는 다음의 파라미터를 다룬다.<ul>
+<li>currentValue 현재 원소</li>
+<li>index 현재 원소의 인덱스</li>
+<li>array 원 배열</li>
+<li>thisArg 콜백을 실행할 때 this로 사용됨<h4 id="코드예제"><a href="#코드예제" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = [<span class="string">'item1'</span>, <span class="string">'item2'</span>, <span class="string">'item3'</span>];</span><br><span class="line"><span class="keyword">const</span> copy = [];</span><br><span class="line"><span class="comment">// for iteration</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;items.length; i++) &#123;</span><br><span class="line">  copy.push(items[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// same operation with forEach</span></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">  copy.push(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
-<li>1</li>
-<li>2</li>
+</li>
 </ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
-<p>Python</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">    is_prime = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">if</span> num &gt; <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, int(num/<span class="number">2</span>)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> num % i == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> is_prime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(numbers)</span>:</span></span><br><span class="line">    N = len(numbers)</span><br><span class="line">    prime_candidate = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, N+<span class="number">1</span>):</span><br><span class="line">        perms = permutations(list(numbers), i)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> perms:</span><br><span class="line">            comb = int(<span class="string">''</span>.join(j))</span><br><span class="line">            <span class="keyword">if</span> check_prime(comb):</span><br><span class="line">                prime_candidate.append(comb)</span><br><span class="line">    <span class="keyword">return</span> len(set(prime_candidate))</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>JavaScript</p>
+<p>위의 코드를 실행하면 item의 원소들은 각각 콜백함수로 넘어가 콜백함수 안에 구현된 행위를 한다. 위의 경우에는 전역의 copy배열에 각각의 원소를 push하는 행위를 하게 된다. 특별히 반환되는 것은 없고 undefined가 반환된다.</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
-<li>1</li>
-<li>2</li>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul>
+<li>이 메소드는 배열의 모든 원소에 대해 콜백함수를 적용하여 그 결과를 새로운 배열에 push에 넣어 리턴하는 JavaScript Array의 메소드다.</li>
+<li>reduce와 함께 활용도가 매우높다.</li>
+<li>map의 콜백함수가 다루는 파라미터는 forEach와 동일하다.<ul>
+<li>currentValue, index, array, thisArg</li>
+</ul>
+</li>
+<li>최종적으로 배열이 리턴된다.<h4 id="코드예제-1"><a href="#코드예제-1" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">const</span> doubles = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;<span class="keyword">return</span> num * <span class="number">2</span>;&#125;);</span><br><span class="line"><span class="comment">// &gt;&gt;&gt; [2,8,18]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>위의 코드를 실행하면 배열의 각원소마다 콜백함수가 실행되고 그 리턴값을 배열에 넣는다. 모든 원소들이 이 행위를 마치고 리턴값들이 모인 배열을 최종적으로 리턴한다.</p>
+</blockquote>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><ul>
+<li>이 메소드는 배열의 모든 원소에 대해 콜백함수를 적용하여 boolean을 받아 true인 경우의 원소만을 모아 배열에 넣어 리턴하는 JavaScript Array 메소드다.</li>
+<li>filter의 콜백 함수는 true나 false를 반환해야 filter가 제대로 작동할 수 있다.<ul>
+<li>currentValue, index, array, thisArg의 파라미터들을 filter의 콜백함수가 사용하며 map과 동일한 기능을 한다.<h4 id="코드예제-2"><a href="#코드예제-2" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBiggerThanTen</span>(<span class="params">value</span>) </span>&#123;<span class="keyword">return</span> value &gt; <span class="number">10</span>&#125;</span><br><span class="line"><span class="keyword">let</span> filtered = [<span class="number">10</span>, <span class="number">11</span>, <span class="number">112</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBiggerThanTen);</span><br><span class="line"><span class="comment">// filtered = [11, 112, 130, 44]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>위의 코드를 실행하면 10은 콜백함수에서 false를, 11은 콜백함수에서 true를 리턴할 것이다. 이러한 행위를 모든 원소에 적용하면 <code>false, true, true, false, true, true</code>가 계산될 것이다. 여기서 true의 값을 리턴한 <code>11, 112, 130, 44</code>만 <code>filtered</code>변수에 반환될 것이다.</p>
+</blockquote>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><ul>
+<li>이 메소드는 배열의 각 원소마다 reducer라고 불리우는 콜백함수를 진행하고 마지막엔 하나의 결과를 반환하는 JavaScirpt Array의 메소드이다.</li>
+<li>배열 메소드 중 매우 활용도가 높다고 불려진다.</li>
+<li>위의 reducer는 네 개의 파라미터를 다룬다.<ul>
+<li>accumulator, currentValue, currentIndex, originalArray</li>
+</ul>
+</li>
+<li>reducer가 실행될때마다 결과값은 accumulator에 할당된다.<h4 id="코드예제-3"><a href="#코드예제-3" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">accumulator, currentValue, currentIndex, array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> accumulator + currentValue;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>위의 코드를 실행하면 배열의 각 원소마다 reducer가 실행되고 reducer가 리턴하는 accumulator + currentValue값이 다음 번의 reducer실행에서 accumulator로 할당되어 실행된다. 제일 마지막에 accumulator의 값이 최종적으로 리턴된다.</p>
+</blockquote>
+<p>reduce를 자세히 보면 map과 비슷한 작동방식이 있다는 것을 알 수 있다. 밑은 mdn에서 예시로 보여주는 reduce로 만드는 map메소드다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.mapUsingReduce) &#123;</span><br><span class="line">  <span class="built_in">Array</span>.prototype.mapUsingReduce = <span class="function"><span class="keyword">function</span>(<span class="params">callback, thisArg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">mappedArray, currentValue, index, array</span>) </span>&#123;</span><br><span class="line">      mappedArray[index] = callback.call(thisArg, currentValue, index, array);</span><br><span class="line">      <span class="keyword">return</span> mappedArray;</span><br><span class="line">    &#125;, []);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="some"><a href="#some" class="headerlink" title="some"></a>some</h2><ul>
+<li>some 메소드는 배열의 각 원소가 콜백함수의 판별을 통과하는지 확인하고 만약 하나라도 통과하는 경우에는 최종적으로 true를 리턴하고 그렇지 않다면 false를 리턴한다.</li>
+<li>some의 콜백함수가 다루는 파라미터는 forEach와 동일하다.<ul>
+<li>currentValue, index, array, thisArg<h3 id="코드예제-4"><a href="#코드예제-4" class="headerlink" title="코드예제"></a>코드예제</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>);  <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>위의 코드는 배열의 각 원소가 10보다 큰 수인지 확인하여 true/false를 리턴하는 콜백함수를 통과한 후 하나라도 true값을 가지게된다면 최종적으로 true를 반환한다.</p>
+</blockquote>
+<h2 id="every"><a href="#every" class="headerlink" title="every"></a>every</h2><ul>
+<li>every 메소드는 some과 매우 흡사한 기능을 하지만 모든 원소가 콜백함수를 통해 true값을 가질때만 최종적으로 true를 리턴하고 나머지 경우엔 false를 리턴한다.</li>
+<li>빈 배열에서 사용하면 무조건 true를 반환한다.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>두 배열 중 위 배열에서 10보다 작은 5가 존재하므로 최종적으로 false를 리턴하고 밑의 배열은 모든 원소가 10보다 크므로 최종적으로 true를 반환한다.</p>
+</blockquote>
+<h2 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h2><ul>
+<li>안정적인 프로그램을 만들기 위해 입력과 출력이 철저히 통제된 순수 함수 및 부수 효과(Side-effect)를 최소화한 함수 위주의 프로그래밍</li>
+<li>간결하고 가독성 높은 프로그램을 작성할 수 있으며 동시성 작업을 더 안전하게 구현할 수 있다.</li>
+<li>함수를 특별하게 취급하지 않는 프로그래밍 패러다임</li>
+</ul>
+<h2 id="함수형-프로그래밍에서-forEach-map-filter"><a href="#함수형-프로그래밍에서-forEach-map-filter" class="headerlink" title="함수형 프로그래밍에서 forEach, map, filter"></a>함수형 프로그래밍에서 forEach, map, filter</h2><ul>
+<li>위에서의 언급처럼 함수형 프로그래밍은 입력과 출력이 철저히 통제되며 부수 효과를 최소화 해야한다. 이는 함수가 함수 밖의 컨텍스트를 만지는 일(부수 효과)가 최소화 되야 하는데 이는 map, filter, reduce같은 배열의 메소드의 특징과 잘 맞아 떨어진다고 볼 수 있다. 그 이유는 위의 메소드들은 배열을 처리하여 새로운 배열을 리턴하고 원 배열은 그대로 두기 때문이다. 반면 forEach는 원 배열을 반드시 바꿔야 하도록 강제하는 것은 전혀 없지만 map이나 reduce처럼 새 배열을 강제하지 않고 index를 이용하면 원배열을 변경하는 것이 가능하다.</li>
+</ul>
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/javascript/">javascript</a><a href="/tags/js/">js</a><a href="/tags/es6/">es6</a><a href="/tags/Array/">Array</a><a href="/tags/methods/">methods</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/07/18/es6-basics/"><span>es6 basics</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/07/18/es6-basics/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-07-18T08:40:57.000Z">
+          2019-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="JavaScript-ES6-Basics"><a href="#JavaScript-ES6-Basics" class="headerlink" title="JavaScript ES6 Basics"></a>JavaScript ES6 Basics</h1><ul>
+<li><p>‘${shape.toString()} : ${config.shapeErrorMsg}’</p>
+<ul>
+<li>template literals : 내장된 표현식을 허용하는 문자열 리터럴로, 문자열과 문자 보간 기능을 사용할 수 있다. 실제로는 따옴표 대신에 backtick이 쓰인다.</li>
+</ul>
+</li>
+<li><p>여러 개의 전역변수를 선언할 때 하나의 객체 내에 선언해 주면 충돌을 어느정도 방지할 수 있다.</p>
+</li>
+<li><p>== 와 ===의 차이</p>
+<ul>
+<li>== : 자료형이 달라도 값이 같다면 true </li>
+<li>=== : 자료형이 같으면서 값이 같아야 true</li>
+</ul>
+</li>
+<li><p>some()</p>
+<ul>
+<li>array.some( ~~ ) 배열 내의 값 중 하나 이상 ~~의 조건을 만족한다면 true를 반환</li>
+</ul>
+</li>
+<li><p>join()</p>
+<ul>
+<li>배열 안의 요소들을 string으로 바꿔주며 인자를 전달할 시에는 배열을 출력할 때 사이에 인자를 함께 출력해준다</li>
+</ul>
+</li>
+<li><p>예외처리를 할 때, if문으로 예외를 throw하는 방법도 있지만 프로그램에서 기본적으로 throw하는 예외를 catch했을 때 처리하는 방법도 있다.</p>
+</li>
+<li><p>어떤 변수를 로컬변수로 사용할 때, var 보다는 let과 const로 선언하는 쪽이 좋다.</p>
+</li>
+<li><p>var와 let의 스코프 차이</p>
+<ul>
+<li>var는 블록단위의 지역스코프를 보장해 주지 않지만 let은 보장해 준다.</li>
+</ul>
+</li>
+<li><p>코드 내에서 동작하는 데에 영향은 없더라도 형식을 통일해 주는 것이 좋다.</p>
+<ul>
+<li>ex ) “ㅇ” 와 ‘ㅇ’ 를 같이 사용하는 것은 좋지 않다.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>함수표현방법</p>
+<ul>
+<li><p>일반적 함수 표현</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'ㅇ'</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>변수를 이용한 함수 표현</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'ㅇ'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>arrow function</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getName = <span class="function">(<span class="params">name</span>) =&gt;</span> <span class="string">"Kim "</span> + name;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>순수함수</p>
+<ul>
+<li>동일한 인자를 주었을 때 항상 같은 값을 반환하는 함수</li>
+<li>함수가 자체적으로 외부 상태를 변경하지 않는다 ( 부수 효과가 없다 )</li>
+<li>장점<ul>
+<li>재사용성이 높다</li>
+<li>입력과 결과가 분리되어 있어서 어떻게 사용되는지 신경 쓸 필요가 없다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ES2015에서의 유용한 문법</p>
+<ul>
+<li>구조 분해 할당</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b] = arr;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>위와 같은 구조로 저장된 값들을 다른 변수에 할당할 때 불필요한 코드를 줄이면서 간결하게 작성할 수 있다.<br><code>[arr[0], arr[1]] = [arr[1], arr[0]]</code> 와 같이 swap도 가능</p>
+</blockquote>
+<ul>
+<li>arrow function</li>
+<li>template literals</li>
 </ul>
 
       
@@ -121,7 +306,173 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+        <a href="/tags/javascript/">javascript</a><a href="/tags/js/">js</a><a href="/tags/es6/">es6</a><a href="/tags/es2015/">es2015</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2019/07/18/git-basics/"><span>git basics</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/07/18/git-basics/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-07-18T08:38:59.000Z">
+          2019-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="git-basics"><a href="#git-basics" class="headerlink" title="git basics"></a>git basics</h1><h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><ul>
+<li>새로운  git 저장소가 만들어짐</li>
+</ul>
+<h2 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h2><ul>
+<li><code>git clone /로컬/저장소/경로</code><ul>
+<li>로컬 저장소(repo)를 복제(clone)</li>
+</ul>
+</li>
+<li><code>git clone username@host:/원격/저장소/경로</code><ul>
+<li>원격 서버의 저장소를 복제</li>
+</ul>
+</li>
+</ul>
+<h2 id="git-작업의-흐름"><a href="#git-작업의-흐름" class="headerlink" title="git 작업의 흐름"></a>git 작업의 흐름</h2><ul>
+<li>로컬 저장소는 git이 관리하는 세 가지로 구성되어 있다.</li>
+<li>첫 번재는 작업 디렉토리 - 실제 파일들로 이루어져 있다.</li>
+<li>두 번째는 인덱스(Index) - 준비 영역 (staging area) 역할을 한다.</li>
+<li>세 번째는 HEAD - 최종 확정본(commit)을 나타낸다.</li>
+</ul>
+<h2 id="Add-amp-Commit"><a href="#Add-amp-Commit" class="headerlink" title="Add &amp; Commit"></a>Add &amp; Commit</h2><ul>
+<li><code>git add &lt;파일이름&gt;</code></li>
+<li><code>git add *</code> : 현 디렉토리 모두 추가<ul>
+<li>위의 명령어로 변경된 파일을 인덱스에 추가할 수 있다.</li>
+</ul>
+</li>
+<li><code>git commit -m &quot;이번 확정본에 대한 설명&quot;</code><ul>
+<li>git의 기본 작업 흐름에서 첫 단계에 해당한다.</li>
+<li>이 명령어를 내려 확정을 하면 변경된 파일이 HEAD에 반영된다.</li>
+<li>원격 저장소는 아직 반영되지 않음</li>
+</ul>
+</li>
+</ul>
+<h2 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h2><ul>
+<li>위의 순서까지 진행했다면 로컬 저장소의 HEAD에만 변경 내용이 존재한다.</li>
+<li><code>git push origin master</code>를 통해 로컬의 master 브랜치를 원격 저장소의 master 브랜치에 발행할 수 있다.</li>
+<li>만약 기존의 원격 저장소에서 복제한 로컬 저장소가 아니라면 <code>git remote add origin &lt;원격서버주소&gt;</code>를 통해 git에게 알려줘야 한다.</li>
+</ul>
+<h2 id="Branching"><a href="#Branching" class="headerlink" title="Branching"></a>Branching</h2><ul>
+<li>브랜치는 안전하게 격리된 상태에서 코딩을 할 때 사용한다.</li>
+<li>저장소를 만들면 기본의 master 브랜치가 만들어진다.</li>
+<li>master 브랜치에서 다른 브랜치를 만들고 그 브랜치에서 작업을 진항하고 나중에 작업이 완료되면 master 가지로 돌아와 병합(merge)한다.</li>
+<li><code>git checkout -b feature_x</code> feature_x라는 브랜치를 만들고 checkout 한다.</li>
+<li><code>git checkout master</code>를 통해 master 브랜치를 다시 checkout한다.</li>
+<li><code>git branch -d feature_x</code>를 통해 브랜치를 삭제할 수 있다.</li>
+<li>새로 만든 브랜치는 원격 저장소로 전송하기 전까지는 다른사람들이 볼 수 없다.</li>
+</ul>
+<h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><ul>
+<li><p><code>git pull</code>을 통해 로컬 저장소를 원격 저장소에 맞춰 갱신할 수 있다.</p>
+<ul>
+<li>로컬 작업 디렉토리에 받아지고(fetch), 병합(merge) 된다.</li>
+</ul>
+</li>
+<li><p>다른 브랜치에 있는 변경 내용을 현재 브랜치로 병합하려면 <code>git merge &lt;브랜치명&gt;</code>을 통해 병합할 수 있다.</p>
+</li>
+<li><code>git diff &lt;원브랜치&gt; &lt;비교브랜치&gt;</code>를 통해 merge전 어떻게 바뀌는지 비교해 볼 수 있다.</li>
+</ul>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><ul>
+<li>SW의 새 버전을 발표할 때마다 꼬리표를 달아놓으면 식별하기 편리하다.</li>
+<li><code>git tag 1.0.0 1b2e1d63ff</code>같은 명령어를 사용하여 tag를 달 수 있으며 1.0.0이 태그이고 뒤의 부분은 태그가 가리킬 확정본 식별자 입니다.</li>
+<li><code>git log</code> 명령어를 통해 확정본 식별자를 얻을 수 있다.</li>
+</ul>
+<h2 id="로컬-변경-내용-되돌리기"><a href="#로컬-변경-내용-되돌리기" class="headerlink" title="로컬 변경 내용 되돌리기"></a>로컬 변경 내용 되돌리기</h2><ul>
+<li><code>git checkout -- &lt;파일 이름&gt;</code> 명령어는 로컬의 변경 내용을 되돌릴 수 있습니다. 로컬의 변경 내용을 변경 전 상태(HEAD)로 되돌린다. <ul>
+<li>다만 이미 인덱스에 추가된 변경 내용과 새로 생성한 파일은 그대로 남는다.</li>
+</ul>
+</li>
+<li>로컬에 있는 모든 변경 내용과 확정본을 포기하려면 <code>git fetch origin || git reset --hard origin/master</code>으로 원격 저장소의 최신 이력을 가져오고 로컬 master 브랜치가 원격 저장소의 master 브랜치 이력을 가리킬 수 잇다.</li>
+</ul>
+<h2 id="git-fork-to-pull-request"><a href="#git-fork-to-pull-request" class="headerlink" title="git fork to pull request"></a>git fork to pull request</h2><ul>
+<li>origin remote repo에서 fork를 하여 자신의 remote repo에 복사한다.<ul>
+<li>실제로 fork는 git에 존재하는 명령어가 아니며 github같은 원격저장소 내에서의 clone과 비슷하다고 볼 수 있다.</li>
+</ul>
+</li>
+<li>나의 원격 저장소에서 로컬로 git clone한다.</li>
+<li>로컬에서 브랜치를 생성하여 작업 후 브랜치를 master로 merge후 master를 push 한다.</li>
+<li>나의 remote repo의 master브랜치를 fork한 origin remote repo에 PR을 날린다.</li>
+<li>물론 origin remote repo가 어떻게 브랜칭을 하느냐에 따라 위의 과정은 매우 달라질 수 있다.</li>
+</ul>
+<h2 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h2><ul>
+<li><code>git pull</code>을 실행하면 원격 저장소의 내용을 가져와 자동으로 병합 작업을 실행하게 됩니다.</li>
+<li>단순히 원격 저장소의 내용을 확인만 하고 로컬 데이터와 병합은 하고 싶지 않은 경우에는 <code>git fetch</code> 명령어를 사용할 수 있습니다.</li>
+<li>fetch한 상태에서 원격 저장소의 내용을 로컬 저장소의 master 브랜치에 통합하고 싶은 경우에는, “FETCH_HEAD” 브랜치를 merge하면 됩니다. pull 명령어는 내부적으로 fetch + merge 입니다.</li>
+</ul>
+<h2 id="github-fork에서-pull-request까지"><a href="#github-fork에서-pull-request까지" class="headerlink" title="github fork에서 pull request까지"></a>github fork에서 pull request까지</h2><ul>
+<li>원본 원격저장소에서 사용자의 원격저장소로 복사(fork) 함<ul>
+<li>실질적으로 git clone. 원격 저장소내의 기능</li>
+</ul>
+</li>
+<li>사용자의 원격 저장소에서 사용자 개인 로컬저장소로 복사(clone) 함</li>
+<li>로컬 저장소에서 작업 후 add 명령어를 이용해 stage에 올림</li>
+<li>commit 명령어로 stage에 올라간 변경사항을 확정</li>
+<li>push를 이용해 로컬 저장소에 commit된 변경사항을 원격 저장소에 반영</li>
+<li>pull request(PR)를 이용해 개인 원격저장소의 변경 사항을 원본 원격저장소에 반영요청<ul>
+<li>이때 여러가지의 상황에 따라 브랜치간으로 이루어 질 수 있음</li>
+</ul>
+</li>
+<li>승인이 이루어지면 원격저장소에 변경 사항 반영</li>
+</ul>
+<h2 id="git-add-와-git-commit-시-git의-내부"><a href="#git-add-와-git-commit-시-git의-내부" class="headerlink" title="git add 와 git commit 시 git의 내부"></a>git add 와 git commit 시 git의 내부</h2><ul>
+<li><code>git add</code> 동작을 수행하면 index(스테이지) 에 object 이름과 실제 파일 이름이 추가되고, 오브젝트에 blob 타입으로 파일 내용이 추가됨</li>
+<li>blob 파일이란 바이너리 라지 오브젝트의 약자로, 대용량 데이터를 저장하기 위한 이진 데이터의 모임을 말함 </li>
+<li><code>git commit</code> 동작을 수행하면 object에 commit 객체와 tree객체가 추가됨 </li>
+<li>tree 객체는 스테이지에 올라온 것들을 snapshot 을 찍어 저장하고, commit객체는 만들어진 tree 객체와 부가적인 정보를 저장함</li>
+</ul>
+<h2 id="git-workflow"><a href="#git-workflow" class="headerlink" title="git-workflow"></a>git-workflow</h2><ul>
+<li>git-workflow가 필요한 이유는 안전한 개발을 위해서임</li>
+<li>개발자가 자유롭고 안전하게 개발할 수 있어 개발 생산성을 향상시킴</li>
+<li>대표적인 git-branch 전략은 master와 develop, feature, release, hotfix로 구분해서 필요에따라 생성해 작업하는 전략을 말함</li>
+<li><code>develop</code> 브랜치의 경우 다음 출시 버전을 개발하는 브랜치</li>
+<li><code>feature</code> 브랜치의 경우 기능을 개발하는 브랜치</li>
+<li><code>release</code> 브랜치는 이전 출시 버전을 준비하는 브랜치</li>
+<li><code>hotfix</code> 브랜치는 출시 버전에서 발생한 버그를 수정하는 브랜치</li>
+<li>팀의 상황에 따라 여러가지로 branch를 유지할 수 있음</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/git/">git</a><a href="/tags/github/">github</a><a href="/tags/깃/">깃</a><a href="/tags/깃허브/">깃허브</a><a href="/tags/깃헙/">깃헙</a><a href="/tags/버전관리/">버전관리</a><a href="/tags/SVN/">SVN</a><a href="/tags/개발/">개발</a>
     </span>
     
 
@@ -287,7 +638,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/우분투/">우분투</a><a href="/tags/linux/">linux</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/검색/">검색</a><a href="/tags/파일명/">파일명</a>
+        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/linux/">linux</a><a href="/tags/우분투/">우분투</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/검색/">검색</a><a href="/tags/파일명/">파일명</a>
     </span>
     
 
@@ -343,7 +694,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/우분투/">우분투</a><a href="/tags/linux/">linux</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/user/">user</a><a href="/tags/사용자/">사용자</a>
+        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/linux/">linux</a><a href="/tags/우분투/">우분투</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/user/">user</a><a href="/tags/사용자/">사용자</a>
     </span>
     
 
@@ -647,174 +998,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/06/28/Algorithm-Spicier/"><span>Algorithm-Spicier</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/06/28/Algorithm-Spicier/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-06-27T17:07:36.000Z">
-          2019-06-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><hr></p>
-<h1 id="알고리즘-Python-더-맵게"><a href="#알고리즘-Python-더-맵게" class="headerlink" title="알고리즘(Python) - 더 맵게"></a>알고리즘(Python) - 더 맵게</h1><hr>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoville = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">12</span>]</span><br><span class="line">K = <span class="number">7</span></span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return = 2</span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
-<li>모든 음식의 스코빌 지수를 K 이상으로 만드는 것</li>
-<li><p>위의 목표를 이루기 위해 하는 작업</p>
-<ul>
-<li>(섞은 음식의 스코빌 지수) = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)</li>
-</ul>
-</li>
-<li><p>모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복</p>
-</li>
-<li>배열 scoville과 원하는 스코빌 지수 K가 주어질 때, 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return하는 함수를 작성</li>
-</ul>
-<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
-<li>1 &lt;= length(scoville) &lt;= 1,000,000</li>
-<li>0 &lt;= K &lt;= 1,000,000,000</li>
-<li>0 &lt;= each element of scoville &lt;= 1,000,000</li>
-<li>모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return</li>
-</ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
-<p>Python</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(scoville, K)</span>:</span></span><br><span class="line">    heap = []</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    [heapq.heappush(heap, i) <span class="keyword">for</span> i <span class="keyword">in</span> scoville]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(K &gt; heap[<span class="number">0</span>]):</span><br><span class="line">        smallest, second_smallest = heapq.heappop(heap), heapq.heappop(heap)</span><br><span class="line">        heapq.heappush(heap, smallest + (second_smallest * <span class="number">2</span>))</span><br><span class="line">        <span class="keyword">if</span> len(heap) == <span class="number">1</span> <span class="keyword">and</span> K &gt; heap[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
-<li>항상 배열의 정렬을 유지하는 힙을 이용한다.</li>
-<li>가장 작은 스코빌과 두 번째로 작은 스코빌을 뽑아내어 새로운 스코빌을 만든다.</li>
-<li>만약 배열에 원소가 하나만 남고 그 원소마저 K 보다 작다면 -1을 리턴한다.</li>
-<li>위의 상황이 아니라면 count를 늘린다.</li>
-<li>while 루프는 가장 작은 스코빌이 K 보다 작은지 점검한다.</li>
-<li>만약 가장 작은 스코빌이 K 보다 크다면 루프에 진입하지 않고 count를 리턴한다.</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/04/25/Algoritm-Collatz/"><span>Algoritm - Collatz</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/25/Algoritm-Collatz/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-25T14:36:42.000Z">
-          2019-04-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><hr></p>
-<h1 id="알고리즘-Python-JavaScript-콜라츠-추측"><a href="#알고리즘-Python-JavaScript-콜라츠-추측" class="headerlink" title="알고리즘(Python, JavaScript) - 콜라츠 추측"></a>알고리즘(Python, JavaScript) - 콜라츠 추측</h1><hr>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input_one = <span class="number">6</span></span><br><span class="line">input_two = <span class="number">16</span></span><br><span class="line">input_three = <span class="number">626331</span></span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output_one = 8</span><br><span class="line">output_two = 4</span><br><span class="line">output_three = -1</span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
-<li>입력된 수가 짝수라면 2로 나눕니다. </li>
-<li>입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
-<li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
-<li>최고 500번을 수행하며 그 안에 성공하면 수행 횟수를, 불가능하면 -1을 리턴한다.</li>
-</ul>
-<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
-<li>1 &lt;= 입력 &lt;= 8,000,000</li>
-<li>최고 500번 수행</li>
-</ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
-<p>Python3</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>JavaScript</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
-<li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
-<li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
-<li>입력 값이 1이면 0인 answer을 리턴한다.</li>
-<li>while 루프로 진입하면 입력 값을 바꾸는 작업을 수행하고 입력 값이 1이 되지 않는다면 500회만 수행하고 그 전에 1이 되면 while 루프로 진입하지 않고 수행한 횟수를 answer에 기록하고 그것을 리턴한다.</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
+        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/javascript/">javascript</a>
     </span>
     
 
