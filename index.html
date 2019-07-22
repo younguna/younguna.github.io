@@ -59,6 +59,77 @@
 
   
     
+    <h3 class="article-title"><a href="/2019/07/22/Logic-gate-endian/"><span>Logic gate-endian</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/07/22/Logic-gate-endian/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-07-21T23:50:39.000Z">
+          2019-07-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="빅엔디언-리틀엔디언"><a href="#빅엔디언-리틀엔디언" class="headerlink" title="빅엔디언 리틀엔디언"></a>빅엔디언 리틀엔디언</h1><h3 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h3><ul>
+<li>컴퓨터 메모리와 같은 1차원의 공간에 여러개의 원소를 배열하는 방법이다. 쉽게 말하여 한 줄의 데이터를 왼쪽부터 쓰고 읽느냐 오른쪽부터 쓰고 읽느냐를 말한다. 컴퓨터공학의 관점에서는 특히 바이트를 배열하는 방법을 의마하며 바이트 순서(Byte order)라 한다.</li>
+</ul>
+<h3 id="유래"><a href="#유래" class="headerlink" title="유래"></a>유래</h3><ul>
+<li>조너선 스위프트의 소설 &lt;걸리버 여행기&gt;에서 달걀을 깰 때 뭉툭한 끝(big-end)을 먼저 깨는 사람들(big-endian)과 뾰족한 끝(little-end)을 먼저 깨는 사람들(little-endian) 사이에 토론에서 유래 되었다.</li>
+<li>컴퓨터공학에서 의 엔디언은 대니 코언(Danny Cohen)이 이런 플레임을 잠재우기 위해 1980년에 쓴 On Holy Wars and a Plea for Peace라는 글에서 유래 되었다.</li>
+</ul>
+<h3 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h3><ul>
+<li>빅엔디언은 쉽게 설명하여 사람이 숫자를 쓰는 방법대로 상위바이트부터 하위주소에 기록하는 것이다. 101010 이라는 바이트가 존재한다면 이는 메모리에 101010으로 기록된다.</li>
+<li>리틀엔디언은 쉽게 설명하여 사람이 숫자를 쓰는 방법의 반대로 하위바이트부터 하위주소에 기록하는 것이다. 101010 이라는 바이트가 존재한다면 이는 메모리에 010101로 기록된다.</li>
+<li>PDP-11 등 몇몇 아키텍쳐는 2바이트 단위와 1바이트 단위로 서로 다른 순서를 사용하는 미들엔디언이라는 컨셉도 존재한다.</li>
+<li>리틀엔디언은 x86 아키텍쳐를 사용하는 인텔이 대표적으로 사용하여서 “인텔 포맷”이라고 불리기도 한다.</li>
+<li>하지만 네트워크는 특성상 네트워크 주소를 빅엔디언으로 사용한다.라우팅이 접두 부호로 이루어져 있기 때문이다.</li>
+<li>빅엔디언은 위의 언급처럼 사람이 읽고 쓰는 방식과 동일하기 때문에 개발자가 소프트웨어 디버깅을 할 때 편리한 점이 있다.</li>
+<li>반대로 리틀 엔디언은 사람이 읽는데는 불편함이 있지만 메모리에 저장된 값의 하위 바이트만 사용할때 별도로 계산이 필요없다는 장점을 가지고 있다. 예를 들어 32비트 숫자가 리틀엔디언으로 2A 00 00 00같이 존재할때, 하위 16비트나 8비트 값을 얻을때는 앞의 한두바이트만 분리하면 바로 얻을 수 있다. 하지만 이를 빅엔디언 방식으로 표현했다면 주소에 2~3바이트를 더하여 구하여야 한다.</li>
+</ul>
+<h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><ul>
+<li>가산기가 덧셈을 할때 LSB(Least Significant Bit, 최하위 비트)에서 시작 하여 carry와 sum을 구하는 계산을 하는데 첫 바이트가 LSB인 리틀엔디언은 가산기가 조금더 단순하게 설계될 수 있다. 하지만 빅엔디언은 마지막 바이트부터 첫 바이트로 역방향으로 진행해야 하는 설계를 가져야한다. 그러나 최신의 프로세서들은 여러개의 바이트를 동시에 읽어들여 동시에 덧셈을 수행하므로 두 엔디언에서 사실상 차이가 없다고 한다.</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/논리게이트/">논리게이트</a><a href="/tags/CPU/">CPU</a><a href="/tags/빅엔디언/">빅엔디언</a><a href="/tags/리틀엔디언/">리틀엔디언</a><a href="/tags/엔디언/">엔디언</a><a href="/tags/endian/">endian</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2019/07/18/JavaScript-Array-methods/"><span>JavaScript Array methods</span></a></h3>
     
   
@@ -638,7 +709,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/linux/">linux</a><a href="/tags/우분투/">우분투</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/검색/">검색</a><a href="/tags/파일명/">파일명</a>
+        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/우분투/">우분투</a><a href="/tags/linux/">linux</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/검색/">검색</a><a href="/tags/파일명/">파일명</a>
     </span>
     
 
@@ -694,7 +765,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/linux/">linux</a><a href="/tags/우분투/">우분투</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/user/">user</a><a href="/tags/사용자/">사용자</a>
+        <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/우분투/">우분투</a><a href="/tags/linux/">linux</a><a href="/tags/리눅스/">리눅스</a><a href="/tags/user/">user</a><a href="/tags/사용자/">사용자</a>
     </span>
     
 
@@ -911,94 +982,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/06/28/Algorithm-Laser-and-sticks/"><span>Algorithm - Laser and sticks</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/06/28/Algorithm-Laser-and-sticks/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-06-27T17:15:57.000Z">
-          2019-06-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><hr></p>
-<h1 id="알고리즘-Python-JavaScript-쇠막대기"><a href="#알고리즘-Python-JavaScript-쇠막대기" class="headerlink" title="알고리즘(Python, JavaScript) - 쇠막대기"></a>알고리즘(Python, JavaScript) - 쇠막대기</h1><hr>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrangement = <span class="string">"()(((()())(())()))(())"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return = 17</span><br></pre></td></tr></table></figure>
-<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><ul>
-<li>A stick can be placed on a stick that is longer.</li>
-<li>Endpoints cannot be overlapped.</li>
-<li>Each stick has at least one laser cut.</li>
-<li>Laser does not cut at the endpoint.</li>
-<li>Parentheses that are closed right after opened represent lasers.</li>
-</ul>
-<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><ul>
-<li>arrangement.length &lt;= 100,000</li>
-<li>opening.length == closing.length</li>
-</ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
-<p>Python</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(arrangement)</span>:</span></span><br><span class="line">    opened_count, final_count = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    arrangement = arrangement.replace(<span class="string">"()"</span>, <span class="string">"0"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> arrangement:</span><br><span class="line">        <span class="keyword">if</span> val == <span class="string">"0"</span>:</span><br><span class="line">            final_count += opened_count</span><br><span class="line">        <span class="keyword">elif</span> val == <span class="string">"("</span>:</span><br><span class="line">            opened_count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            opened_count -= <span class="number">1</span></span><br><span class="line">            final_count += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> final_count</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>JavaScript</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">arrangement</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> opened_count = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">var</span> final_count = <span class="number">0</span>;</span><br><span class="line">	arrangement = arrangement.replace(<span class="regexp">/\(\)/g</span>, <span class="string">"0"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> arrangement) &#123;</span><br><span class="line">        <span class="keyword">var</span> val = arrangement.charAt(i);</span><br><span class="line">        <span class="keyword">if</span> (val === <span class="string">"0"</span>)&#123;</span><br><span class="line">            final_count += opened_count;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (val === <span class="string">"("</span>) &#123;</span><br><span class="line">            opened_count++;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            opened_count--;</span><br><span class="line">            final_count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> final_count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><ul>
-<li>()는 반드시 레이저를 표현하기때문에 ()를 하나의 원소로 표현하기 위히해 “0”으로 치환합니다.</li>
-<li>() represents laser so replace them with one length element such as 0.</li>
-<li>arrangement를 하나씩 탐색할때 괄호는 여는 (를 만날때마다 쇠막대기가 하나씩 쌓이는 행위를 의미합니다.</li>
-<li>Exploring each element of arrangement, opening paranthsis represent stacking  one layer of stick.</li>
-<li>쌓임이 유지되다 레이저를 만나면 쌓인 레이어만큼 총 조각이 늘어나게 됩니다.</li>
-<li>While exploring and stacking layers, when you meet laser, as manay as current layer, you will gain total pieces.</li>
-<li>쌓임이 유지되다 )를 만나면 유지되고 있는 레이어가 줄어듭니다.</li>
-<li>While stakcing layers, when you meet ), current number of layers loses 1.</li>
-<li>(를 만나면 레이어수인 opened_count를 늘리고 레이져를 만나면 만난 당시의 opened_count 만큼 총 조각 수인 final_count를 늘립니다.</li>
-<li>When you meet (, increase opened_count(current number of layers). When you meet “)”, decrease opened_count. When you meet “0”(laser), incrase final_count as much as opened_count.</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/javascript/">javascript</a>
     </span>
     
 
