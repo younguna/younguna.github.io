@@ -1,179 +1,32 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Algoritm - Collatz | younguna</title>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Algoritm - Collatz · younguna</title><meta name="description" content="&amp;#xC54C;&amp;#xACE0;&amp;#xB9AC;&amp;#xC998;(Python, JavaScript) - &amp;#xCF5C;&amp;#xB77C;&amp;#xCE20; &amp;#xCD94;&amp;#xCE21;
 
-  
-  <meta name="author" content="younguna">
-  
-
-  
-  <meta name="description" content="알고리즘(Python, JavaScript) - 콜라츠 추측
-
-Input123input_one = 6input_two = 16input_three = 626331
-Expected Output123output_one = 8output_two = 4output_three ">
-  
-
-  
-  
-  <meta name="keywords" content="algorithm,알고리즘,카카오,프로그래머스,파이썬,python,javascript,자바스크립트">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="Algoritm - Collatz"/>
-
-  <meta property="og:site_name" content="younguna"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">younguna</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>Algoritm - Collatz</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/04/25/Algoritm-Collatz/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-04-25T14:36:42.000Z">
-          2019-04-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><hr></p>
-<h1 id="알고리즘-Python-JavaScript-콜라츠-추측"><a href="#알고리즘-Python-JavaScript-콜라츠-추측" class="headerlink" title="알고리즘(Python, JavaScript) - 콜라츠 추측"></a>알고리즘(Python, JavaScript) - 콜라츠 추측</h1><hr>
+Input123input_one = 6input_two = 16input_three = 626"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Algoritm - Collatz</a></h3></div><div class="post-content"><p><hr></p>
+<h1 id="&#xC54C;&#xACE0;&#xB9AC;&#xC998;-Python-JavaScript-&#xCF5C;&#xB77C;&#xCE20;-&#xCD94;&#xCE21;"><a href="#&#xC54C;&#xACE0;&#xB9AC;&#xC998;-Python-JavaScript-&#xCF5C;&#xB77C;&#xCE20;-&#xCD94;&#xCE21;" class="headerlink" title="&#xC54C;&#xACE0;&#xB9AC;&#xC998;(Python, JavaScript) - &#xCF5C;&#xB77C;&#xCE20; &#xCD94;&#xCE21;"></a>&#xC54C;&#xACE0;&#xB9AC;&#xC998;(Python, JavaScript) - &#xCF5C;&#xB77C;&#xCE20; &#xCD94;&#xCE21;</h1><hr>
 
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input_one = <span class="number">6</span></span><br><span class="line">input_two = <span class="number">16</span></span><br><span class="line">input_three = <span class="number">626331</span></span><br></pre></td></tr></table></figure>
 <h2 id="Expected-Output"><a href="#Expected-Output" class="headerlink" title="Expected Output"></a>Expected Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output_one = 8</span><br><span class="line">output_two = 4</span><br><span class="line">output_three = -1</span><br></pre></td></tr></table></figure>
-<h2 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h2><ul>
-<li>입력된 수가 짝수라면 2로 나눕니다. </li>
-<li>입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
-<li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
-<li>최고 500번을 수행하며 그 안에 성공하면 수행 횟수를, 불가능하면 -1을 리턴한다.</li>
+<h2 id="&#xBAA9;&#xD45C;"><a href="#&#xBAA9;&#xD45C;" class="headerlink" title="&#xBAA9;&#xD45C;"></a>&#xBAA9;&#xD45C;</h2><ul class="ui list">
+<li>&#xC785;&#xB825;&#xB41C; &#xC218;&#xAC00; &#xC9DD;&#xC218;&#xB77C;&#xBA74; 2&#xB85C; &#xB098;&#xB215;&#xB2C8;&#xB2E4;. </li>
+<li>&#xC785;&#xB825;&#xB41C; &#xC218;&#xAC00; &#xD640;&#xC218;&#xB77C;&#xBA74; 3&#xC744; &#xACF1;&#xD558;&#xACE0; 1&#xC744; &#xB354;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xACB0;&#xACFC;&#xB85C; &#xB098;&#xC628; &#xC218;&#xC5D0; &#xAC19;&#xC740; &#xC791;&#xC5C5;&#xC744; 1&#xC774; &#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xBC18;&#xBCF5;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xCD5C;&#xACE0; 500&#xBC88;&#xC744; &#xC218;&#xD589;&#xD558;&#xBA70; &#xADF8; &#xC548;&#xC5D0; &#xC131;&#xACF5;&#xD558;&#xBA74; &#xC218;&#xD589; &#xD69F;&#xC218;&#xB97C;, &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xBA74; -1&#xC744; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</li>
 </ul>
-<h2 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h2><ul>
-<li>1 &lt;= 입력 &lt;= 8,000,000</li>
-<li>최고 500번 수행</li>
+<h2 id="&#xC870;&#xAC74;"><a href="#&#xC870;&#xAC74;" class="headerlink" title="&#xC870;&#xAC74;"></a>&#xC870;&#xAC74;</h2><ul class="ui list">
+<li>1 &lt;= &#xC785;&#xB825; &lt;= 8,000,000</li>
+<li>&#xCD5C;&#xACE0; 500&#xBC88; &#xC218;&#xD589;</li>
 </ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><blockquote>
+<h2 id="&#xCF54;&#xB4DC;"><a href="#&#xCF54;&#xB4DC;" class="headerlink" title="&#xCF54;&#xB4DC;"></a>&#xCF54;&#xB4DC;</h2><blockquote>
 <p>Python3</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(num)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> num != <span class="number">1</span> <span class="keyword">and</span> answer &lt;= <span class="number">500</span>:</span><br><span class="line">        is_odd = num % <span class="number">2</span></span><br><span class="line">        num = (num*<span class="number">3</span>)+<span class="number">1</span> <span class="keyword">if</span> is_odd <span class="keyword">else</span> num/<span class="number">2</span></span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer <span class="keyword">if</span> num == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>JavaScript</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>)&#123;</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="해설"><a href="#해설" class="headerlink" title="해설"></a>해설</h2><ul>
-<li>처음 코드로 진입하면 아직 입력값을 바꾸는 작업을 하지 않았기 때문에 수행 횟수는 0이다.</li>
-<li>처음부터 입력이 1이라면 while 루프로 진입이 불가능하고 바로 마지막 코드로 가게된다.</li>
-<li>입력 값이 1이면 0인 answer을 리턴한다.</li>
-<li>while 루프로 진입하면 입력 값을 바꾸는 작업을 수행하고 입력 값이 1이 되지 않는다면 500회만 수행하고 그 전에 1이 되면 while 루프로 진입하지 않고 수행한 횟수를 answer에 기록하고 그것을 리턴한다.</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num !== <span class="number">1</span> &amp;&amp; answer &lt;= <span class="number">500</span>){</span><br><span class="line">        num = num%<span class="number">2</span> === <span class="number">0</span> ? num/<span class="number">2</span> : num*<span class="number">3</span>+<span class="number">1</span>;</span><br><span class="line">        answer++;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> (num === <span class="number">1</span>) ? answer : <span class="number">-1</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="&#xD574;&#xC124;"><a href="#&#xD574;&#xC124;" class="headerlink" title="&#xD574;&#xC124;"></a>&#xD574;&#xC124;</h2><ul class="ui list">
+<li>&#xCC98;&#xC74C; &#xCF54;&#xB4DC;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xBA74; &#xC544;&#xC9C1; &#xC785;&#xB825;&#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC218;&#xD589; &#xD69F;&#xC218;&#xB294; 0&#xC774;&#xB2E4;.</li>
+<li>&#xCC98;&#xC74C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xC774; 1&#xC774;&#xB77C;&#xBA74; while &#xB8E8;&#xD504;&#xB85C; &#xC9C4;&#xC785;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xACE0; &#xBC14;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xCF54;&#xB4DC;&#xB85C; &#xAC00;&#xAC8C;&#xB41C;&#xB2E4;.</li>
+<li>&#xC785;&#xB825; &#xAC12;&#xC774; 1&#xC774;&#xBA74; 0&#xC778; answer&#xC744; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</li>
+<li>while &#xB8E8;&#xD504;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xBA74; &#xC785;&#xB825; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD558;&#xACE0; &#xC785;&#xB825; &#xAC12;&#xC774; 1&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74; 500&#xD68C;&#xB9CC; &#xC218;&#xD589;&#xD558;&#xACE0; &#xADF8; &#xC804;&#xC5D0; 1&#xC774; &#xB418;&#xBA74; while &#xB8E8;&#xD504;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC218;&#xD589;&#xD55C; &#xD69F;&#xC218;&#xB97C; answer&#xC5D0; &#xAE30;&#xB85D;&#xD558;&#xACE0; &#xADF8;&#xAC83;&#xC744; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</li>
 </ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/algorithm/">algorithm</a><a href="/tags/알고리즘/">알고리즘</a><a href="/tags/카카오/">카카오</a><a href="/tags/프로그래머스/">프로그래머스</a><a href="/tags/파이썬/">파이썬</a><a href="/tags/python/">python</a><a href="/tags/javascript/">javascript</a><a href="/tags/자바스크립트/">자바스크립트</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2019 younguna
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-</body>
-</html>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-04-25</span><i class="fa fa-tag"></i><a class="tag" href="/tags/algorithm/" title="algorithm">algorithm </a><a class="tag" href="/tags/알고리즘/" title="알고리즘">알고리즘 </a><a class="tag" href="/tags/카카오/" title="카카오">카카오 </a><a class="tag" href="/tags/프로그래머스/" title="프로그래머스">프로그래머스 </a><a class="tag" href="/tags/파이썬/" title="파이썬">파이썬 </a><a class="tag" href="/tags/python/" title="python">python </a><a class="tag" href="/tags/javascript/" title="javascript">javascript </a><a class="tag" href="/tags/자바스크립트/" title="자바스크립트">자바스크립트 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/06/27/python-python-basics/" title="python-python basics">Previous Post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/04/19/LaTeX-Math-symbols-레이텍-수학-기호/" title="LaTeX - Math symbols 레이텍 수학 기호">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

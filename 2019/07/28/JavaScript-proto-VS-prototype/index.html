@@ -1,189 +1,41 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>JavaScript __proto__ VS prototype | younguna</title>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>JavaScript __proto__ VS prototype · younguna</title><meta name="description" content="JavaScript  __proto__ VS prototype
 
-  
-  <meta name="author" content="younguna">
-  
-
-  
-  <meta name="description" content="JavaScript  __proto__ VS prototype
-
-단순히 생성한 객체(ex. const a = {})에는 prototype객체가 없다.
-prototype은 함수객체에만 존재한다.
-prototype은 함수를 new 키워드와 함께 constructor로 사용">
-  
-
-  
-  
-  <meta name="keywords" content="자바스크립트,JavaScript,JS,prototype,__proto__,상속,프로토타입">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="JavaScript __proto__ VS prototype"/>
-
-  <meta property="og:site_name" content="younguna"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">younguna</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>JavaScript __proto__ VS prototype</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/07/28/JavaScript-proto-VS-prototype/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-07-28T06:07:05.000Z">
-          2019-07-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="JavaScript-proto-VS-prototype"><a href="#JavaScript-proto-VS-prototype" class="headerlink" title="JavaScript  __proto__ VS prototype"></a>JavaScript  __proto__ VS prototype</h1><blockquote>
-<ul>
-<li>단순히 생성한 객체(ex. const a = {})에는 prototype객체가 없다.</li>
-<li>prototype은 함수객체에만 존재한다.</li>
-<li>prototype은 함수를 new 키워드와 함께 constructor로 사용하고 싶을때 쓴다.</li>
-<li><strong>proto</strong>는 모든 객체에 존재한다.</li>
-<li><strong>proto</strong>를 이용하여 prototype chain을 검사한다.</li>
+&amp;#xB2E8;&amp;#xC21C;&amp;#xD788; &amp;#xC0DD;&amp;#xC131;&amp;#xD55C; &amp;#xAC1D;&amp;#xCCB4;(ex. const a = {})&amp;#xC5D0;&amp;#xB294; prototype&amp;#xA"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>JavaScript __proto__ VS prototype</a></h3></div><div class="post-content"><h1 id="JavaScript-proto-VS-prototype"><a href="#JavaScript-proto-VS-prototype" class="headerlink" title="JavaScript  __proto__ VS prototype"></a>JavaScript  __proto__ VS prototype</h1><blockquote>
+<ul class="ui list">
+<li>&#xB2E8;&#xC21C;&#xD788; &#xC0DD;&#xC131;&#xD55C; &#xAC1D;&#xCCB4;(ex. const a = {})&#xC5D0;&#xB294; prototype&#xAC1D;&#xCCB4;&#xAC00; &#xC5C6;&#xB2E4;.</li>
+<li>prototype&#xC740; &#xD568;&#xC218;&#xAC1D;&#xCCB4;&#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</li>
+<li>prototype&#xC740; &#xD568;&#xC218;&#xB97C; new &#xD0A4;&#xC6CC;&#xB4DC;&#xC640; &#xD568;&#xAED8; constructor&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xC744;&#xB54C; &#xC4F4;&#xB2E4;.</li>
+<li><strong>proto</strong>&#xB294; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</li>
+<li><strong>proto</strong>&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; prototype chain&#xC744; &#xAC80;&#xC0AC;&#xD55C;&#xB2E4;.</li>
 </ul>
 </blockquote>
-<ul>
-<li><p>자바스크립트에서 함수는 객체이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br><span class="line"><span class="comment">//같은것이다.</span></span><br></pre></td></tr></table></figure>
+<ul class="ui list">
+<li><p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; &#xD568;&#xC218;&#xB294; &#xAC1D;&#xCCB4;&#xC774;&#xB2E4;.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params"></span>)</span>{};</span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br><span class="line"><span class="comment">//&#xAC19;&#xC740;&#xAC83;&#xC774;&#xB2E4;.</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>위의 함수를 선언하면 Person 객체와 Person’s prototype이라는 두개의 객체가 생긴다. <code>(실제로는 Person&#39;s prototype이라고 불리지는 않지만 이 글에서는 Person객체의 prototype이 가리키는 prototype객체를 말한다.)</code></p>
+<li><p>&#xC704;&#xC758; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xBA74; Person &#xAC1D;&#xCCB4;&#xC640; Person&#x2019;s prototype&#xC774;&#xB77C;&#xB294; &#xB450;&#xAC1C;&#xC758; &#xAC1D;&#xCCB4;&#xAC00; &#xC0DD;&#xAE34;&#xB2E4;. <code>(&#xC2E4;&#xC81C;&#xB85C;&#xB294; Person&apos;s prototype&#xC774;&#xB77C;&#xACE0; &#xBD88;&#xB9AC;&#xC9C0;&#xB294; &#xC54A;&#xC9C0;&#xB9CC; &#xC774; &#xAE00;&#xC5D0;&#xC11C;&#xB294; Person&#xAC1D;&#xCCB4;&#xC758; prototype&#xC774; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; prototype&#xAC1D;&#xCCB4;&#xB97C; &#xB9D0;&#xD55C;&#xB2E4;.)</code></p>
 </li>
-<li><p>Person의 prototype속성은 Person’s prototype을 가리키고 Person’s prototype은 constructor 속성으로 Person 객체를 가리킨다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.returnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<li><p>Person&#xC758; prototype&#xC18D;&#xC131;&#xC740; Person&#x2019;s prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; Person&#x2019;s prototype&#xC740; constructor &#xC18D;&#xC131;&#xC73C;&#xB85C; Person &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.returnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{}</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>위까지 완료되면 객체를 찍어내는 공장인 Person이라는 Constructor function을 만든 것이다.</p>
+<li><p>&#xC704;&#xAE4C;&#xC9C0; &#xC644;&#xB8CC;&#xB418;&#xBA74; &#xAC1D;&#xCCB4;&#xB97C; &#xCC0D;&#xC5B4;&#xB0B4;&#xB294; &#xACF5;&#xC7A5;&#xC778; Person&#xC774;&#xB77C;&#xB294; Constructor function&#xC744; &#xB9CC;&#xB4E0; &#xAC83;&#xC774;&#xB2E4;.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> kim = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>위의 코드가 실행되면 kim이라는 객체가 만들어지는데 이 객체는 <strong>proto</strong>속성이 생기는데 이 속성은 Person’s prototype을 가리키게 된다.</p>
+<li><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; kim&#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xB294;&#xB370; &#xC774; &#xAC1D;&#xCCB4;&#xB294; <strong>proto</strong>&#xC18D;&#xC131;&#xC774; &#xC0DD;&#xAE30;&#xB294;&#xB370; &#xC774; &#xC18D;&#xC131;&#xC740; Person&#x2019;s prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;.</p>
 </li>
-<li>즉 Person.prototype도 Person’s Prototype을 가리키고 kim.<strong>proto</strong>도 Person’s Prototype을 가리킨다.</li>
+<li>&#xC989; Person.prototype&#xB3C4; Person&#x2019;s Prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; kim.<strong>proto</strong>&#xB3C4; Person&#x2019;s Prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;.</li>
 </ul>
-<p><img src="https://imgur.com/pr7spGd.png"></p>
-<ul>
-<li>위의 그림에서 new Person()이 kim의 역할을 나타낸다.</li>
-<li>kim의 <strong>proto</strong>는 kim을 생성한 Person의 prototype을 가리키고 그 prototype은 constructor 속성으로 다시 Person을 가리킨다.</li>
-<li>kim의 <strong>proto</strong>는 Person의 prototype을 가리킨다 했는데 사실 Person의 prototype도 <strong>proto</strong>속성으로 다른 prototype을 가리킬 것이다.</li>
-<li>위의 그림에서는 Animal의 prototype을 가리키고 있다. 이는 JavaScirpt에서 상속의 기본 개념이다.<ul>
-<li>new Person인 kim객체는 Person의 인스턴스로써 Person의 Prototype의 returnName과 returnAge함수를 쓸 수 있는데 이것은 JavaScript가 kim객체의 prototype chain따라 Person의 prototype 객체에서 returnName과 returnAge를 찾아내었기 때문이다.</li>
-<li>이런식으로 JavaScript는 <strong>proto</strong>속성을 따라 kim객체가  Animal의 prototype객체안에서 makeSount()를 찾아서 사용할 수 있도록 해준다.</li>
-<li>이는 마치 Person이 Animal을 상속한 것과 같은 효과를 낸다.</li>
-<li>참고로 <strong>proto</strong>의 연결의 마지막에는 최상위 객체인 Object의 prototype 객체가 있으며 함수나 속성을 prototype chain을 모두 찾은 후 찾지 못한다면 속성의 경우 undefined을 리턴하고 함수의 경우 에러가 발생한다.</li>
+<p><a class="magnific-img" href="https://imgur.com/pr7spGd.png"><img src="https://imgur.com/pr7spGd.png" class="ui centered image"></a></p>
+<ul class="ui list">
+<li>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; new Person()&#xC774; kim&#xC758; &#xC5ED;&#xD560;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</li>
+<li>kim&#xC758; <strong>proto</strong>&#xB294; kim&#xC744; &#xC0DD;&#xC131;&#xD55C; Person&#xC758; prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xADF8; prototype&#xC740; constructor &#xC18D;&#xC131;&#xC73C;&#xB85C; &#xB2E4;&#xC2DC; Person&#xC744; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;.</li>
+<li>kim&#xC758; <strong>proto</strong>&#xB294; Person&#xC758; prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4; &#xD588;&#xB294;&#xB370; &#xC0AC;&#xC2E4; Person&#xC758; prototype&#xB3C4; <strong>proto</strong>&#xC18D;&#xC131;&#xC73C;&#xB85C; &#xB2E4;&#xB978; prototype&#xC744; &#xAC00;&#xB9AC;&#xD0AC; &#xAC83;&#xC774;&#xB2E4;.</li>
+<li>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C;&#xB294; Animal&#xC758; prototype&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xC788;&#xB2E4;. &#xC774;&#xB294; JavaScirpt&#xC5D0;&#xC11C; &#xC0C1;&#xC18D;&#xC758; &#xAE30;&#xBCF8; &#xAC1C;&#xB150;&#xC774;&#xB2E4;.<ul>
+<li>new Person&#xC778; kim&#xAC1D;&#xCCB4;&#xB294; Person&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB85C;&#xC368; Person&#xC758; Prototype&#xC758; returnName&#xACFC; returnAge&#xD568;&#xC218;&#xB97C; &#xC4F8; &#xC218; &#xC788;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; JavaScript&#xAC00; kim&#xAC1D;&#xCCB4;&#xC758; prototype chain&#xB530;&#xB77C; Person&#xC758; prototype &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; returnName&#xACFC; returnAge&#xB97C; &#xCC3E;&#xC544;&#xB0B4;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</li>
+<li>&#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; JavaScript&#xB294; <strong>proto</strong>&#xC18D;&#xC131;&#xC744; &#xB530;&#xB77C; kim&#xAC1D;&#xCCB4;&#xAC00;  Animal&#xC758; prototype&#xAC1D;&#xCCB4;&#xC548;&#xC5D0;&#xC11C; makeSount()&#xB97C; &#xCC3E;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC900;&#xB2E4;.</li>
+<li>&#xC774;&#xB294; &#xB9C8;&#xCE58; Person&#xC774; Animal&#xC744; &#xC0C1;&#xC18D;&#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xD6A8;&#xACFC;&#xB97C; &#xB0B8;&#xB2E4;.</li>
+<li>&#xCC38;&#xACE0;&#xB85C; <strong>proto</strong>&#xC758; &#xC5F0;&#xACB0;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0;&#xB294; &#xCD5C;&#xC0C1;&#xC704; &#xAC1D;&#xCCB4;&#xC778; Object&#xC758; prototype &#xAC1D;&#xCCB4;&#xAC00; &#xC788;&#xC73C;&#xBA70; &#xD568;&#xC218;&#xB098; &#xC18D;&#xC131;&#xC744; prototype chain&#xC744; &#xBAA8;&#xB450; &#xCC3E;&#xC740; &#xD6C4; &#xCC3E;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;&#xBA74; &#xC18D;&#xC131;&#xC758; &#xACBD;&#xC6B0; undefined&#xC744; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xD568;&#xC218;&#xC758; &#xACBD;&#xC6B0; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</li>
 </ul>
 </li>
 </ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/자바스크립트/">자바스크립트</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/JS/">JS</a><a href="/tags/prototype/">prototype</a><a href="/tags/proto/">__proto__</a><a href="/tags/상속/">상속</a><a href="/tags/프로토타입/">프로토타입</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2019 younguna
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-</body>
-</html>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-07-28</span><i class="fa fa-tag"></i><a class="tag" href="/tags/자바스크립트/" title="자바스크립트">자바스크립트 </a><a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript </a><a class="tag" href="/tags/JS/" title="JS">JS </a><a class="tag" href="/tags/prototype/" title="prototype">prototype </a><a class="tag" href="/tags/proto/" title="__proto__">__proto__ </a><a class="tag" href="/tags/상속/" title="상속">상속 </a><a class="tag" href="/tags/프로토타입/" title="프로토타입">프로토타입 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/22/git-git-fork-flow/" title="git-git fork flow">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

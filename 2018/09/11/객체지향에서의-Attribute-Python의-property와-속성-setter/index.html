@@ -1,164 +1,18 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>객체지향에서의 Attribute, Python의 @property와 @속성.setter | younguna</title>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>객체지향에서의 Attribute, Python의 @property와 @속성.setter · younguna</title><meta name="description" content="&amp;#xAC1D;&amp;#xCCB4;&amp;#xC9C0;&amp;#xD5A5;&amp;#xC5D0;&amp;#xC11C;&amp;#xC758; Attribute, Python&amp;#xC758; @property&amp;#xC640; @&amp;#xC18D;&amp;#xC131;.setter
 
-  
-  <meta name="author" content="younguna">
-  
+&amp;#xAC1D;&amp;#xCCB4;&amp;#xC9C0"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>객체지향에서의 Attribute, Python의 @property와 @속성.setter</a></h3></div><div class="post-content"><hr>
 
-  
-  <meta name="description" content="객체지향에서의 Attribute, Python의 @property와 @속성.setter
+<h1 id="&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;&#xC5D0;&#xC11C;&#xC758;-Attribute-Python&#xC758;-property&#xC640;-&#xC18D;&#xC131;-setter"><a href="#&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;&#xC5D0;&#xC11C;&#xC758;-Attribute-Python&#xC758;-property&#xC640;-&#xC18D;&#xC131;-setter" class="headerlink" title="&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;&#xC5D0;&#xC11C;&#xC758; Attribute, Python&#xC758; @property&#xC640; @&#xC18D;&#xC131;.setter"></a>&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;&#xC5D0;&#xC11C;&#xC758; Attribute, Python&#xC758; @property&#xC640; @&#xC18D;&#xC131;.setter</h1><hr>
 
-객체지향 프로그래밍에서는 객체의 속성 (attribute)을 행위 (method)를 통하여 객체를 나타냅니다.자동차를 객체로 생각한다면 한 자동차에서 속성중 하나인 기름의 양을 o">
-  
-
-  
-  
-  <meta name="keywords" content="파이썬,Python,property,\@property,getter,setter,객체지향">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="객체지향에서의 Attribute, Python의 @property와 @속성.setter"/>
-
-  <meta property="og:site_name" content="younguna"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">younguna</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>객체지향에서의 Attribute, Python의 @property와 @속성.setter</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/09/11/객체지향에서의-Attribute-Python의-property와-속성-setter/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-09-11T09:54:33.000Z">
-          2018-09-11
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <hr>
-
-<h1 id="객체지향에서의-Attribute-Python의-property와-속성-setter"><a href="#객체지향에서의-Attribute-Python의-property와-속성-setter" class="headerlink" title="객체지향에서의 Attribute, Python의 @property와 @속성.setter"></a>객체지향에서의 Attribute, Python의 @property와 @속성.setter</h1><hr>
-
-<p>객체지향 프로그래밍에서는 객체의 속성 (attribute)을 행위 (method)를 통하여 객체를 나타냅니다.<br>자동차를 객체로 생각한다면 한 자동차에서 속성중 하나인 기름의 양을 oil_amount 변수로 또 자동차의 행위중 하나인 앞으로 나아간다를 go_forward라는  행위 (method)로 표현하여 자동차를 “객체화” 할 수 있습니다.<br>자동차라는 개념을 우리의 프로그래밍안에 나타내고자 자동차에서 우리가 필요한 속성과 행위만 끄집어내어 추상화 한 것입니다.<br>파이썬의 @property는 이 중 속성에 대해 더 깊이 들여다볼 주제입니다.</p>
-<h4 id="예를-들어"><a href="#예를-들어" class="headerlink" title="예를 들어"></a>예를 들어</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>라는 객체를 표현했다고 생각해봅시다.</p>
-<p>우선 Car라는 객체의 속성값들이 표현되어있는 __init__안을 보면 self로 하여 표현한다는 것을 알겠는데 왜 __(double underscore, dunder, 던더, 더블 밑줄)을 앞에 붙여서 선언했을까요?</p>
-<p>저것은 일종의 약속입니다. 이 속성값은 이 객체의 밖에서 함부로 접근할 수 없다라고 “파이썬”에서 사용하는 약속입니다. 저 약속과 관계없이 얼마든지 바꿀 수는 있습니다. 하지만 그러면 지금부터 알아볼 @property의 의미가 무색해지겠죠.</p>
-<p>왜 이런식의 약속이 필요한지에 대한 질문은 여기서는 생략하도록 하겠습니다.</p>
-<p>자 그렇다면 self.__oil_amount를 바꾸고 싶다면, 예를 들어 차에 기름을 충전하는 객체가 한 Car객체에 기름을 충전하여 기름의 양 속성이 외부에서 더 해져야 한다면 어떻게 해야할 까? (물론 self.__oil_amount를 직접 바꾸지 않는다는 약속하에)</p>
-<p>이때 @property가 들어옵니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__oil_amount</span><br><span class="line"></span><br><span class="line"><span class="meta">    @oil_amount.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self, new_oil_amount)</span>:</span></span><br><span class="line"></span><br><span class="line">        self.__oil_amount += new_oil_amount</span><br></pre></td></tr></table></figure></p>
-<p>이렇게 정의하게 되면</p>
+<p>&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0;&#xC11C;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xC18D;&#xC131; (attribute)&#xC744; &#xD589;&#xC704; (method)&#xB97C; &#xD1B5;&#xD558;&#xC5EC; &#xAC1D;&#xCCB4;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.<br>&#xC790;&#xB3D9;&#xCC28;&#xB97C; &#xAC1D;&#xCCB4;&#xB85C; &#xC0DD;&#xAC01;&#xD55C;&#xB2E4;&#xBA74; &#xD55C; &#xC790;&#xB3D9;&#xCC28;&#xC5D0;&#xC11C; &#xC18D;&#xC131;&#xC911; &#xD558;&#xB098;&#xC778; &#xAE30;&#xB984;&#xC758; &#xC591;&#xC744; oil_amount &#xBCC0;&#xC218;&#xB85C; &#xB610; &#xC790;&#xB3D9;&#xCC28;&#xC758; &#xD589;&#xC704;&#xC911; &#xD558;&#xB098;&#xC778; &#xC55E;&#xC73C;&#xB85C; &#xB098;&#xC544;&#xAC04;&#xB2E4;&#xB97C; go_forward&#xB77C;&#xB294;  &#xD589;&#xC704; (method)&#xB85C; &#xD45C;&#xD604;&#xD558;&#xC5EC; &#xC790;&#xB3D9;&#xCC28;&#xB97C; &#x201C;&#xAC1D;&#xCCB4;&#xD654;&#x201D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC790;&#xB3D9;&#xCC28;&#xB77C;&#xB294; &#xAC1C;&#xB150;&#xC744; &#xC6B0;&#xB9AC;&#xC758; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC548;&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xACE0;&#xC790; &#xC790;&#xB3D9;&#xCC28;&#xC5D0;&#xC11C; &#xC6B0;&#xB9AC;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC18D;&#xC131;&#xACFC; &#xD589;&#xC704;&#xB9CC; &#xB044;&#xC9D1;&#xC5B4;&#xB0B4;&#xC5B4; &#xCD94;&#xC0C1;&#xD654; &#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC774;&#xC36C;&#xC758; @property&#xB294; &#xC774; &#xC911; &#xC18D;&#xC131;&#xC5D0; &#xB300;&#xD574; &#xB354; &#xAE4A;&#xC774; &#xB4E4;&#xC5EC;&#xB2E4;&#xBCFC; &#xC8FC;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xC608;&#xB97C;-&#xB4E4;&#xC5B4;"><a href="#&#xC608;&#xB97C;-&#xB4E4;&#xC5B4;" class="headerlink" title="&#xC608;&#xB97C; &#xB4E4;&#xC5B4;"></a>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xD45C;&#xD604;&#xD588;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
+<p>&#xC6B0;&#xC120; Car&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xC18D;&#xC131;&#xAC12;&#xB4E4;&#xC774; &#xD45C;&#xD604;&#xB418;&#xC5B4;&#xC788;&#xB294; __init__&#xC548;&#xC744; &#xBCF4;&#xBA74; self&#xB85C; &#xD558;&#xC5EC; &#xD45C;&#xD604;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xACA0;&#xB294;&#xB370; &#xC65C; __(double underscore, dunder, &#xB358;&#xB354;, &#xB354;&#xBE14; &#xBC11;&#xC904;)&#xC744; &#xC55E;&#xC5D0; &#xBD99;&#xC5EC;&#xC11C; &#xC120;&#xC5B8;&#xD588;&#xC744;&#xAE4C;&#xC694;?</p>
+<p>&#xC800;&#xAC83;&#xC740; &#xC77C;&#xC885;&#xC758; &#xC57D;&#xC18D;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC18D;&#xC131;&#xAC12;&#xC740; &#xC774; &#xAC1D;&#xCCB4;&#xC758; &#xBC16;&#xC5D0;&#xC11C; &#xD568;&#xBD80;&#xB85C; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB77C;&#xACE0; &#x201C;&#xD30C;&#xC774;&#xC36C;&#x201D;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC57D;&#xC18D;&#xC785;&#xB2C8;&#xB2E4;. &#xC800; &#xC57D;&#xC18D;&#xACFC; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC5BC;&#xB9C8;&#xB4E0;&#xC9C0; &#xBC14;&#xAFC0; &#xC218;&#xB294; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xADF8;&#xB7EC;&#xBA74; &#xC9C0;&#xAE08;&#xBD80;&#xD130; &#xC54C;&#xC544;&#xBCFC; @property&#xC758; &#xC758;&#xBBF8;&#xAC00; &#xBB34;&#xC0C9;&#xD574;&#xC9C0;&#xACA0;&#xC8E0;.</p>
+<p>&#xC65C; &#xC774;&#xB7F0;&#xC2DD;&#xC758; &#xC57D;&#xC18D;&#xC774; &#xD544;&#xC694;&#xD55C;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC9C8;&#xBB38;&#xC740; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC0DD;&#xB7B5;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC790; &#xADF8;&#xB807;&#xB2E4;&#xBA74; self.__oil_amount&#xB97C; &#xBC14;&#xAFB8;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xCC28;&#xC5D0; &#xAE30;&#xB984;&#xC744; &#xCDA9;&#xC804;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xD55C; Car&#xAC1D;&#xCCB4;&#xC5D0; &#xAE30;&#xB984;&#xC744; &#xCDA9;&#xC804;&#xD558;&#xC5EC; &#xAE30;&#xB984;&#xC758; &#xC591; &#xC18D;&#xC131;&#xC774; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xB354; &#xD574;&#xC838;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C;&#xD560; &#xAE4C;? (&#xBB3C;&#xB860; self.__oil_amount&#xB97C; &#xC9C1;&#xC811; &#xBC14;&#xAFB8;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xC57D;&#xC18D;&#xD558;&#xC5D0;)</p>
+<p>&#xC774;&#xB54C; @property&#xAC00; &#xB4E4;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, initial_oil_amount)</span>:</span></span><br><span class="line">        self.__oil_amount = initial_oil_amount</span><br><span class="line">        self.__coordinate = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go_forward</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__oil_amount -= <span class="number">1</span></span><br><span class="line">        self.__coordinate += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__oil_amount</span><br><span class="line"></span><br><span class="line"><span class="meta">    @oil_amount.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oil_amount</span><span class="params">(self, new_oil_amount)</span>:</span></span><br><span class="line"></span><br><span class="line">        self.__oil_amount += new_oil_amount</span><br></pre></td></tr></table></figure></p>
+<p>&#xC774;&#xB807;&#xAC8C; &#xC815;&#xC758;&#xD558;&#xAC8C; &#xB418;&#xBA74;</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">car = Car(<span class="number">5</span>)</span><br><span class="line">car.oil_amount()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span></span><br><span class="line"></span><br><span class="line">car.go_forward()</span><br><span class="line">car.oil_amount()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span></span><br><span class="line"></span><br><span class="line">car.oil_amount(<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p>위 처럼 car.oil_amount()는 self.__oil_amount의 getter 처럼,<br>car.oil_amount(variable)은 self.__oil_amount의 setter처럼 작동하게 됩니다.</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/파이썬/">파이썬</a><a href="/tags/Python/">Python</a><a href="/tags/property/">property</a><a href="/tags/property/">\@property</a><a href="/tags/getter/">getter</a><a href="/tags/setter/">setter</a><a href="/tags/객체지향/">객체지향</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2019 younguna
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-</body>
-</html>
+<p>&#xC704; &#xCC98;&#xB7FC; car.oil_amount()&#xB294; self.__oil_amount&#xC758; getter &#xCC98;&#xB7FC;,<br>car.oil_amount(variable)&#xC740; self.__oil_amount&#xC758; setter&#xCC98;&#xB7FC; &#xC791;&#xB3D9;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-09-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/파이썬/" title="파이썬">파이썬 </a><a class="tag" href="/tags/Python/" title="Python">Python </a><a class="tag" href="/tags/property/" title="property">property </a><a class="tag" href="/tags/property/" title="\@property">\@property </a><a class="tag" href="/tags/getter/" title="getter">getter </a><a class="tag" href="/tags/setter/" title="setter">setter </a><a class="tag" href="/tags/객체지향/" title="객체지향">객체지향 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/" title="Algorithm - Player who did not finish">Previous Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

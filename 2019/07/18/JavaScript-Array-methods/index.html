@@ -1,233 +1,82 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>JavaScript Array methods | younguna</title>
-
-  
-  <meta name="author" content="younguna">
-  
-
-  
-  <meta name="description" content="JavaScript Array MethodsforEach
-이 메소드는 단순히 배열의 모든 원소에 대해 콜백함수를 실행합니다.
-forEach의 콜백함수는 다음의 파라미터를 다룬다.
-currentValue 현재 원소
-index 현재 원소의 인덱스
-array 원 배열
-thi">
-  
-
-  
-  
-  <meta name="keywords" content="javascript,js,es6,Array,methods">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="JavaScript Array methods"/>
-
-  <meta property="og:site_name" content="younguna"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="younguna" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">younguna</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>JavaScript Array methods</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/07/18/JavaScript-Array-methods/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-07-18T08:42:53.000Z">
-          2019-07-18
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="JavaScript-Array-Methods"><a href="#JavaScript-Array-Methods" class="headerlink" title="JavaScript Array Methods"></a>JavaScript Array Methods</h1><h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><ul>
-<li>이 메소드는 단순히 배열의 모든 원소에 대해 콜백함수를 실행합니다.</li>
-<li>forEach의 콜백함수는 다음의 파라미터를 다룬다.<ul>
-<li>currentValue 현재 원소</li>
-<li>index 현재 원소의 인덱스</li>
-<li>array 원 배열</li>
-<li>thisArg 콜백을 실행할 때 this로 사용됨<h4 id="코드예제"><a href="#코드예제" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = [<span class="string">'item1'</span>, <span class="string">'item2'</span>, <span class="string">'item3'</span>];</span><br><span class="line"><span class="keyword">const</span> copy = [];</span><br><span class="line"><span class="comment">// for iteration</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;items.length; i++) &#123;</span><br><span class="line">  copy.push(items[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// same operation with forEach</span></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">  copy.push(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>JavaScript Array methods · younguna</title><meta name="description" content="JavaScript Array MethodsforEach
+&amp;#xC774; &amp;#xBA54;&amp;#xC18C;&amp;#xB4DC;&amp;#xB294; &amp;#xB2E8;&amp;#xC21C;&amp;#xD788; &amp;#xBC30;&amp;#xC5F4;&amp;#xC758; &amp;#xBAA8;&amp;#xB4E0; &amp;#xC6D0;&amp;"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>JavaScript Array methods</a></h3></div><div class="post-content"><h1 id="JavaScript-Array-Methods"><a href="#JavaScript-Array-Methods" class="headerlink" title="JavaScript Array Methods"></a>JavaScript Array Methods</h1><h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><ul class="ui list">
+<li>&#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E8;&#xC21C;&#xD788; &#xBC30;&#xC5F4;&#xC758; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xC5D0; &#xB300;&#xD574; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>forEach&#xC758; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xB2E4;&#xC74C;&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xB2E4;&#xB8EC;&#xB2E4;.<ul>
+<li>currentValue &#xD604;&#xC7AC; &#xC6D0;&#xC18C;</li>
+<li>index &#xD604;&#xC7AC; &#xC6D0;&#xC18C;&#xC758; &#xC778;&#xB371;&#xC2A4;</li>
+<li>array &#xC6D0; &#xBC30;&#xC5F4;</li>
+<li>thisArg &#xCF5C;&#xBC31;&#xC744; &#xC2E4;&#xD589;&#xD560; &#xB54C; this&#xB85C; &#xC0AC;&#xC6A9;&#xB428;<h4 id="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"><a href="#&#xCF54;&#xB4DC;&#xC608;&#xC81C;" class="headerlink" title="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"></a>&#xCF54;&#xB4DC;&#xC608;&#xC81C;</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = [<span class="string">&apos;item1&apos;</span>, <span class="string">&apos;item2&apos;</span>, <span class="string">&apos;item3&apos;</span>];</span><br><span class="line"><span class="keyword">const</span> copy = [];</span><br><span class="line"><span class="comment">// for iteration</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;items.length; i++) {</span><br><span class="line">  copy.push(items[i]);</span><br><span class="line">}</span><br><span class="line"><span class="comment">// same operation with forEach</span></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>{</span><br><span class="line">  copy.push(item);</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>위의 코드를 실행하면 item의 원소들은 각각 콜백함수로 넘어가 콜백함수 안에 구현된 행위를 한다. 위의 경우에는 전역의 copy배열에 각각의 원소를 push하는 행위를 하게 된다. 특별히 반환되는 것은 없고 undefined가 반환된다.</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; item&#xC758; &#xC6D0;&#xC18C;&#xB4E4;&#xC740; &#xAC01;&#xAC01; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB85C; &#xB118;&#xC5B4;&#xAC00; &#xCF5C;&#xBC31;&#xD568;&#xC218; &#xC548;&#xC5D0; &#xAD6C;&#xD604;&#xB41C; &#xD589;&#xC704;&#xB97C; &#xD55C;&#xB2E4;. &#xC704;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC804;&#xC5ED;&#xC758; copy&#xBC30;&#xC5F4;&#xC5D0; &#xAC01;&#xAC01;&#xC758; &#xC6D0;&#xC18C;&#xB97C; push&#xD558;&#xB294; &#xD589;&#xC704;&#xB97C; &#xD558;&#xAC8C; &#xB41C;&#xB2E4;. &#xD2B9;&#xBCC4;&#xD788; &#xBC18;&#xD658;&#xB418;&#xB294; &#xAC83;&#xC740; &#xC5C6;&#xACE0; undefined&#xAC00; &#xBC18;&#xD658;&#xB41C;&#xB2E4;.</p>
 </blockquote>
-<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul>
-<li>이 메소드는 배열의 모든 원소에 대해 콜백함수를 적용하여 그 결과를 새로운 배열에 push에 넣어 리턴하는 JavaScript Array의 메소드다.</li>
-<li>reduce와 함께 활용도가 매우높다.</li>
-<li>map의 콜백함수가 다루는 파라미터는 forEach와 동일하다.<ul>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul class="ui list">
+<li>&#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xC5D0; &#xB300;&#xD574; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xC5EC; &#xADF8; &#xACB0;&#xACFC;&#xB97C; &#xC0C8;&#xB85C;&#xC6B4; &#xBC30;&#xC5F4;&#xC5D0; push&#xC5D0; &#xB123;&#xC5B4; &#xB9AC;&#xD134;&#xD558;&#xB294; JavaScript Array&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB2E4;.</li>
+<li>reduce&#xC640; &#xD568;&#xAED8; &#xD65C;&#xC6A9;&#xB3C4;&#xAC00; &#xB9E4;&#xC6B0;&#xB192;&#xB2E4;.</li>
+<li>map&#xC758; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xAC00; &#xB2E4;&#xB8E8;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; forEach&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xB2E4;.<ul>
 <li>currentValue, index, array, thisArg</li>
 </ul>
 </li>
-<li>최종적으로 배열이 리턴된다.<h4 id="코드예제-1"><a href="#코드예제-1" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">const</span> doubles = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;<span class="keyword">return</span> num * <span class="number">2</span>;&#125;);</span><br><span class="line"><span class="comment">// &gt;&gt;&gt; [2,8,18]</span></span><br></pre></td></tr></table></figure>
+<li>&#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xBC30;&#xC5F4;&#xC774; &#xB9AC;&#xD134;&#xB41C;&#xB2E4;.<h4 id="&#xCF54;&#xB4DC;&#xC608;&#xC81C;-1"><a href="#&#xCF54;&#xB4DC;&#xC608;&#xC81C;-1" class="headerlink" title="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"></a>&#xCF54;&#xB4DC;&#xC608;&#xC81C;</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">const</span> doubles = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>{<span class="keyword">return</span> num * <span class="number">2</span>;});</span><br><span class="line"><span class="comment">// &gt;&gt;&gt; [2,8,18]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>위의 코드를 실행하면 배열의 각원소마다 콜백함수가 실행되고 그 리턴값을 배열에 넣는다. 모든 원소들이 이 행위를 마치고 리턴값들이 모인 배열을 최종적으로 리턴한다.</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xBC30;&#xC5F4;&#xC758; &#xAC01;&#xC6D0;&#xC18C;&#xB9C8;&#xB2E4; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xADF8; &#xB9AC;&#xD134;&#xAC12;&#xC744; &#xBC30;&#xC5F4;&#xC5D0; &#xB123;&#xB294;&#xB2E4;. &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xB4E4;&#xC774; &#xC774; &#xD589;&#xC704;&#xB97C; &#xB9C8;&#xCE58;&#xACE0; &#xB9AC;&#xD134;&#xAC12;&#xB4E4;&#xC774; &#xBAA8;&#xC778; &#xBC30;&#xC5F4;&#xC744; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</p>
 </blockquote>
-<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><ul>
-<li>이 메소드는 배열의 모든 원소에 대해 콜백함수를 적용하여 boolean을 받아 true인 경우의 원소만을 모아 배열에 넣어 리턴하는 JavaScript Array 메소드다.</li>
-<li>filter의 콜백 함수는 true나 false를 반환해야 filter가 제대로 작동할 수 있다.<ul>
-<li>currentValue, index, array, thisArg의 파라미터들을 filter의 콜백함수가 사용하며 map과 동일한 기능을 한다.<h4 id="코드예제-2"><a href="#코드예제-2" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBiggerThanTen</span>(<span class="params">value</span>) </span>&#123;<span class="keyword">return</span> value &gt; <span class="number">10</span>&#125;</span><br><span class="line"><span class="keyword">let</span> filtered = [<span class="number">10</span>, <span class="number">11</span>, <span class="number">112</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBiggerThanTen);</span><br><span class="line"><span class="comment">// filtered = [11, 112, 130, 44]</span></span><br></pre></td></tr></table></figure>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><ul class="ui list">
+<li>&#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xC5D0; &#xB300;&#xD574; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xC5EC; boolean&#xC744; &#xBC1B;&#xC544; true&#xC778; &#xACBD;&#xC6B0;&#xC758; &#xC6D0;&#xC18C;&#xB9CC;&#xC744; &#xBAA8;&#xC544; &#xBC30;&#xC5F4;&#xC5D0; &#xB123;&#xC5B4; &#xB9AC;&#xD134;&#xD558;&#xB294; JavaScript Array &#xBA54;&#xC18C;&#xB4DC;&#xB2E4;.</li>
+<li>filter&#xC758; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB294; true&#xB098; false&#xB97C; &#xBC18;&#xD658;&#xD574;&#xC57C; filter&#xAC00; &#xC81C;&#xB300;&#xB85C; &#xC791;&#xB3D9;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>currentValue, index, array, thisArg&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB4E4;&#xC744; filter&#xC758; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xAC00; &#xC0AC;&#xC6A9;&#xD558;&#xBA70; map&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD55C;&#xB2E4;.<h4 id="&#xCF54;&#xB4DC;&#xC608;&#xC81C;-2"><a href="#&#xCF54;&#xB4DC;&#xC608;&#xC81C;-2" class="headerlink" title="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"></a>&#xCF54;&#xB4DC;&#xC608;&#xC81C;</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBiggerThanTen</span>(<span class="params">value</span>) </span>{<span class="keyword">return</span> value &gt; <span class="number">10</span>}</span><br><span class="line"><span class="keyword">let</span> filtered = [<span class="number">10</span>, <span class="number">11</span>, <span class="number">112</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBiggerThanTen);</span><br><span class="line"><span class="comment">// filtered = [11, 112, 130, 44]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>위의 코드를 실행하면 10은 콜백함수에서 false를, 11은 콜백함수에서 true를 리턴할 것이다. 이러한 행위를 모든 원소에 적용하면 <code>false, true, true, false, true, true</code>가 계산될 것이다. 여기서 true의 값을 리턴한 <code>11, 112, 130, 44</code>만 <code>filtered</code>변수에 반환될 것이다.</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; 10&#xC740; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC5D0;&#xC11C; false&#xB97C;, 11&#xC740; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC5D0;&#xC11C; true&#xB97C; &#xB9AC;&#xD134;&#xD560; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD589;&#xC704;&#xB97C; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xC5D0; &#xC801;&#xC6A9;&#xD558;&#xBA74; <code>false, true, true, false, true, true</code>&#xAC00; &#xACC4;&#xC0B0;&#xB420; &#xAC83;&#xC774;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; true&#xC758; &#xAC12;&#xC744; &#xB9AC;&#xD134;&#xD55C; <code>11, 112, 130, 44</code>&#xB9CC; <code>filtered</code>&#xBCC0;&#xC218;&#xC5D0; &#xBC18;&#xD658;&#xB420; &#xAC83;&#xC774;&#xB2E4;.</p>
 </blockquote>
-<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><ul>
-<li>이 메소드는 배열의 각 원소마다 reducer라고 불리우는 콜백함수를 진행하고 마지막엔 하나의 결과를 반환하는 JavaScirpt Array의 메소드이다.</li>
-<li>배열 메소드 중 매우 활용도가 높다고 불려진다.</li>
-<li>위의 reducer는 네 개의 파라미터를 다룬다.<ul>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><ul class="ui list">
+<li>&#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC6D0;&#xC18C;&#xB9C8;&#xB2E4; reducer&#xB77C;&#xACE0; &#xBD88;&#xB9AC;&#xC6B0;&#xB294; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC9C4;&#xD589;&#xD558;&#xACE0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D4; &#xD558;&#xB098;&#xC758; &#xACB0;&#xACFC;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; JavaScirpt Array&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xC774;&#xB2E4;.</li>
+<li>&#xBC30;&#xC5F4; &#xBA54;&#xC18C;&#xB4DC; &#xC911; &#xB9E4;&#xC6B0; &#xD65C;&#xC6A9;&#xB3C4;&#xAC00; &#xB192;&#xB2E4;&#xACE0; &#xBD88;&#xB824;&#xC9C4;&#xB2E4;.</li>
+<li>&#xC704;&#xC758; reducer&#xB294; &#xB124; &#xAC1C;&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xB2E4;&#xB8EC;&#xB2E4;.<ul>
 <li>accumulator, currentValue, currentIndex, originalArray</li>
 </ul>
 </li>
-<li>reducer가 실행될때마다 결과값은 accumulator에 할당된다.<h4 id="코드예제-3"><a href="#코드예제-3" class="headerlink" title="코드예제"></a>코드예제</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">accumulator, currentValue, currentIndex, array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> accumulator + currentValue;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<li>reducer&#xAC00; &#xC2E4;&#xD589;&#xB420;&#xB54C;&#xB9C8;&#xB2E4; &#xACB0;&#xACFC;&#xAC12;&#xC740; accumulator&#xC5D0; &#xD560;&#xB2F9;&#xB41C;&#xB2E4;.<h4 id="&#xCF54;&#xB4DC;&#xC608;&#xC81C;-3"><a href="#&#xCF54;&#xB4DC;&#xC608;&#xC81C;-3" class="headerlink" title="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"></a>&#xCF54;&#xB4DC;&#xC608;&#xC81C;</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">accumulator, currentValue, currentIndex, array</span>) </span>{</span><br><span class="line">  <span class="keyword">return</span> accumulator + currentValue;</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>위의 코드를 실행하면 배열의 각 원소마다 reducer가 실행되고 reducer가 리턴하는 accumulator + currentValue값이 다음 번의 reducer실행에서 accumulator로 할당되어 실행된다. 제일 마지막에 accumulator의 값이 최종적으로 리턴된다.</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC6D0;&#xC18C;&#xB9C8;&#xB2E4; reducer&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xACE0; reducer&#xAC00; &#xB9AC;&#xD134;&#xD558;&#xB294; accumulator + currentValue&#xAC12;&#xC774; &#xB2E4;&#xC74C; &#xBC88;&#xC758; reducer&#xC2E4;&#xD589;&#xC5D0;&#xC11C; accumulator&#xB85C; &#xD560;&#xB2F9;&#xB418;&#xC5B4; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;. &#xC81C;&#xC77C; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; accumulator&#xC758; &#xAC12;&#xC774; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xB9AC;&#xD134;&#xB41C;&#xB2E4;.</p>
 </blockquote>
-<p>reduce를 자세히 보면 map과 비슷한 작동방식이 있다는 것을 알 수 있다. 밑은 mdn에서 예시로 보여주는 reduce로 만드는 map메소드다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.mapUsingReduce) &#123;</span><br><span class="line">  <span class="built_in">Array</span>.prototype.mapUsingReduce = <span class="function"><span class="keyword">function</span>(<span class="params">callback, thisArg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">mappedArray, currentValue, index, array</span>) </span>&#123;</span><br><span class="line">      mappedArray[index] = callback.call(thisArg, currentValue, index, array);</span><br><span class="line">      <span class="keyword">return</span> mappedArray;</span><br><span class="line">    &#125;, []);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="some"><a href="#some" class="headerlink" title="some"></a>some</h2><ul>
-<li>some 메소드는 배열의 각 원소가 콜백함수의 판별을 통과하는지 확인하고 만약 하나라도 통과하는 경우에는 최종적으로 true를 리턴하고 그렇지 않다면 false를 리턴한다.</li>
-<li>some의 콜백함수가 다루는 파라미터는 forEach와 동일하다.<ul>
-<li>currentValue, index, array, thisArg<h3 id="코드예제-4"><a href="#코드예제-4" class="headerlink" title="코드예제"></a>코드예제</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>);  <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>reduce&#xB97C; &#xC790;&#xC138;&#xD788; &#xBCF4;&#xBA74; map&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xC791;&#xB3D9;&#xBC29;&#xC2DD;&#xC774; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;. &#xBC11;&#xC740; mdn&#xC5D0;&#xC11C; &#xC608;&#xC2DC;&#xB85C; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; reduce&#xB85C; &#xB9CC;&#xB4DC;&#xB294; map&#xBA54;&#xC18C;&#xB4DC;&#xB2E4;.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.mapUsingReduce) {</span><br><span class="line">  <span class="built_in">Array</span>.prototype.mapUsingReduce = <span class="function"><span class="keyword">function</span>(<span class="params">callback, thisArg</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">mappedArray, currentValue, index, array</span>) </span>{</span><br><span class="line">      mappedArray[index] = callback.call(thisArg, currentValue, index, array);</span><br><span class="line">      <span class="keyword">return</span> mappedArray;</span><br><span class="line">    }, []);</span><br><span class="line">  };</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<h2 id="some"><a href="#some" class="headerlink" title="some"></a>some</h2><ul class="ui list">
+<li>some &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC6D0;&#xC18C;&#xAC00; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC758; &#xD310;&#xBCC4;&#xC744; &#xD1B5;&#xACFC;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xACE0; &#xB9CC;&#xC57D; &#xD558;&#xB098;&#xB77C;&#xB3C4; &#xD1B5;&#xACFC;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; true&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; false&#xB97C; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</li>
+<li>some&#xC758; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xAC00; &#xB2E4;&#xB8E8;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; forEach&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xB2E4;.<ul>
+<li>currentValue, index, array, thisArg<h3 id="&#xCF54;&#xB4DC;&#xC608;&#xC81C;-4"><a href="#&#xCF54;&#xB4DC;&#xC608;&#xC81C;-4" class="headerlink" title="&#xCF54;&#xB4DC;&#xC608;&#xC81C;"></a>&#xCF54;&#xB4DC;&#xC608;&#xC81C;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>);  <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt; <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>위의 코드는 배열의 각 원소가 10보다 큰 수인지 확인하여 true/false를 리턴하는 콜백함수를 통과한 후 하나라도 true값을 가지게된다면 최종적으로 true를 반환한다.</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC6D0;&#xC18C;&#xAC00; 10&#xBCF4;&#xB2E4; &#xD070; &#xC218;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC5EC; true/false&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xB294; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xD1B5;&#xACFC;&#xD55C; &#xD6C4; &#xD558;&#xB098;&#xB77C;&#xB3C4; true&#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xAC8C;&#xB41C;&#xB2E4;&#xBA74; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; true&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
 </blockquote>
-<h2 id="every"><a href="#every" class="headerlink" title="every"></a>every</h2><ul>
-<li>every 메소드는 some과 매우 흡사한 기능을 하지만 모든 원소가 콜백함수를 통해 true값을 가질때만 최종적으로 true를 리턴하고 나머지 경우엔 false를 리턴한다.</li>
-<li>빈 배열에서 사용하면 무조건 true를 반환한다.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="every"><a href="#every" class="headerlink" title="every"></a>every</h2><ul class="ui list">
+<li>every &#xBA54;&#xC18C;&#xB4DC;&#xB294; some&#xACFC; &#xB9E4;&#xC6B0; &#xD761;&#xC0AC;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xC9C0;&#xB9CC; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xAC00; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; true&#xAC12;&#xC744; &#xAC00;&#xC9C8;&#xB54C;&#xB9CC; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; true&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xB098;&#xBA38;&#xC9C0; &#xACBD;&#xC6B0;&#xC5D4; false&#xB97C; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</li>
+<li>&#xBE48; &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBB34;&#xC870;&#xAC74; true&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">elem</span> =&gt;</span> elem &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>두 배열 중 위 배열에서 10보다 작은 5가 존재하므로 최종적으로 false를 리턴하고 밑의 배열은 모든 원소가 10보다 크므로 최종적으로 true를 반환한다.</p>
+<p>&#xB450; &#xBC30;&#xC5F4; &#xC911; &#xC704; &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; 10&#xBCF4;&#xB2E4; &#xC791;&#xC740; 5&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; false&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xBC11;&#xC758; &#xBC30;&#xC5F4;&#xC740; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xAC00; 10&#xBCF4;&#xB2E4; &#xD06C;&#xBBC0;&#xB85C; &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; true&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
 </blockquote>
-<h2 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h2><ul>
-<li>안정적인 프로그램을 만들기 위해 입력과 출력이 철저히 통제된 순수 함수 및 부수 효과(Side-effect)를 최소화한 함수 위주의 프로그래밍</li>
-<li>간결하고 가독성 높은 프로그램을 작성할 수 있으며 동시성 작업을 더 안전하게 구현할 수 있다.</li>
-<li>함수를 특별하게 취급하지 않는 프로그래밍 패러다임</li>
+<h2 id="&#xD568;&#xC218;&#xD615;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;"><a href="#&#xD568;&#xC218;&#xD615;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;" class="headerlink" title="&#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;"></a>&#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;</h2><ul class="ui list">
+<li>&#xC548;&#xC815;&#xC801;&#xC778; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC774; &#xCCA0;&#xC800;&#xD788; &#xD1B5;&#xC81C;&#xB41C; &#xC21C;&#xC218; &#xD568;&#xC218; &#xBC0F; &#xBD80;&#xC218; &#xD6A8;&#xACFC;(Side-effect)&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD55C; &#xD568;&#xC218; &#xC704;&#xC8FC;&#xC758; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;</li>
+<li>&#xAC04;&#xACB0;&#xD558;&#xACE0; &#xAC00;&#xB3C5;&#xC131; &#xB192;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xB3D9;&#xC2DC;&#xC131; &#xC791;&#xC5C5;&#xC744; &#xB354; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD568;&#xC218;&#xB97C; &#xD2B9;&#xBCC4;&#xD558;&#xAC8C; &#xCDE8;&#xAE09;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xD328;&#xB7EC;&#xB2E4;&#xC784;</li>
 </ul>
-<h2 id="함수형-프로그래밍에서-forEach-map-filter"><a href="#함수형-프로그래밍에서-forEach-map-filter" class="headerlink" title="함수형 프로그래밍에서 forEach, map, filter"></a>함수형 프로그래밍에서 forEach, map, filter</h2><ul>
-<li>위에서의 언급처럼 함수형 프로그래밍은 입력과 출력이 철저히 통제되며 부수 효과를 최소화 해야한다. 이는 함수가 함수 밖의 컨텍스트를 만지는 일(부수 효과)가 최소화 되야 하는데 이는 map, filter, reduce같은 배열의 메소드의 특징과 잘 맞아 떨어진다고 볼 수 있다. 그 이유는 위의 메소드들은 배열을 처리하여 새로운 배열을 리턴하고 원 배열은 그대로 두기 때문이다. 반면 forEach는 원 배열을 반드시 바꿔야 하도록 강제하는 것은 전혀 없지만 map이나 reduce처럼 새 배열을 강제하지 않고 index를 이용하면 원배열을 변경하는 것이 가능하다.</li>
+<h2 id="&#xD568;&#xC218;&#xD615;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0;&#xC11C;-forEach-map-filter"><a href="#&#xD568;&#xC218;&#xD615;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0;&#xC11C;-forEach-map-filter" class="headerlink" title="&#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0;&#xC11C; forEach, map, filter"></a>&#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0;&#xC11C; forEach, map, filter</h2><ul class="ui list">
+<li>&#xC704;&#xC5D0;&#xC11C;&#xC758; &#xC5B8;&#xAE09;&#xCC98;&#xB7FC; &#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC740; &#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC774; &#xCCA0;&#xC800;&#xD788; &#xD1B5;&#xC81C;&#xB418;&#xBA70; &#xBD80;&#xC218; &#xD6A8;&#xACFC;&#xB97C; &#xCD5C;&#xC18C;&#xD654; &#xD574;&#xC57C;&#xD55C;&#xB2E4;. &#xC774;&#xB294; &#xD568;&#xC218;&#xAC00; &#xD568;&#xC218; &#xBC16;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xB9CC;&#xC9C0;&#xB294; &#xC77C;(&#xBD80;&#xC218; &#xD6A8;&#xACFC;)&#xAC00; &#xCD5C;&#xC18C;&#xD654; &#xB418;&#xC57C; &#xD558;&#xB294;&#xB370; &#xC774;&#xB294; map, filter, reduce&#xAC19;&#xC740; &#xBC30;&#xC5F4;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xD2B9;&#xC9D5;&#xACFC; &#xC798; &#xB9DE;&#xC544; &#xB5A8;&#xC5B4;&#xC9C4;&#xB2E4;&#xACE0; &#xBCFC; &#xC218; &#xC788;&#xB2E4;. &#xADF8; &#xC774;&#xC720;&#xB294; &#xC704;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB4E4;&#xC740; &#xBC30;&#xC5F4;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; &#xBC30;&#xC5F4;&#xC744; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xC6D0; &#xBC30;&#xC5F4;&#xC740; &#xADF8;&#xB300;&#xB85C; &#xB450;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xBC18;&#xBA74; forEach&#xB294; &#xC6D0; &#xBC30;&#xC5F4;&#xC744; &#xBC18;&#xB4DC;&#xC2DC; &#xBC14;&#xAFD4;&#xC57C; &#xD558;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC804;&#xD600; &#xC5C6;&#xC9C0;&#xB9CC; map&#xC774;&#xB098; reduce&#xCC98;&#xB7FC; &#xC0C8; &#xBC30;&#xC5F4;&#xC744; &#xAC15;&#xC81C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; index&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC6D0;&#xBC30;&#xC5F4;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
 </ul>
 <h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/javascript/">javascript</a><a href="/tags/js/">js</a><a href="/tags/es6/">es6</a><a href="/tags/Array/">Array</a><a href="/tags/methods/">methods</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2019 younguna
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-</body>
-</html>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-07-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/javascript/" title="javascript">javascript </a><a class="tag" href="/tags/js/" title="js">js </a><a class="tag" href="/tags/es6/" title="es6">es6 </a><a class="tag" href="/tags/Array/" title="Array">Array </a><a class="tag" href="/tags/methods/" title="methods">methods </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/07/22/Logic-gate-endian/" title="Logic gate-endian">Previous Post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/18/es6-basics/" title="es6 basics">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
