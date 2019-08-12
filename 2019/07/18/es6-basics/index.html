@@ -1,82 +1,82 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>es6 basics · younguna</title><meta name="description" content="JavaScript ES6 Basics
-&amp;#x2018;${shape.toString()} : ${config.shapeErrorMsg}&amp;#x2019;
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>es6 basics · younguna</title><meta name="description" content="JavaScript ES6 Basics
+‘${shape.toString()} : ${config.shapeErrorMsg}’
 
-template literals : &amp;#xB0B4;&amp;#xC7A5;&amp;#xB41C; &amp;#xD45C;&amp;#xD604;&amp;#xC"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>es6 basics</a></h3></div><div class="post-content"><h1 id="JavaScript-ES6-Basics"><a href="#JavaScript-ES6-Basics" class="headerlink" title="JavaScript ES6 Basics"></a>JavaScript ES6 Basics</h1><ul class="ui list">
-<li><p>&#x2018;${shape.toString()} : ${config.shapeErrorMsg}&#x2019;</p>
+template literals : 내장된 표현식을 허용하는 문자열 리터럴로, 문자열과 문자 보간 기능을 사용할 수 있다. 실제로는 따옴표 대"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>es6 basics</a></h3></div><div class="post-content"><h1 id="JavaScript-ES6-Basics"><a href="#JavaScript-ES6-Basics" class="headerlink" title="JavaScript ES6 Basics"></a>JavaScript ES6 Basics</h1><ul>
+<li><p>‘${shape.toString()} : ${config.shapeErrorMsg}’</p>
 <ul>
-<li>template literals : &#xB0B4;&#xC7A5;&#xB41C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4;&#xB85C;, &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xBB38;&#xC790; &#xBCF4;&#xAC04; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC2E4;&#xC81C;&#xB85C;&#xB294; &#xB530;&#xC634;&#xD45C; &#xB300;&#xC2E0;&#xC5D0; backtick&#xC774; &#xC4F0;&#xC778;&#xB2E4;.</li>
+<li>template literals : 내장된 표현식을 허용하는 문자열 리터럴로, 문자열과 문자 보간 기능을 사용할 수 있다. 실제로는 따옴표 대신에 backtick이 쓰인다.</li>
 </ul>
 </li>
-<li><p>&#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xB54C; &#xD558;&#xB098;&#xC758; &#xAC1D;&#xCCB4; &#xB0B4;&#xC5D0; &#xC120;&#xC5B8;&#xD574; &#xC8FC;&#xBA74; &#xCDA9;&#xB3CC;&#xC744; &#xC5B4;&#xB290;&#xC815;&#xB3C4; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<li><p>여러 개의 전역변수를 선언할 때 하나의 객체 내에 선언해 주면 충돌을 어느정도 방지할 수 있다.</p>
 </li>
-<li><p>== &#xC640; ===&#xC758; &#xCC28;&#xC774;</p>
+<li><p>== 와 ===의 차이</p>
 <ul>
-<li>== : &#xC790;&#xB8CC;&#xD615;&#xC774; &#xB2EC;&#xB77C;&#xB3C4; &#xAC12;&#xC774; &#xAC19;&#xB2E4;&#xBA74; true </li>
-<li>=== : &#xC790;&#xB8CC;&#xD615;&#xC774; &#xAC19;&#xC73C;&#xBA74;&#xC11C; &#xAC12;&#xC774; &#xAC19;&#xC544;&#xC57C; true</li>
+<li>== : 자료형이 달라도 값이 같다면 true </li>
+<li>=== : 자료형이 같으면서 값이 같아야 true</li>
 </ul>
 </li>
 <li><p>some()</p>
 <ul>
-<li>array.some( ~~ ) &#xBC30;&#xC5F4; &#xB0B4;&#xC758; &#xAC12; &#xC911; &#xD558;&#xB098; &#xC774;&#xC0C1; ~~&#xC758; &#xC870;&#xAC74;&#xC744; &#xB9CC;&#xC871;&#xD55C;&#xB2E4;&#xBA74; true&#xB97C; &#xBC18;&#xD658;</li>
+<li>array.some( ~~ ) 배열 내의 값 중 하나 이상 ~~의 조건을 만족한다면 true를 반환</li>
 </ul>
 </li>
 <li><p>join()</p>
 <ul>
-<li>&#xBC30;&#xC5F4; &#xC548;&#xC758; &#xC694;&#xC18C;&#xB4E4;&#xC744; string&#xC73C;&#xB85C; &#xBC14;&#xAFD4;&#xC8FC;&#xBA70; &#xC778;&#xC790;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC2DC;&#xC5D0;&#xB294; &#xBC30;&#xC5F4;&#xC744; &#xCD9C;&#xB825;&#xD560; &#xB54C; &#xC0AC;&#xC774;&#xC5D0; &#xC778;&#xC790;&#xB97C; &#xD568;&#xAED8; &#xCD9C;&#xB825;&#xD574;&#xC900;&#xB2E4;</li>
+<li>배열 안의 요소들을 string으로 바꿔주며 인자를 전달할 시에는 배열을 출력할 때 사이에 인자를 함께 출력해준다</li>
 </ul>
 </li>
-<li><p>&#xC608;&#xC678;&#xCC98;&#xB9AC;&#xB97C; &#xD560; &#xB54C;, if&#xBB38;&#xC73C;&#xB85C; &#xC608;&#xC678;&#xB97C; throw&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; throw&#xD558;&#xB294; &#xC608;&#xC678;&#xB97C; catch&#xD588;&#xC744; &#xB54C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xB2E4;.</p>
+<li><p>예외처리를 할 때, if문으로 예외를 throw하는 방법도 있지만 프로그램에서 기본적으로 throw하는 예외를 catch했을 때 처리하는 방법도 있다.</p>
 </li>
-<li><p>&#xC5B4;&#xB5A4; &#xBCC0;&#xC218;&#xB97C; &#xB85C;&#xCEEC;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;, var &#xBCF4;&#xB2E4;&#xB294; let&#xACFC; const&#xB85C; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xCABD;&#xC774; &#xC88B;&#xB2E4;.</p>
+<li><p>어떤 변수를 로컬변수로 사용할 때, var 보다는 let과 const로 선언하는 쪽이 좋다.</p>
 </li>
-<li><p>var&#xC640; let&#xC758; &#xC2A4;&#xCF54;&#xD504; &#xCC28;&#xC774;</p>
+<li><p>var와 let의 스코프 차이</p>
 <ul>
-<li>var&#xB294; &#xBE14;&#xB85D;&#xB2E8;&#xC704;&#xC758; &#xC9C0;&#xC5ED;&#xC2A4;&#xCF54;&#xD504;&#xB97C; &#xBCF4;&#xC7A5;&#xD574; &#xC8FC;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; let&#xC740; &#xBCF4;&#xC7A5;&#xD574; &#xC900;&#xB2E4;.</li>
+<li>var는 블록단위의 지역스코프를 보장해 주지 않지만 let은 보장해 준다.</li>
 </ul>
 </li>
-<li><p>&#xCF54;&#xB4DC; &#xB0B4;&#xC5D0;&#xC11C; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xB370;&#xC5D0; &#xC601;&#xD5A5;&#xC740; &#xC5C6;&#xB354;&#xB77C;&#xB3C4; &#xD615;&#xC2DD;&#xC744; &#xD1B5;&#xC77C;&#xD574; &#xC8FC;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
+<li><p>코드 내에서 동작하는 데에 영향은 없더라도 형식을 통일해 주는 것이 좋다.</p>
 <ul>
-<li>ex ) &#x201C;&#x3147;&#x201D; &#xC640; &#x2018;&#x3147;&#x2019; &#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC88B;&#xC9C0; &#xC54A;&#xB2E4;.</li>
+<li>ex ) “ㅇ” 와 ‘ㅇ’ 를 같이 사용하는 것은 좋지 않다.</li>
 </ul>
 </li>
 </ul>
-<ul class="ui list">
-<li><p>&#xD568;&#xC218;&#xD45C;&#xD604;&#xBC29;&#xBC95;</p>
 <ul>
-<li><p>&#xC77C;&#xBC18;&#xC801; &#xD568;&#xC218; &#xD45C;&#xD604;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>{ </span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&apos;&#x3147;&apos;</span>); </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<li><p>함수표현방법</p>
+<ul>
+<li><p>일반적 함수 표현</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'ㅇ'</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#xBCC0;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xD568;&#xC218; &#xD45C;&#xD604;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&apos;&#x3147;&apos;</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<li><p>변수를 이용한 함수 표현</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'ㅇ'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>arrow function</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getName = <span class="function">(<span class="params">name</span>) =&gt;</span> <span class="string">&quot;Kim &quot;</span> + name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getName = <span class="function">(<span class="params">name</span>) =&gt;</span> <span class="string">"Kim "</span> + name;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>&#xC21C;&#xC218;&#xD568;&#xC218;</p>
+<li><p>순수함수</p>
 <ul>
-<li>&#xB3D9;&#xC77C;&#xD55C; &#xC778;&#xC790;&#xB97C; &#xC8FC;&#xC5C8;&#xC744; &#xB54C; &#xD56D;&#xC0C1; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD568;&#xC218;</li>
-<li>&#xD568;&#xC218;&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC678;&#xBD80; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4; ( &#xBD80;&#xC218; &#xD6A8;&#xACFC;&#xAC00; &#xC5C6;&#xB2E4; )</li>
-<li>&#xC7A5;&#xC810;<ul>
-<li>&#xC7AC;&#xC0AC;&#xC6A9;&#xC131;&#xC774; &#xB192;&#xB2E4;</li>
-<li>&#xC785;&#xB825;&#xACFC; &#xACB0;&#xACFC;&#xAC00; &#xBD84;&#xB9AC;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C; &#xC5B4;&#xB5BB;&#xAC8C; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xC9C0; &#xC2E0;&#xACBD; &#xC4F8; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;.</li>
+<li>동일한 인자를 주었을 때 항상 같은 값을 반환하는 함수</li>
+<li>함수가 자체적으로 외부 상태를 변경하지 않는다 ( 부수 효과가 없다 )</li>
+<li>장점<ul>
+<li>재사용성이 높다</li>
+<li>입력과 결과가 분리되어 있어서 어떻게 사용되는지 신경 쓸 필요가 없다.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>ES2015&#xC5D0;&#xC11C;&#xC758; &#xC720;&#xC6A9;&#xD55C; &#xBB38;&#xBC95;</p>
+<li><p>ES2015에서의 유용한 문법</p>
 <ul>
-<li>&#xAD6C;&#xC870; &#xBD84;&#xD574; &#xD560;&#xB2F9;</li>
+<li>구조 분해 할당</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b] = arr;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>&#xC704;&#xC640; &#xAC19;&#xC740; &#xAD6C;&#xC870;&#xB85C; &#xC800;&#xC7A5;&#xB41C; &#xAC12;&#xB4E4;&#xC744; &#xB2E4;&#xB978; &#xBCC0;&#xC218;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xB54C; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xCF54;&#xB4DC;&#xB97C; &#xC904;&#xC774;&#xBA74;&#xC11C; &#xAC04;&#xACB0;&#xD558;&#xAC8C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;.<br><code>[arr[0], arr[1]] = [arr[1], arr[0]]</code> &#xC640; &#xAC19;&#xC774; swap&#xB3C4; &#xAC00;&#xB2A5;</p>
+<p>위와 같은 구조로 저장된 값들을 다른 변수에 할당할 때 불필요한 코드를 줄이면서 간결하게 작성할 수 있다.<br><code>[arr[0], arr[1]] = [arr[1], arr[0]]</code> 와 같이 swap도 가능</p>
 </blockquote>
-<ul class="ui list">
+<ul>
 <li>arrow function</li>
 <li>template literals</li>
 </ul>

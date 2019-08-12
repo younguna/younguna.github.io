@@ -1,37 +1,37 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Linear Algebra for ML · younguna</title><meta name="description" content="2. Linear Algebra
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Linear Algebra for ML · younguna</title><meta name="description" content="2. Linear Algebra
 2.1 Scalars, Vectors, Matrices and Tensors
-Scalars : &amp;#xC2A4;&amp;#xCE7C;&amp;#xB77C;&amp;#xB294; &amp;#xC120;&amp;#xD615;&amp;#xC218;&amp;#xD559;&amp;#xC5D0;&amp;#xC11"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Linear Algebra for ML</a></h3></div><div class="post-content"><p><hr></p>
+Scalars : 스칼라는 선형수학에서 보는 형태와 달리 하나의 단어로 표현되며 주로 이탈릭체를 사용한다. 실수인지 자연수인지 등의 어떤 형태의 수인지 주로 함"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Linear Algebra for ML</a></h3></div><div class="post-content"><p><hr></p>
 <h1 id="2-Linear-Algebra"><a href="#2-Linear-Algebra" class="headerlink" title="2. Linear Algebra"></a>2. Linear Algebra</h1><p><hr></p>
-<h2 id="2-1-Scalars-Vectors-Matrices-and-Tensors"><a href="#2-1-Scalars-Vectors-Matrices-and-Tensors" class="headerlink" title="2.1 Scalars, Vectors, Matrices and Tensors"></a>2.1 Scalars, Vectors, Matrices and Tensors</h2><ul class="ui list">
-<li><strong>Scalars</strong> : &#xC2A4;&#xCE7C;&#xB77C;&#xB294; &#xC120;&#xD615;&#xC218;&#xD559;&#xC5D0;&#xC11C; &#xBCF4;&#xB294; &#xD615;&#xD0DC;&#xC640; &#xB2EC;&#xB9AC; &#xD558;&#xB098;&#xC758; &#xB2E8;&#xC5B4;&#xB85C; &#xD45C;&#xD604;&#xB418;&#xBA70; &#xC8FC;&#xB85C; &#xC774;&#xD0C8;&#xB9AD;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC2E4;&#xC218;&#xC778;&#xC9C0; &#xC790;&#xC5F0;&#xC218;&#xC778;&#xC9C0; &#xB4F1;&#xC758; &#xC5B4;&#xB5A4; &#xD615;&#xD0DC;&#xC758; &#xC218;&#xC778;&#xC9C0; &#xC8FC;&#xB85C; &#xD568;&#xAED8; &#xC11C;&#xC220;&#xD558;&#xC5EC; &#xC900;&#xB2E4;. &#xC608;) <em>a</em></li>
-<li><strong>Vectors</strong> : &#xC218;&#xC758; &#xC5F4;&#xB85C; &#xB418;&#xC5B4;&#xC788;&#xB294; &#xD615;&#xD0DC;&#xB97C; &#xAC00;&#xC9C4;&#xB2E4;. &#xAC01; &#xC218;(element)&#xB294; &#xC778;&#xB371;&#xC2A4;&#xB85C; &#xADF8; &#xC21C;&#xC11C;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xBA70; &#xBCA1;&#xD130;&#xB294; &#xC8FC;&#xB85C; &#xC18C;&#xBB38;&#xC790;&#xC5D0; &#xAD75;&#xC740;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<h2 id="2-1-Scalars-Vectors-Matrices-and-Tensors"><a href="#2-1-Scalars-Vectors-Matrices-and-Tensors" class="headerlink" title="2.1 Scalars, Vectors, Matrices and Tensors"></a>2.1 Scalars, Vectors, Matrices and Tensors</h2><ul>
+<li><strong>Scalars</strong> : 스칼라는 선형수학에서 보는 형태와 달리 하나의 단어로 표현되며 주로 이탈릭체를 사용한다. 실수인지 자연수인지 등의 어떤 형태의 수인지 주로 함께 서술하여 준다. 예) <em>a</em></li>
+<li><strong>Vectors</strong> : 수의 열로 되어있는 형태를 가진다. 각 수(element)는 인덱스로 그 순서를 표현하며 벡터는 주로 소문자에 굵은체를 사용한다.</li>
 </ul>
-<script type="math/tex; mode=display">\mathbf{x} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}</script><ul class="ui list">
-<li><p><strong>Matrices</strong> : &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB294; &#xBCA1;&#xD130;&#xB97C; &#xC606;&#xC73C;&#xB85C; &#xBD99;&#xC778; &#xD615;&#xD0DC;&#xB85C; 2&#xCC28;&#xC6D0;&#xC758; &#xBC30;&#xC5F4;&#xC744; &#xAC00;&#xC9C4;&#xB2E4;. &#xAC01; &#xC218;(element)&#xB294; &#xB450;&#xAC1C;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xB85C; &#xAD6C;&#xBD84;&#xB420;&#xC218; &#xC788;&#xB2E4;. <em>A</em>&#x2004;=&#x2004;3 &gt; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4; A&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xD589;&#xACFC; &#xB450; &#xBC88;&#xC9F8; &#xC5F4;&#xC758; &#xC218;&#xB294; 3&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<script type="math/tex; mode=display">\mathbf{x} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}</script><ul>
+<li><p><strong>Matrices</strong> : 매트릭스는 벡터를 옆으로 붙인 형태로 2차원의 배열을 가진다. 각 수(element)는 두개의 인덱스로 구분될수 있다. <em>A</em> = 3 &gt; 매트릭스 A의 첫 번째 행과 두 번째 열의 수는 3이라는 것을 의미한다.</p>
 <script type="math/tex; mode=display">\mathbf{A} = \begin{bmatrix} A_{1,1}\ A_{1,2} \\ A_{2,1}\ A_{2,2} \\ \vdots \\ A_{n,1}\ A_{n,2} \end{bmatrix}</script></li>
-<li><p><strong>Tensors</strong> : &#xC5B4;&#xB5A4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC6B0;&#xB9AC;&#xB294; 2&#xCC28;&#xC6D0; &#xC774;&#xC0C1;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xC218;&#xC758; &#xD615;&#xD0DC;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;. &#xD150;&#xC11C;&#xB97C; &#xC27D;&#xAC8C; &#xC0DD;&#xAC01;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xAC01; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xAC00; element&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; vector&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xC0C1;&#xC0C1;&#xD558;&#xAE30; &#xC27D;&#xB2E4;. &#xC120;&#xD615;&#xB300;&#xC218;&#xD559;&#xC5D0;&#xC11C; &#xC2A4;&#xCE7C;&#xB77C;&#xB294; rank 0&#xC758; &#xD150;&#xC11C;, &#xBCA1;&#xD130;&#xB294; rank 1&#xC758; &#xD150;&#xC11C;, &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB294; rank 2&#xC758; &#xD150;&#xC11C;&#xC774;&#xB2E4;. Arial &#xD3F0;&#xD2B8;&#xC758; &#xAD75;&#xC740; &#xAD75;&#xAE30;&#xB85C; &#xD150;&#xC11C;&#xB97C; &#xD45C;&#xD604;&#xD55C;&#xB2E4;.</p>
+<li><p><strong>Tensors</strong> : 어떤 경우에는 우리는 2차원 이상으로 이루어진 수의 형태가 필요하다. 텐서를 쉽게 생각하기 위해서는 각 매트릭스가 element로 이루어진 vector를 생각하면 상상하기 쉽다. 선형대수학에서 스칼라는 rank 0의 텐서, 벡터는 rank 1의 텐서, 매트릭스는 rank 2의 텐서이다. Arial 폰트의 굵은 굵기로 텐서를 표현한다.</p>
 </li>
-<li><strong>main diagonal</strong> : &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC67C;&#xCABD;, &#xAC00;&#xC7A5; &#xC704;&#xCABD;&#xBD80;&#xD130; &#xD558;&#xB098;&#xC529; &#xB0B4;&#xB824;&#xC624;&#xBA70; &#xD558;&#xB098;&#xC529; &#xC624;&#xB978;&#xCABD;&#xC73C;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xBA70; &#xB9CC;&#xB098;&#xB294; element&#xB4E4;&#xC758; &#xC9D1;&#xD569;&#xC744; main diagonal&#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</li>
-<li><p><strong>transpose</strong> : &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD55C; operation&#xC911; &#xD558;&#xB098;&#xC774;&#xBA70; main diagonal&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xBC18;&#xC0AC;&#xB41C; &#xD615;&#xD0DC;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xC791;&#xC5C5;&#xC774;&#xB2E4;.</p>
+<li><strong>main diagonal</strong> : 매트릭스에서 가장 왼쪽, 가장 위쪽부터 하나씩 내려오며 하나씩 오른쪽으로 이동하며 만나는 element들의 집합을 main diagonal이라고 한다.</li>
+<li><p><strong>transpose</strong> : 매트릭스에서 가장 중요한 operation중 하나이며 main diagonal를 기준으로 반사된 형태를 만드는 작업이다.</p>
 <script type="math/tex; mode=display">(A^T)_{i,j} = A_{j,i}</script></li>
-<li><p>&#xBCA1;&#xD130;&#xB294; &#xD558;&#xB098;&#xC758; &#xC5F4;&#xB85C;&#xB9CC; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xBCA1;&#xD130;&#xC5D0; Transpose&#xB97C; &#xAC00;&#xD558;&#xBA74; &#xD558;&#xB098;&#xC758; &#xD589;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xAC00; &#xB41C;&#xB2E4;.</p>
+<li><p>벡터는 하나의 열로만 이루어진 매트릭스로 볼 수 있으며 벡터에 Transpose를 가하면 하나의 행을 가지는 매트릭스가 된다.</p>
 </li>
-<li>&#xD589;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; &#xAC00;&#xB054;&#xC529; &#xC2DD;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xADF8;&#xB7F4;&#xB550; &#xB2E4;&#xC2DC; transpose&#xB97C; &#xC801;&#xC6A9;&#xD574; column vector&#xB85C; &#xBCC0;&#xD615;&#xD560; &#xC218; &#xC788;&#xB2E4;</li>
+<li>행으로 이루어진 매트릭스를 가끔씩 식에서 볼 수 있으며 그럴땐 다시 transpose를 적용해 column vector로 변형할 수 있다</li>
 </ul>
-<script type="math/tex; mode=display">\mathbf{x} = [x_1,x_2, ... x_n]^T</script><h2 id="2-2-Multiplying-Matrices-and-Vectors"><a href="#2-2-Multiplying-Matrices-and-Vectors" class="headerlink" title="2.2 Multiplying Matrices and Vectors"></a>2.2 Multiplying Matrices and Vectors</h2><ul class="ui list">
-<li><strong>matrix product</strong> : &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4; &#xACF1;&#xC758; &#xACB0;&#xACFC;&#xBB3C; A&#xAC00; $m \times n$, B&#xAC00; $n \times p$ &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC758; &#xACBD;&#xC6B0; &#xCC98;&#xB7FC; A&#xC758; &#xC5F4; &#xCC28;&#xC218;&#xC640; B&#xC758; &#xD589; &#xCC28;&#xC218;&#xAC00; &#xAC19;&#xC544;&#xC57C; $AB = C$&#xC758; &#xACBD;&#xC6B0;&#xCC98;&#xB7FC; $C (m \times p)$ &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.</li>
-<li><p>AB = C&#xAC00; &#xC131;&#xB9BD;&#xB41C;&#xB2E4;&#xACE0; BA &#xC758; &#xACF1;&#xC774; &#xC131;&#xB9BD;&#xB418;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB2E4;.</p>
+<script type="math/tex; mode=display">\mathbf{x} = [x_1,x_2, ... x_n]^T</script><h2 id="2-2-Multiplying-Matrices-and-Vectors"><a href="#2-2-Multiplying-Matrices-and-Vectors" class="headerlink" title="2.2 Multiplying Matrices and Vectors"></a>2.2 Multiplying Matrices and Vectors</h2><ul>
+<li><strong>matrix product</strong> : 매트릭스 곱의 결과물 A가 $m \times n$, B가 $n \times p$ 매트릭스의 경우 처럼 A의 열 차수와 B의 행 차수가 같아야 $AB = C$의 경우처럼 $C (m \times p)$ 매트릭스를 가질 수 있다.</li>
+<li><p>AB = C가 성립된다고 BA 의 곱이 성립되는 것이 아니다.</p>
 <script type="math/tex; mode=display">C_{i,j} = \sum_kA_{i,k}B_{k,j}</script></li>
-<li><p>&#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC758; &#xAC01; element&#xB07C;&#xB9AC; &#xACF1;&#xD558;&#xC5EC; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC740; element-wise product &#xD639;&#xC740; Hadamard product&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<li><p>매트릭스의 각 element끼리 곱하여 매트릭스를 생성하는 것은 element-wise product 혹은 Hadamard product라고 한다.</p>
 </li>
-<li>&#xBCA1;&#xD130; &#xACC4;&#xC0B0;&#xC5D0;&#xC11C; &#xC4F0;&#xC774;&#xB294; dot product&#xB294; &#xAC19;&#xC740; &#xCC28;&#xC218;&#xC758; &#xBCA1;&#xD130; x&#xC640; y&#xB97C; x&#xB97C; transpose&#xD558;&#xC5EC; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4; &#xACF1;&#xC744; &#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xB2E4;.<br>&#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC758; &#xACF1;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD2B9;&#xC9D5;&#xC744; &#xAC00;&#xC9C4;&#xB2E4;.</li>
+<li>벡터 계산에서 쓰이는 dot product는 같은 차수의 벡터 x와 y를 x를 transpose하여 매트릭스 곱을 하는 것과 같다.<br>매트릭스의 곱은 다음과 같은 특징을 가진다.</li>
 <li><p>Distributive<br>$A(B+C) = AB + AC$</p>
 </li>
 <li><p>Associative<br>$A(BC) = (AB)C$</p>
 </li>
-<li><p>&#xB2E8; commutative&#xD558;&#xC9C0; &#xC54A;&#xB2E4;.<br>$AB != BA$</p>
+<li><p>단 commutative하지 않다.<br>$AB != BA$</p>
 </li>
-<li><p>&#xD558;&#xC9C0;&#xB9CC; vector&#xC758; dot product&#xB294; commutative&#xD558;&#xB2E4;.</p>
+<li><p>하지만 vector의 dot product는 commutative하다.</p>
 <script type="math/tex; mode=display">x^Ty = y^Tx</script></li>
 <li><p>Transpose of a matrix product has a simple form</p>
 <script type="math/tex; mode=display">(AB)^T = B^TA^T</script></li>
@@ -41,119 +41,119 @@ Scalars : &amp;#xC2A4;&amp;#xCE7C;&amp;#xB77C;&amp;#xB294; &amp;#xC120;&amp;#xD6
 </li>
 </ul>
 <script type="math/tex; mode=display">Ax=b</script><p><small>$\text{where A is m x n matrix, b is m x 1 vector, and x is n x 1 vector}$</small></p>
-<h2 id="2-3-Identity-and-Inverse-Matrices"><a href="#2-3-Identity-and-Inverse-Matrices" class="headerlink" title="2.3 Identity and Inverse Matrices"></a>2.3 Identity and Inverse Matrices</h2><ul class="ui list">
-<li>matrix inversion &#xC73C;&#xB85C; matrix equation &#xC744; &#xD480; &#xC218; &#xC788;&#xB2E4;.</li>
-<li>matrix inversino&#xC744; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; Identity matrix&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xD574;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;.</li>
-<li><strong>Identity matrix</strong> : square marix&#xC774;&#xBA70; main diagonal&#xC758; &#xBAA8;&#xB4E0; element&#xC5D0;&#xB294; 1&#xC774; &#xAC12;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xBA70; &#xB098;&#xBA38;&#xC9C0; element&#xB294; 0&#xC778; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB2E4;.</li>
+<h2 id="2-3-Identity-and-Inverse-Matrices"><a href="#2-3-Identity-and-Inverse-Matrices" class="headerlink" title="2.3 Identity and Inverse Matrices"></a>2.3 Identity and Inverse Matrices</h2><ul>
+<li>matrix inversion 으로 matrix equation 을 풀 수 있다.</li>
+<li>matrix inversino을 이해하기 위해서는 Identity matrix에 대한 이해가 필요하다.</li>
+<li><strong>Identity matrix</strong> : square marix이며 main diagonal의 모든 element에는 1이 값으로 존재하며 나머지 element는 0인 매트릭스다.</li>
 </ul>
 <p>Matrix Inverse </p>
 <script type="math/tex; mode=display">A^{-1}A = I_n</script><p>solving matrix equation with inverse </p>
-<script type="math/tex; mode=display">Ax=b</script><script type="math/tex; mode=display">A^{-1}Ax = A^{-1}b</script><script type="math/tex; mode=display">I_nx = A^{-1}b</script><script type="math/tex; mode=display">x = A^{-1}b</script><ul class="ui list">
-<li>&#xAC15;&#xB825;&#xD55C; tool&#xC774;&#xC9C0;&#xB9CC; software engineering&#xC5D0;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC81C;&#xD55C;&#xC801;&#xC778; &#xAC83;&#xC774; &#xD604;&#xC2E4;&#xC774;&#xB2E4;.</li>
+<script type="math/tex; mode=display">Ax=b</script><script type="math/tex; mode=display">A^{-1}Ax = A^{-1}b</script><script type="math/tex; mode=display">I_nx = A^{-1}b</script><script type="math/tex; mode=display">x = A^{-1}b</script><ul>
+<li>강력한 tool이지만 software engineering에서는 사용하는 것이 제한적인 것이 현실이다.</li>
 </ul>
-<h2 id="2-4-Linear-Dependence-and-Span"><a href="#2-4-Linear-Dependence-and-Span" class="headerlink" title="2.4 Linear Dependence and Span"></a>2.4 Linear Dependence and Span</h2><ul class="ui list">
-<li>Inverse&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xAE30;&#xC704;&#xD574;&#xC120; Ax=b&#xC758; &#xC2DD;&#xC5D0;&#xC11C; &#xBC18;&#xB4DC;&#xC2DC; &#xB2E8; &#xD558;&#xB098;&#xC758; solution&#xC774; &#xC874;&#xC7AC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</li>
-<li><strong>Linear combination</strong> : set&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; vector&#xC758; &#xC870;&#xD569; &#xD639;&#xC740; scalar&#xB97C; &#xACF1;&#xD558;&#xC5EC; &#xC870;&#xD569;&#xD558;&#xC5EC; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B8; vector</li>
-<li><strong>Span</strong> : Linear combination&#xC758; &#xBAA8;&#xB4E0; point&#xB4E4;&#xC758; &#xC9D1;&#xD569;&#xC774;&#xB2E4;.</li>
-<li><strong>Column space / Range of A</strong> : matrix equation&#xC5D0;&#xC11C; column&#xB4E4;&#xC758; span&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
-<li><strong>Linear dependence</strong> : vector&#xB4E4;&#xC774; &#xAC01;&#xAC01; &#xC11C;&#xB85C;&#xC11C;&#xB85C; Linear combination&#xC774; &#xC544;&#xB2CC; &#xC0C1;&#xD0DC;&#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
+<h2 id="2-4-Linear-Dependence-and-Span"><a href="#2-4-Linear-Dependence-and-Span" class="headerlink" title="2.4 Linear Dependence and Span"></a>2.4 Linear Dependence and Span</h2><ul>
+<li>Inverse가 존재하기위해선 Ax=b의 식에서 반드시 단 하나의 solution이 존재해야 한다.</li>
+<li><strong>Linear combination</strong> : set에 존재하는 vector의 조합 혹은 scalar를 곱하여 조합하여 만들어낸 vector</li>
+<li><strong>Span</strong> : Linear combination의 모든 point들의 집합이다.</li>
+<li><strong>Column space / Range of A</strong> : matrix equation에서 column들의 span을 의미한다.</li>
+<li><strong>Linear dependence</strong> : vector들이 각각 서로서로 Linear combination이 아닌 상태를 의미한다.</li>
 </ul>
-<p>&#xC885;&#xD569;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xAC00; inverse&#xAC00; &#xB418;&#xB824;&#xBA74;&#x2026; </p>
-<ul class="ui list">
-<li>solution&#xC774; &#xD558;&#xB098;&#xB9CC; &#xC874;&#xC7AC;</li>
-<li>A &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xAC00; &#xCD5C;&#xB300; m column&#xC774; &#xC874;&#xC7AC;</li>
-<li>&#xC885;&#xD569;&#xD558;&#xBA74; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xAC00; square&#xC758; &#xD615;&#xD0DC;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4; &#x21D2; m = n</li>
+<p>종합적으로 매트릭스가 inverse가 되려면… </p>
+<ul>
+<li>solution이 하나만 존재</li>
+<li>A 매트릭스가 최대 m column이 존재</li>
+<li>종합하면 매트릭스가 square의 형태여야 한다 ⇒ m = n</li>
 <li><strong>Singular matrix</strong> : square matrix with linear independence</li>
-<li>singular&#xAC00; &#xC544;&#xB2C8;&#xB354;&#xB77C;&#xB3C4; solution&#xC744; &#xAD6C;&#xD560; &#xC218; &#xB294; &#xC788;&#xC9C0;&#xB9CC; matrix inversion&#xC744; &#xC4F8; &#xC218; &#xC5C6;&#xB2E4;.</li>
+<li>singular가 아니더라도 solution을 구할 수 는 있지만 matrix inversion을 쓸 수 없다.</li>
 </ul>
-<h2 id="2-5-Norms"><a href="#2-5-Norms" class="headerlink" title="2.5 Norms"></a>2.5 Norms</h2><ul class="ui list">
+<h2 id="2-5-Norms"><a href="#2-5-Norms" class="headerlink" title="2.5 Norms"></a>2.5 Norms</h2><ul>
 <li><strong>Norm</strong> : one of measuring size of vector.</li>
 </ul>
 <script type="math/tex; mode=display">L_pnorm = ||x||_p = \left( \sum_i|x_i|^p \right)^{1/p}</script><p>$\text{for p in }\mathbb{R},\ p \geq 1$</p>
-<ul class="ui list">
+<ul>
 <li>a norm is any function f that staisfies the following properties<ul>
-<li>f(x) = 0 &#x21D2; x = 0</li>
-<li>f(x+y) &#x2264; f(x) + f(y) (the Triangle Inequality)</li>
+<li>f(x) = 0 ⇒ x = 0</li>
+<li>f(x+y) ≤ f(x) + f(y) (the Triangle Inequality)</li>
 <li>for all alpha, f(alpha x) = |x|f(x)</li>
 </ul>
 </li>
 </ul>
 <p>L2 norm (Euclidean norm) </p>
-<script type="math/tex; mode=display">L_2norm = ||x||_2 = \left(\sum_i |x_i|^2\right)^{1/2}</script><p>&#xC790;&#xC8FC; &#xC4F0;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; ||x||&#xB85C; &#xB9CE;&#xC774; &#xD45C;&#xAE30;&#xB428; </p>
-<ul class="ui list">
-<li>squared L2 norm&#xC774; &#xC218;&#xD559;&#xC801;&#xC73C;&#xB85C; &#xCEF4;&#xD4E8;&#xD130;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC218;&#xC6D4;&#xD558;&#xB2E4;.</li>
+<script type="math/tex; mode=display">L_2norm = ||x||_2 = \left(\sum_i |x_i|^2\right)^{1/2}</script><p>자주 쓰이기 때문에 ||x||로 많이 표기됨 </p>
+<ul>
+<li>squared L2 norm이 수학적으로 컴퓨터로 처리하기 수월하다.</li>
 <li>the derivatives of the squared L2 norm with respect to each element of x each depend only on the corresponding element of x, while all of the derivatives of the L2 norm depend on the entire vector.</li>
 </ul>
 <p><strong>L1 norm</strong></p>
-<script type="math/tex; mode=display">L_1norm = ||x||_1 = \sum_i|x_i|</script><ul class="ui list">
-<li>L1 norm &#xC740; zero&#xC640; nonzero&#xC758; &#xCC28;&#xC774;&#xAC00; &#xC911;&#xC694;&#xD560;&#xB54C; ML&#xC5D0;&#xC11C; &#xC790;&#xC8FC; &#xC4F0;&#xC778;&#xB2E4;.</li>
+<script type="math/tex; mode=display">L_1norm = ||x||_1 = \sum_i|x_i|</script><ul>
+<li>L1 norm 은 zero와 nonzero의 차이가 중요할때 ML에서 자주 쓰인다.</li>
 </ul>
 <p><strong>Max norm</strong> </p>
-<script type="math/tex; mode=display">||x||_\infty = \max_i|x_i|</script><p>||<em>x</em>||&#x221E;&#x2004;=&#x2004;max<em>i</em>|<em>xi</em>| </p>
+<script type="math/tex; mode=display">||x||_\infty = \max_i|x_i|</script><p>||<em>x</em>||∞ = max<em>i</em>|<em>xi</em>| </p>
 <p><strong>Frobenius norm</strong> - size of matrix</p>
-<script type="math/tex; mode=display">||A||_F = \sqrt{\sum_{i,j}A^{2}_{i,j}}</script><ul class="ui list">
-<li>&#xBCA1;&#xD130;&#xC758; L2 norm&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xD615;&#xD0DC;&#xB97C; &#xAC00;&#xC9C4;&#xB2E4;.</li>
+<script type="math/tex; mode=display">||A||_F = \sqrt{\sum_{i,j}A^{2}_{i,j}}</script><ul>
+<li>벡터의 L2 norm과 비슷한 형태를 가진다.</li>
 </ul>
-<p>&#xB450; &#xBCA1;&#xD130;&#xC758; dot product&#xB97C; norm&#xC758; &#xD615;&#xD0DC;&#xB85C; &#xB2E4;&#xC2DC; &#xC4F4; &#xD615;&#xD0DC; </p>
-<script type="math/tex; mode=display">x^Ty = ||x||_2||y||_2cos\theta</script><ul class="ui list">
-<li><em>&#x3B8;</em> &#xB294; x&#xC640; y &#xC0AC;&#xC774;&#xC758; &#xAC01;&#xB3C4;&#xC774;&#xB2E4;.</li>
+<p>두 벡터의 dot product를 norm의 형태로 다시 쓴 형태 </p>
+<script type="math/tex; mode=display">x^Ty = ||x||_2||y||_2cos\theta</script><ul>
+<li><em>θ</em> 는 x와 y 사이의 각도이다.</li>
 </ul>
-<h2 id="2-6-Sepcial-Kinds-of-Matrices-and-Vectors"><a href="#2-6-Sepcial-Kinds-of-Matrices-and-Vectors" class="headerlink" title="2.6 Sepcial Kinds of Matrices and Vectors"></a>2.6 Sepcial Kinds of Matrices and Vectors</h2><ul class="ui list">
-<li><strong>unit vector</strong> : unit norm&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xBCA1;&#xD130;</li>
+<h2 id="2-6-Sepcial-Kinds-of-Matrices-and-Vectors"><a href="#2-6-Sepcial-Kinds-of-Matrices-and-Vectors" class="headerlink" title="2.6 Sepcial Kinds of Matrices and Vectors"></a>2.6 Sepcial Kinds of Matrices and Vectors</h2><ul>
+<li><strong>unit vector</strong> : unit norm을 가지는 벡터</li>
 </ul>
-<script type="math/tex; mode=display">||x||_2 = 1</script><ul class="ui list">
-<li>orthogonal : &#xBCA1;&#xD130; x&#xC640; &#xBCA1;&#xD130;y&#xAC00; x^Ty = 0&#xC758; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xBA74; orthogonal &#xD558;&#xB2E4;&#xACE0; &#xD55C;&#xB2E4;. &#xC9C1;&#xAD00;&#xC801;&#xC73C;&#xB85C; &#xBCA1;&#xD130; &#xCC28;&#xC6D0;&#xC5D0;&#xC11C; &#xC9C1;&#xAC01;&#xC744; &#xC774;&#xB8E8;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. orthogonal&#xC744; &#xC774;&#xB8E8;&#xACE0; unit norm&#xC744; &#xAC00;&#xC9C0;&#xBA74; <strong>orthonormal</strong>&#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</li>
-<li>orthogonal matrix: &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC758; &#xD589;&#xB4E4;&#xC774; orthonormal&#xD558;&#xACE0; &#xC5F4;&#xB4E4;&#xC774; orthonormal&#xD55C; square &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
+<script type="math/tex; mode=display">||x||_2 = 1</script><ul>
+<li>orthogonal : 벡터 x와 벡터y가 x^Ty = 0의 값을 가지면 orthogonal 하다고 한다. 직관적으로 벡터 차원에서 직각을 이루는 것을 의미한다. orthogonal을 이루고 unit norm을 가지면 <strong>orthonormal</strong>이라고 한다.</li>
+<li>orthogonal matrix: 매트릭스의 행들이 orthonormal하고 열들이 orthonormal한 square 매트릭스를 의미한다.</li>
 </ul>
 <script type="math/tex; mode=display">A^TA = AA^T = I</script><p>this implies that</p>
-<script type="math/tex; mode=display">A^{-1} = A^T</script><h2 id="2-7-Eigendecomposition-&#xACE0;&#xC720;&#xAC12;-&#xBD84;&#xD574;"><a href="#2-7-Eigendecomposition-&#xACE0;&#xC720;&#xAC12;-&#xBD84;&#xD574;" class="headerlink" title="2.7 Eigendecomposition(&#xACE0;&#xC720;&#xAC12; &#xBD84;&#xD574;)"></a>2.7 Eigendecomposition(&#xACE0;&#xC720;&#xAC12; &#xBD84;&#xD574;)</h2><ul class="ui list">
-<li>&#xC218;&#xB97C; &#xC778;&#xC218;&#xBD84;&#xD574;&#xD558;&#xB294; &#xAC83; &#xCC98;&#xB7FC; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; &#xBD84;&#xD574;&#xD558;&#xC5EC; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC758; &#xD2B9;&#xC9D5;&#xC744; &#xD55C;&#xBC88;&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xD615;&#xD0DC;&#xB85C; &#xBD84;&#xD574;&#xD55C;&#xB2E4;.</li>
-<li><strong>eigendecomposition</strong> : &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; eigenvector&#xC640; eigenvalue&#xB85C; &#xBD84;&#xD574; &#xD558;&#xB294; &#xAC83;</li>
-<li><p><strong>eigenvector</strong>: non-zero&#xBCA1;&#xD130;&#xC778; v&#xAC00; &#xB2E4;&#xC74C;&#xC744; &#xB9CC;&#xC871;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
-<script type="math/tex; mode=display">\mathbf{A}v = \lambda v</script><p>  &#xC5EC;&#xAE30;&#xC11C; lambda&#xB294; eigenvalue&#xC774;&#xBA70; eigenvector v&#xC640; &#xB9E4;&#xCE6D;&#xD55C;&#xB2E4;.</p>
+<script type="math/tex; mode=display">A^{-1} = A^T</script><h2 id="2-7-Eigendecomposition-고유값-분해"><a href="#2-7-Eigendecomposition-고유값-분해" class="headerlink" title="2.7 Eigendecomposition(고유값 분해)"></a>2.7 Eigendecomposition(고유값 분해)</h2><ul>
+<li>수를 인수분해하는 것 처럼 매트릭스를 분해하여 매트릭스의 특징을 한번에 나타내는 형태로 분해한다.</li>
+<li><strong>eigendecomposition</strong> : 매트릭스를 eigenvector와 eigenvalue로 분해 하는 것</li>
+<li><p><strong>eigenvector</strong>: non-zero벡터인 v가 다음을 만족하는 것을 의미한다.</p>
+<script type="math/tex; mode=display">\mathbf{A}v = \lambda v</script><p>  여기서 lambda는 eigenvalue이며 eigenvector v와 매칭한다.</p>
 <p>  Eigendecomposition</p>
-<script type="math/tex; mode=display">\mathbf{A} = \mathbf{V}diag(\lambda)\mathbf{V}^{-1}</script><p>  V&#xB294; Linearly independent&#xD55C; eigenvector&#xC744; &#xC606;&#xC73C;&#xB85C; &#xBD99;&#xC5EC; &#xAD6C;&#xC131;&#xD55C; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC774;&#xBA70; diag(lambda)&#xB294; &#xAC01; eigenvector&#xC5D0; &#xB9E4;&#xCE6D;&#xD558;&#xB294; eigenvalue&#xB97C; main diagonal&#xB85C; &#xAC00;&#xC9C0;&#xB294; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC774;&#xB2E4;.</p>
+<script type="math/tex; mode=display">\mathbf{A} = \mathbf{V}diag(\lambda)\mathbf{V}^{-1}</script><p>  V는 Linearly independent한 eigenvector을 옆으로 붙여 구성한 매트릭스이며 diag(lambda)는 각 eigenvector에 매칭하는 eigenvalue를 main diagonal로 가지는 매트릭스이다.</p>
 <ul>
-<li>&#xBAA8;&#xB4E0; &#xB9E4;&#xD2B8;&#xB9AC;&#xC2A4;&#xAC00; eigendecomposition&#xC774; &#xAC00;&#xB2A5; &#xD55C; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB2E4;.</li>
+<li>모든 매트리스가 eigendecomposition이 가능 한 것은 아니다.</li>
 </ul>
 </li>
 </ul>
-<p>&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xCC45;&#xC5D0;&#xC11C;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xBD84;&#xD574;&#xAC00; &#xAC00;&#xB2A5;&#xD55C; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB9CC; &#xB2E4;&#xB8EC;&#xB2E4;. &#xC2E4;&#xC218; + symmetric &#xD55C; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB294; &#xC2E4;&#xC218;&#xB85C;&#xB9CC; &#xAD6C;&#xC131;&#xB41C; eigenvector&#xC640; eigenvalue&#xB85C; &#xBD84;&#xD574;&#xD560; &#xC218; &#xC788;&#xB2E4;. </p>
-<script type="math/tex; mode=display">A = QΛQ^T</script><p>&#xC5EC;&#xAE30;&#xC11C; Q&#xB294; eigenvector&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; orthogonal matrix&#xC774;&#xBA70; Lambda&#xB294; eigenvalue&#xC758; diagonal matrix&#xC774;&#xB2E4;.</p>
-<ul class="ui list">
-<li>&#xC5EC;&#xAE30;&#xC11C; symmetric&#xD55C; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4; A&#xB294; eigendecomposition&#xC774; &#xBCF4;&#xC7A5;&#xB418;&#xC5B4;&#xC788;&#xC9C0;&#xB9CC; &#xBD84;&#xD574;&#xAC00; &#xACE0;&#xC720;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC744; &#xC218; &#xC788;&#xB2E4;.</li>
+<p>하지만 이 책에서는 간단한 분해가 가능한 매트릭스만 다룬다. 실수 + symmetric 한 매트릭스는 실수로만 구성된 eigenvector와 eigenvalue로 분해할 수 있다. </p>
+<script type="math/tex; mode=display">A = QΛQ^T</script><p>여기서 Q는 eigenvector로 이루어진 orthogonal matrix이며 Lambda는 eigenvalue의 diagonal matrix이다.</p>
+<ul>
+<li>여기서 symmetric한 매트릭스 A는 eigendecomposition이 보장되어있지만 분해가 고유하지는 않을 수 있다.</li>
 </ul>
-<h2 id="2-8-Singular-Value-Decomposition-SVD"><a href="#2-8-Singular-Value-Decomposition-SVD" class="headerlink" title="2.8 Singular Value Decomposition (SVD)"></a>2.8 Singular Value Decomposition (SVD)</h2><ul class="ui list">
-<li>Eigendecomposition&#xACFC; &#xAC19;&#xC740; &#xC131;&#xACA9;&#xC744; &#xAC00;&#xC9C0;&#xBA70; Singular Value Decomposition&#xC740; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB97C; singular vector&#xC640; singular value&#xB85C; &#xBD84;&#xD574;&#xD55C;&#xB2E4;.</li>
-<li>eigendecomposition&#xBCF4;&#xB2E4; &#xC880; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC801;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
-<li>&#xBAA8;&#xB4E0; &#xC2E4;&#xC218;&#xC758; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB294; SVD&#xAC00; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
+<h2 id="2-8-Singular-Value-Decomposition-SVD"><a href="#2-8-Singular-Value-Decomposition-SVD" class="headerlink" title="2.8 Singular Value Decomposition (SVD)"></a>2.8 Singular Value Decomposition (SVD)</h2><ul>
+<li>Eigendecomposition과 같은 성격을 가지며 Singular Value Decomposition은 매트릭스를 singular vector와 singular value로 분해한다.</li>
+<li>eigendecomposition보다 좀 더 일반적으로 적용이 가능하다.</li>
+<li>모든 실수의 매트릭스는 SVD가 가능하다.</li>
 </ul>
-<script type="math/tex; mode=display">A=UDV^T</script><ul class="ui list">
-<li>U&#xC640; V&#xB294; orthogonal matrix&#xC774;&#xB2E4;.</li>
-<li>D&#xB294; diagonal &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xC774;&#xBA70; &#xBC18;&#xB4DC;&#xC2DC; square &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4;&#xB294; &#xC544;&#xB2C8;&#xB2E4;.</li>
-<li>U&#xC758; &#xBCA1;&#xD130;&#xB4E4;&#xC740; <strong>left-singular vector</strong> V&#xC758; colmn &#xBCA1;&#xD130;&#xB4E4;&#xC740; <strong>right-sigular vector</strong>&#xB77C;&#xACE0; &#xBD88;&#xB9B0;&#xB2E4;.</li>
-<li>SVD&#xC758; &#xAC00;&#xC7A5; &#xC720;&#xC6A9;&#xD55C; &#xAE30;&#xB2A5;&#xC740; &#xBD80;&#xBD84;&#xC801;&#xC73C;&#xB85C; non-square matrix&#xB85C;&#xC758; &#xB9E4;&#xD2B8;&#xB9AD;&#xC2A4; inversion&#xC744; generalize &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</li>
+<script type="math/tex; mode=display">A=UDV^T</script><ul>
+<li>U와 V는 orthogonal matrix이다.</li>
+<li>D는 diagonal 매트릭스이며 반드시 square 매트릭스는 아니다.</li>
+<li>U의 벡터들은 <strong>left-singular vector</strong> V의 colmn 벡터들은 <strong>right-sigular vector</strong>라고 불린다.</li>
+<li>SVD의 가장 유용한 기능은 부분적으로 non-square matrix로의 매트릭스 inversion을 generalize 하는 것이다.</li>
 </ul>
-<h2 id="2-9-The-Moore-Penrose-Pseudoinverse"><a href="#2-9-The-Moore-Penrose-Pseudoinverse" class="headerlink" title="2.9 The Moore-Penrose Pseudoinverse"></a>2.9 The Moore-Penrose Pseudoinverse</h2><ul class="ui list">
-<li>Ax = y&#xB97C; &#xD480;&#xAE30; &#xC704;&#xD574; A&#xC758; inverse&#xC778; B&#xB97C; &#xAD6C;&#xD55C;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xC790;.</li>
-<li>x = By&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xAC00;&#xC838;&#xC57C;&#xD558;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C; &#xACBD;&#xC6B0; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; Moore-Penrose Pseudoinverse&#xC774;&#xB2E4;.</li>
+<h2 id="2-9-The-Moore-Penrose-Pseudoinverse"><a href="#2-9-The-Moore-Penrose-Pseudoinverse" class="headerlink" title="2.9 The Moore-Penrose Pseudoinverse"></a>2.9 The Moore-Penrose Pseudoinverse</h2><ul>
+<li>Ax = y를 풀기 위해 A의 inverse인 B를 구한다고 가정하자.</li>
+<li>x = By의 형태를 가져야하는데 이것이 불가능한 경우 적용하는 것이 Moore-Penrose Pseudoinverse이다.</li>
 </ul>
-<script type="math/tex; mode=display">A^+ = VD^+U^T</script><ul class="ui list">
-<li>&#xC5EC;&#xAE30;&#xC11C; U,D,B&#xB294; A&#xC758; SVD&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xD55C;&#xB2E4;.</li>
-<li>D+&#xB294; D&#xC758; non-zero element&#xB97C; reciprocal&#xC744; &#xCDE8;&#xD55C;&#xD6C4; transpose&#xD558;&#xC5EC; &#xAD6C;&#xD55C;&#xB2E4;.</li>
+<script type="math/tex; mode=display">A^+ = VD^+U^T</script><ul>
+<li>여기서 U,D,B는 A의 SVD를 이용하여 구한다.</li>
+<li>D+는 D의 non-zero element를 reciprocal을 취한후 transpose하여 구한다.</li>
 </ul>
-<h2 id="2-10-The-Trace-Operator"><a href="#2-10-The-Trace-Operator" class="headerlink" title="2.10 The Trace Operator"></a>2.10 The Trace Operator</h2><ul class="ui list">
-<li>trace opearator&#xB294; diagonal entry&#xB4E4;&#xC758; &#xD569;&#xC744; &#xC27D;&#xAC8C; &#xD45C;&#xD604;&#xD574; &#xC900;&#xB2E4;.</li>
+<h2 id="2-10-The-Trace-Operator"><a href="#2-10-The-Trace-Operator" class="headerlink" title="2.10 The Trace Operator"></a>2.10 The Trace Operator</h2><ul>
+<li>trace opearator는 diagonal entry들의 합을 쉽게 표현해 준다.</li>
 </ul>
-<script type="math/tex; mode=display">Tr(A)  = \sum_iA_{i,i}</script><ul class="ui list">
+<script type="math/tex; mode=display">Tr(A)  = \sum_iA_{i,i}</script><ul>
 <li>Frobenius norm</li>
 </ul>
-<script type="math/tex; mode=display">||A||_F = \sqrt{Tr(AA^T)}</script><ul class="ui list">
-<li>&#xD2B9;&#xC9D5;</li>
+<script type="math/tex; mode=display">||A||_F = \sqrt{Tr(AA^T)}</script><ul>
+<li>특징</li>
 </ul>
-<script type="math/tex; mode=display">Tr(A) = Tr(A^T) \\ Tr(ABC) = Tr(CAB) = Tr(BCA)</script><h2 id="2-11-The-Determinant"><a href="#2-11-The-Determinant" class="headerlink" title="2.11 The Determinant"></a>2.11 The Determinant</h2><ul class="ui list">
-<li>square matrix&#xAC00; &#xAC00;&#xC9C0;&#xBA70; det(A)&#xB77C;&#xACE0; &#xD45C;&#xD604;&#xB41C;&#xB2E4;. &#xD639;&#xC740; |A|&#xB77C;&#xACE0; &#xD45C;&#xD604;&#xD55C;&#xB2E4;.</li>
-<li>det(A)&#xB294; product of all eigenvalues&#xC640; &#xAC19;&#xB2E4;.</li>
+<script type="math/tex; mode=display">Tr(A) = Tr(A^T) \\ Tr(ABC) = Tr(CAB) = Tr(BCA)</script><h2 id="2-11-The-Determinant"><a href="#2-11-The-Determinant" class="headerlink" title="2.11 The Determinant"></a>2.11 The Determinant</h2><ul>
+<li>square matrix가 가지며 det(A)라고 표현된다. 혹은 |A|라고 표현한다.</li>
+<li>det(A)는 product of all eigenvalues와 같다.</li>
 </ul>
-<script type="math/tex; mode=display">| \mathbf{A}| = \left| \begin{bmatrix} a\ \ b  \\   c\ \ d \end{bmatrix} \right| = ad - bc</script><h2 id="2-12-Example-Principal-Component-Analysis"><a href="#2-12-Example-Principal-Component-Analysis" class="headerlink" title="2.12 Example: Principal Component Analysis"></a>2.12 Example: Principal Component Analysis</h2><p>Continue&#x2026;</p>
+<script type="math/tex; mode=display">| \mathbf{A}| = \left| \begin{bmatrix} a\ \ b  \\   c\ \ d \end{bmatrix} \right| = ad - bc</script><h2 id="2-12-Example-Principal-Component-Analysis"><a href="#2-12-Example-Principal-Component-Analysis" class="headerlink" title="2.12 Example: Principal Component Analysis"></a>2.12 Example: Principal Component Analysis</h2><p>Continue…</p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-04-17</span><i class="fa fa-tag"></i><a class="tag" href="/tags/수학/" title="수학">수학 </a><a class="tag" href="/tags/Machine-Learning/" title="Machine Learning">Machine Learning </a><a class="tag" href="/tags/Artificial-Intelligence/" title="Artificial Intelligence">Artificial Intelligence </a><a class="tag" href="/tags/Math/" title="Math">Math </a><a class="tag" href="/tags/Linear-Algebra/" title="Linear Algebra">Linear Algebra </a><a class="tag" href="/tags/선형대수학/" title="선형대수학">선형대수학 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/04/17/Algorithm-Kth-number/" title="Algorithm - Kth number">Previous Post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/04/16/Algorithm-Player-who-couldn-t-finish/" title="Algorithm - Player who did not finish">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

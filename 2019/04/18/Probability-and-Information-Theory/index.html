@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Probability and Information Theory · younguna</title><meta name="description" content="3. Probability and Information Theory
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Probability and Information Theory · younguna</title><meta name="description" content="3. Probability and Information Theory
 
 Preface
 Probability theory is mathmatical framework for representing uncertain statements.
 Usage in AI
-the laws"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Probability and Information Theory</a></h3></div><div class="post-content"><hr>
+the laws"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Probability and Information Theory</a></h3></div><div class="post-content"><hr>
 
 <h1 id="3-Probability-and-Information-Theory"><a href="#3-Probability-and-Information-Theory" class="headerlink" title="3. Probability and Information Theory"></a>3. Probability and Information Theory</h1><hr>
 
-<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><ul class="ui list">
+<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><ul>
 <li>Probability theory is mathmatical framework for representing uncertain statements.</li>
 <li>Usage in AI<ul>
 <li>the laws of probability tells us how AI systems should reason, so we design our algorithms to compute or approximate various expressions derived using probability theory</li>
@@ -16,14 +16,14 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 </li>
 <li>While prob theory allows us to make uncertain statements and reason in the presence of uncertainty, <strong>information theory</strong> allows us to quantify the amount of uncertainty in a prob distribution.</li>
 </ul>
-<h2 id="3-1-Why-Probability"><a href="#3-1-Why-Probability" class="headerlink" title="3.1 Why Probability"></a>3.1 Why Probability</h2><ul class="ui list">
+<h2 id="3-1-Why-Probability"><a href="#3-1-Why-Probability" class="headerlink" title="3.1 Why Probability"></a>3.1 Why Probability</h2><ul>
 <li>ML must always deal with uncertain quantities, and sometimes may also need to deal with stochastic(non-deterministic) quantities.</li>
 <li>Beyond mathematical statements that are true by definition, it is difficult to think of any proposition that is absolutely true or any event that is absolutely guaranteed to occur.</li>
 <li><p>Three possible sources of uncertainty</p>
 <ul>
 <li>Inherent stochasticity in the system being modeled</li>
 <li>Incomplete observability - we cannot observe all of the variables that drive the behavior of the system. Monty Hall problem</li>
-<li>Incomplete modeling - When we use a model that must discard some of the information we have observed, the discarded information results in uncertainty in the model&#x2019;s prediction.</li>
+<li>Incomplete modeling - When we use a model that must discard some of the information we have observed, the discarded information results in uncertainty in the model’s prediction.</li>
 </ul>
 </li>
 <li><p>In many cases, it is more practical to use a simple but uncertain rule rather than a complex but certain one, even if the true rule is deterministic and our modeling system has the fidelity to accommodate a complex rule.</p>
@@ -37,10 +37,10 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 <li>The former kind of prob, related directly to the rates at which events occur, is known as <strong>frequentist probability</strong>, while the latter, related to qualitative levels of certainty, is known as <strong>Baysian probability</strong>.</li>
 <li>probability theory provides a set of formal rules for determining the likelihood of a proposition being true given the likelihood of other propositions.</li>
 </ul>
-<h2 id="3-2-Random-Variables"><a href="#3-2-Random-Variables" class="headerlink" title="3.2 Random Variables"></a>3.2 Random Variables</h2><ul class="ui list">
+<h2 id="3-2-Random-Variables"><a href="#3-2-Random-Variables" class="headerlink" title="3.2 Random Variables"></a>3.2 Random Variables</h2><ul>
 <li><strong>random variable</strong> is a variable that can take on different values randomly.</li>
 </ul>
-<ul class="ui list">
+<ul>
 <li><p>For example, $x_1$ and $x_2$ are both possible values that the random variable $x$ can take on.</p>
 </li>
 <li><p>for vector-valued variables, we would write the random variable as x(arial font) and one of its values as $\mathbf{x}$.</p>
@@ -49,10 +49,10 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 <li>discrete rv is one that has a finite or countably infinite number of states. Not necessarily the integers.</li>
 <li>a continuous rv is associated with a real value.</li>
 </ul>
-<h2 id="3-3-Probability-Distribution"><a href="#3-3-Probability-Distribution" class="headerlink" title="3.3 Probability Distribution"></a>3.3 Probability Distribution</h2><ul class="ui list">
+<h2 id="3-3-Probability-Distribution"><a href="#3-3-Probability-Distribution" class="headerlink" title="3.3 Probability Distribution"></a>3.3 Probability Distribution</h2><ul>
 <li>A probability distribution is a description of how likely a rv or set of rvs is to take on each of its possible states.</li>
 </ul>
-<h3 id="3-3-1-Discrete-Variables-and-Probability-Mass-Functions"><a href="#3-3-1-Discrete-Variables-and-Probability-Mass-Functions" class="headerlink" title="3.3.1 Discrete Variables and Probability Mass Functions"></a>3.3.1 Discrete Variables and Probability Mass Functions</h3><ul class="ui list">
+<h3 id="3-3-1-Discrete-Variables-and-Probability-Mass-Functions"><a href="#3-3-1-Discrete-Variables-and-Probability-Mass-Functions" class="headerlink" title="3.3.1 Discrete Variables and Probability Mass Functions"></a>3.3.1 Discrete Variables and Probability Mass Functions</h3><ul>
 <li>Probability Mass Function (PMF)<ul>
 <li>denotes with $P$</li>
 <li>The domain of P must be the set of all possible states of x.</li>
@@ -61,7 +61,7 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 </ul>
 </li>
 </ul>
-<h3 id="3-3-2-Continuous-Variables-and-Probability-Density-Functions"><a href="#3-3-2-Continuous-Variables-and-Probability-Density-Functions" class="headerlink" title="3.3.2 Continuous Variables and Probability Density Functions"></a>3.3.2 Continuous Variables and Probability Density Functions</h3><ul class="ui list">
+<h3 id="3-3-2-Continuous-Variables-and-Probability-Density-Functions"><a href="#3-3-2-Continuous-Variables-and-Probability-Density-Functions" class="headerlink" title="3.3.2 Continuous Variables and Probability Density Functions"></a>3.3.2 Continuous Variables and Probability Density Functions</h3><ul>
 <li><p>Probability Density Function (PDF)</p>
 <ul>
 <li>The domain of p must be the set of all possible states of x.</li>
@@ -70,7 +70,7 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 </ul>
 </li>
 </ul>
-<h2 id="3-4-Marginal-Probability"><a href="#3-4-Marginal-Probability" class="headerlink" title="3.4 Marginal Probability"></a>3.4 Marginal Probability</h2><ul class="ui list">
+<h2 id="3-4-Marginal-Probability"><a href="#3-4-Marginal-Probability" class="headerlink" title="3.4 Marginal Probability"></a>3.4 Marginal Probability</h2><ul>
 <li><p>The probability distribution over the subset is known as the marginal probability distribution.</p>
 <ul>
 <li><p>For example, suppose that we have discrete random variables x and y, and we know $P(x,y)$. We can find $P(x)$ with the sum rule:</p>
@@ -122,7 +122,7 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 </li>
 </ul>
 <script type="math/tex; mode=display">
-    \mu \in \mathbf{R}\ and\ \sigma \in (0, \infty)</script><script type="math/tex; mode=display">E[x] = \mu</script><ul class="ui list">
+    \mu \in \mathbf{R}\ and\ \sigma \in (0, \infty)</script><script type="math/tex; mode=display">E[x] = \mu</script><ul>
 <li><p>When absence of prior knowledge about what form a distribution over real numbers, Normal Distribution is good choice for two major reason.</p>
 <ul>
 <li>First, many distributions we wish to model are truly close to being normal distribution. The central limit theorem(CLT) shows that the sum of many independent random variables is approximately normally distributed<ul>
@@ -141,8 +141,8 @@ the laws"><meta name="keywords"><meta content="width=device-width, initial-scale
 <script type="math/tex; mode=display">\zeta(x) = log(1+exp(x))</script><ul>
 <li>The softplus function can be useful for producing the Beta or sigma parameter of a normal distribution because its range is $(0, \infty)$.</li>
 </ul>
-<h2 id="3-11-Bayes&#x2019;-Rule"><a href="#3-11-Bayes&#x2019;-Rule" class="headerlink" title="3.11 Bayes&#x2019; Rule"></a>3.11 Bayes&#x2019; Rule</h2><ul>
-<li>We often find ourselves in a situation where we know P(y|x) and need to know P(x|y). Fortunately, if we also know P(x), we can compute the desired quantity using Bayes&#x2019; rule.</li>
+<h2 id="3-11-Bayes’-Rule"><a href="#3-11-Bayes’-Rule" class="headerlink" title="3.11 Bayes’ Rule"></a>3.11 Bayes’ Rule</h2><ul>
+<li>We often find ourselves in a situation where we know P(y|x) and need to know P(x|y). Fortunately, if we also know P(x), we can compute the desired quantity using Bayes’ rule.</li>
 </ul>
 <script type="math/tex; mode=display">P(x|y) = \frac{P(x)P(y|x)}{P(y)}</script></li>
 </ul>

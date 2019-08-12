@@ -1,119 +1,128 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>git basics · younguna</title><meta name="description" content="git basicsInit
-&amp;#xC0C8;&amp;#xB85C;&amp;#xC6B4;  git &amp;#xC800;&amp;#xC7A5;&amp;#xC18C;&amp;#xAC00; &amp;#xB9CC;&amp;#xB4E4;&amp;#xC5B4;&amp;#xC9D0;
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>git basics · younguna</title><meta name="description" content="git basicsInit
+새로운  git 저장소가 만들어짐
 
 Clone
-git clone /&amp;#xB85C;&amp;#xCEEC;/&amp;#xC"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>git basics</a></h3></div><div class="post-content"><h1 id="git-basics"><a href="#git-basics" class="headerlink" title="git basics"></a>git basics</h1><h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><ul class="ui list">
-<li>&#xC0C8;&#xB85C;&#xC6B4;  git &#xC800;&#xC7A5;&#xC18C;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9D0;</li>
+git clone /로컬/저장소/경로
+로컬 저장소(repo)를 복제(clone)
+
+
+git clone username@host:/원격/저장소/경로
+원격 서버의 저장소를 복제
+
+
+
+git 작업의 흐"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>git basics</a></h3></div><div class="post-content"><h1 id="git-basics"><a href="#git-basics" class="headerlink" title="git basics"></a>git basics</h1><h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><ul>
+<li>새로운  git 저장소가 만들어짐</li>
 </ul>
-<h2 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h2><ul class="ui list">
-<li><code>git clone /&#xB85C;&#xCEEC;/&#xC800;&#xC7A5;&#xC18C;/&#xACBD;&#xB85C;</code><ul>
-<li>&#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;(repo)&#xB97C; &#xBCF5;&#xC81C;(clone)</li>
-</ul>
-</li>
-<li><code>git clone username@host:/&#xC6D0;&#xACA9;/&#xC800;&#xC7A5;&#xC18C;/&#xACBD;&#xB85C;</code><ul>
-<li>&#xC6D0;&#xACA9; &#xC11C;&#xBC84;&#xC758; &#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xBCF5;&#xC81C;</li>
-</ul>
-</li>
-</ul>
-<h2 id="git-&#xC791;&#xC5C5;&#xC758;-&#xD750;&#xB984;"><a href="#git-&#xC791;&#xC5C5;&#xC758;-&#xD750;&#xB984;" class="headerlink" title="git &#xC791;&#xC5C5;&#xC758; &#xD750;&#xB984;"></a>git &#xC791;&#xC5C5;&#xC758; &#xD750;&#xB984;</h2><ul class="ui list">
-<li>&#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xB294; git&#xC774; &#xAD00;&#xB9AC;&#xD558;&#xB294; &#xC138; &#xAC00;&#xC9C0;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xB2E4;.</li>
-<li>&#xCCAB; &#xBC88;&#xC7AC;&#xB294; &#xC791;&#xC5C5; &#xB514;&#xB809;&#xD1A0;&#xB9AC; - &#xC2E4;&#xC81C; &#xD30C;&#xC77C;&#xB4E4;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC838; &#xC788;&#xB2E4;.</li>
-<li>&#xB450; &#xBC88;&#xC9F8;&#xB294; &#xC778;&#xB371;&#xC2A4;(Index) - &#xC900;&#xBE44; &#xC601;&#xC5ED; (staging area) &#xC5ED;&#xD560;&#xC744; &#xD55C;&#xB2E4;.</li>
-<li>&#xC138; &#xBC88;&#xC9F8;&#xB294; HEAD - &#xCD5C;&#xC885; &#xD655;&#xC815;&#xBCF8;(commit)&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</li>
-</ul>
-<h2 id="Add-amp-Commit"><a href="#Add-amp-Commit" class="headerlink" title="Add &amp; Commit"></a>Add &amp; Commit</h2><ul class="ui list">
-<li><code>git add &lt;&#xD30C;&#xC77C;&#xC774;&#xB984;&gt;</code></li>
-<li><code>git add *</code> : &#xD604; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xBAA8;&#xB450; &#xCD94;&#xAC00;<ul>
-<li>&#xC704;&#xC758; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xBCC0;&#xACBD;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xC778;&#xB371;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<h2 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h2><ul>
+<li><code>git clone /로컬/저장소/경로</code><ul>
+<li>로컬 저장소(repo)를 복제(clone)</li>
 </ul>
 </li>
-<li><code>git commit -m &quot;&#xC774;&#xBC88; &#xD655;&#xC815;&#xBCF8;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xBA85;&quot;</code><ul>
-<li>git&#xC758; &#xAE30;&#xBCF8; &#xC791;&#xC5C5; &#xD750;&#xB984;&#xC5D0;&#xC11C; &#xCCAB; &#xB2E8;&#xACC4;&#xC5D0; &#xD574;&#xB2F9;&#xD55C;&#xB2E4;.</li>
-<li>&#xC774; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xB0B4;&#xB824; &#xD655;&#xC815;&#xC744; &#xD558;&#xBA74; &#xBCC0;&#xACBD;&#xB41C; &#xD30C;&#xC77C;&#xC774; HEAD&#xC5D0; &#xBC18;&#xC601;&#xB41C;&#xB2E4;.</li>
-<li>&#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xB294; &#xC544;&#xC9C1; &#xBC18;&#xC601;&#xB418;&#xC9C0; &#xC54A;&#xC74C;</li>
+<li><code>git clone username@host:/원격/저장소/경로</code><ul>
+<li>원격 서버의 저장소를 복제</li>
 </ul>
 </li>
 </ul>
-<h2 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h2><ul class="ui list">
-<li>&#xC704;&#xC758; &#xC21C;&#xC11C;&#xAE4C;&#xC9C0; &#xC9C4;&#xD589;&#xD588;&#xB2E4;&#xBA74; &#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xC758; HEAD&#xC5D0;&#xB9CC; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xC774; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</li>
-<li><code>git push origin master</code>&#xB97C; &#xD1B5;&#xD574; &#xB85C;&#xCEEC;&#xC758; master &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; master &#xBE0C;&#xB79C;&#xCE58;&#xC5D0; &#xBC1C;&#xD589;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
-<li>&#xB9CC;&#xC57D; &#xAE30;&#xC874;&#xC758; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C; &#xBCF5;&#xC81C;&#xD55C; &#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xBA74; <code>git remote add origin &lt;&#xC6D0;&#xACA9;&#xC11C;&#xBC84;&#xC8FC;&#xC18C;&gt;</code>&#xB97C; &#xD1B5;&#xD574; git&#xC5D0;&#xAC8C; &#xC54C;&#xB824;&#xC918;&#xC57C; &#xD55C;&#xB2E4;.</li>
+<h2 id="git-작업의-흐름"><a href="#git-작업의-흐름" class="headerlink" title="git 작업의 흐름"></a>git 작업의 흐름</h2><ul>
+<li>로컬 저장소는 git이 관리하는 세 가지로 구성되어 있다.</li>
+<li>첫 번재는 작업 디렉토리 - 실제 파일들로 이루어져 있다.</li>
+<li>두 번째는 인덱스(Index) - 준비 영역 (staging area) 역할을 한다.</li>
+<li>세 번째는 HEAD - 최종 확정본(commit)을 나타낸다.</li>
 </ul>
-<h2 id="Branching"><a href="#Branching" class="headerlink" title="Branching"></a>Branching</h2><ul class="ui list">
-<li>&#xBE0C;&#xB79C;&#xCE58;&#xB294; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xACA9;&#xB9AC;&#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xCF54;&#xB529;&#xC744; &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
-<li>&#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xB9CC;&#xB4E4;&#xBA74; &#xAE30;&#xBCF8;&#xC758; master &#xBE0C;&#xB79C;&#xCE58;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4;&#xB2E4;.</li>
-<li>master &#xBE0C;&#xB79C;&#xCE58;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xADF8; &#xBE0C;&#xB79C;&#xCE58;&#xC5D0;&#xC11C; &#xC791;&#xC5C5;&#xC744; &#xC9C4;&#xD56D;&#xD558;&#xACE0; &#xB098;&#xC911;&#xC5D0; &#xC791;&#xC5C5;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; master &#xAC00;&#xC9C0;&#xB85C; &#xB3CC;&#xC544;&#xC640; &#xBCD1;&#xD569;(merge)&#xD55C;&#xB2E4;.</li>
-<li><code>git checkout -b feature_x</code> feature_x&#xB77C;&#xB294; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; checkout &#xD55C;&#xB2E4;.</li>
-<li><code>git checkout master</code>&#xB97C; &#xD1B5;&#xD574; master &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xB2E4;&#xC2DC; checkout&#xD55C;&#xB2E4;.</li>
-<li><code>git branch -d feature_x</code>&#xB97C; &#xD1B5;&#xD574; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xC0AD;&#xC81C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
-<li>&#xC0C8;&#xB85C; &#xB9CC;&#xB4E0; &#xBE0C;&#xB79C;&#xCE58;&#xB294; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xB85C; &#xC804;&#xC1A1;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0;&#xB294; &#xB2E4;&#xB978;&#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xBCFC; &#xC218; &#xC5C6;&#xB2E4;.</li>
+<h2 id="Add-amp-Commit"><a href="#Add-amp-Commit" class="headerlink" title="Add &amp; Commit"></a>Add &amp; Commit</h2><ul>
+<li><code>git add &lt;파일이름&gt;</code></li>
+<li><code>git add *</code> : 현 디렉토리 모두 추가<ul>
+<li>위의 명령어로 변경된 파일을 인덱스에 추가할 수 있다.</li>
 </ul>
-<h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><ul class="ui list">
-<li><p><code>git pull</code>&#xC744; &#xD1B5;&#xD574; &#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xB9DE;&#xCDB0; &#xAC31;&#xC2E0;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+</li>
+<li><code>git commit -m &quot;이번 확정본에 대한 설명&quot;</code><ul>
+<li>git의 기본 작업 흐름에서 첫 단계에 해당한다.</li>
+<li>이 명령어를 내려 확정을 하면 변경된 파일이 HEAD에 반영된다.</li>
+<li>원격 저장소는 아직 반영되지 않음</li>
+</ul>
+</li>
+</ul>
+<h2 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h2><ul>
+<li>위의 순서까지 진행했다면 로컬 저장소의 HEAD에만 변경 내용이 존재한다.</li>
+<li><code>git push origin master</code>를 통해 로컬의 master 브랜치를 원격 저장소의 master 브랜치에 발행할 수 있다.</li>
+<li>만약 기존의 원격 저장소에서 복제한 로컬 저장소가 아니라면 <code>git remote add origin &lt;원격서버주소&gt;</code>를 통해 git에게 알려줘야 한다.</li>
+</ul>
+<h2 id="Branching"><a href="#Branching" class="headerlink" title="Branching"></a>Branching</h2><ul>
+<li>브랜치는 안전하게 격리된 상태에서 코딩을 할 때 사용한다.</li>
+<li>저장소를 만들면 기본의 master 브랜치가 만들어진다.</li>
+<li>master 브랜치에서 다른 브랜치를 만들고 그 브랜치에서 작업을 진항하고 나중에 작업이 완료되면 master 가지로 돌아와 병합(merge)한다.</li>
+<li><code>git checkout -b feature_x</code> feature_x라는 브랜치를 만들고 checkout 한다.</li>
+<li><code>git checkout master</code>를 통해 master 브랜치를 다시 checkout한다.</li>
+<li><code>git branch -d feature_x</code>를 통해 브랜치를 삭제할 수 있다.</li>
+<li>새로 만든 브랜치는 원격 저장소로 전송하기 전까지는 다른사람들이 볼 수 없다.</li>
+</ul>
+<h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><ul>
+<li><p><code>git pull</code>을 통해 로컬 저장소를 원격 저장소에 맞춰 갱신할 수 있다.</p>
 <ul>
-<li>&#xB85C;&#xCEEC; &#xC791;&#xC5C5; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xBC1B;&#xC544;&#xC9C0;&#xACE0;(fetch), &#xBCD1;&#xD569;(merge) &#xB41C;&#xB2E4;.</li>
+<li>로컬 작업 디렉토리에 받아지고(fetch), 병합(merge) 된다.</li>
 </ul>
 </li>
-<li><p>&#xB2E4;&#xB978; &#xBE0C;&#xB79C;&#xCE58;&#xC5D0; &#xC788;&#xB294; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xC744; &#xD604;&#xC7AC; &#xBE0C;&#xB79C;&#xCE58;&#xB85C; &#xBCD1;&#xD569;&#xD558;&#xB824;&#xBA74; <code>git merge &lt;&#xBE0C;&#xB79C;&#xCE58;&#xBA85;&gt;</code>&#xC744; &#xD1B5;&#xD574; &#xBCD1;&#xD569;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<li><p>다른 브랜치에 있는 변경 내용을 현재 브랜치로 병합하려면 <code>git merge &lt;브랜치명&gt;</code>을 통해 병합할 수 있다.</p>
 </li>
-<li><code>git diff &lt;&#xC6D0;&#xBE0C;&#xB79C;&#xCE58;&gt; &lt;&#xBE44;&#xAD50;&#xBE0C;&#xB79C;&#xCE58;&gt;</code>&#xB97C; &#xD1B5;&#xD574; merge&#xC804; &#xC5B4;&#xB5BB;&#xAC8C; &#xBC14;&#xB00C;&#xB294;&#xC9C0; &#xBE44;&#xAD50;&#xD574; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</li>
+<li><code>git diff &lt;원브랜치&gt; &lt;비교브랜치&gt;</code>를 통해 merge전 어떻게 바뀌는지 비교해 볼 수 있다.</li>
 </ul>
-<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><ul class="ui list">
-<li>SW&#xC758; &#xC0C8; &#xBC84;&#xC804;&#xC744; &#xBC1C;&#xD45C;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xAF2C;&#xB9AC;&#xD45C;&#xB97C; &#xB2EC;&#xC544;&#xB193;&#xC73C;&#xBA74; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; &#xD3B8;&#xB9AC;&#xD558;&#xB2E4;.</li>
-<li><code>git tag 1.0.0 1b2e1d63ff</code>&#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; tag&#xB97C; &#xB2EC; &#xC218; &#xC788;&#xC73C;&#xBA70; 1.0.0&#xC774; &#xD0DC;&#xADF8;&#xC774;&#xACE0; &#xB4A4;&#xC758; &#xBD80;&#xBD84;&#xC740; &#xD0DC;&#xADF8;&#xAC00; &#xAC00;&#xB9AC;&#xD0AC; &#xD655;&#xC815;&#xBCF8; &#xC2DD;&#xBCC4;&#xC790; &#xC785;&#xB2C8;&#xB2E4;.</li>
-<li><code>git log</code> &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC815;&#xBCF8; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;.</li>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><ul>
+<li>SW의 새 버전을 발표할 때마다 꼬리표를 달아놓으면 식별하기 편리하다.</li>
+<li><code>git tag 1.0.0 1b2e1d63ff</code>같은 명령어를 사용하여 tag를 달 수 있으며 1.0.0이 태그이고 뒤의 부분은 태그가 가리킬 확정본 식별자 입니다.</li>
+<li><code>git log</code> 명령어를 통해 확정본 식별자를 얻을 수 있다.</li>
 </ul>
-<h2 id="&#xB85C;&#xCEEC;-&#xBCC0;&#xACBD;-&#xB0B4;&#xC6A9;-&#xB418;&#xB3CC;&#xB9AC;&#xAE30;"><a href="#&#xB85C;&#xCEEC;-&#xBCC0;&#xACBD;-&#xB0B4;&#xC6A9;-&#xB418;&#xB3CC;&#xB9AC;&#xAE30;" class="headerlink" title="&#xB85C;&#xCEEC; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9; &#xB418;&#xB3CC;&#xB9AC;&#xAE30;"></a>&#xB85C;&#xCEEC; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9; &#xB418;&#xB3CC;&#xB9AC;&#xAE30;</h2><ul class="ui list">
-<li><code>git checkout -- &lt;&#xD30C;&#xC77C; &#xC774;&#xB984;&gt;</code> &#xBA85;&#xB839;&#xC5B4;&#xB294; &#xB85C;&#xCEEC;&#xC758; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xC744; &#xB418;&#xB3CC;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB85C;&#xCEEC;&#xC758; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xC744; &#xBCC0;&#xACBD; &#xC804; &#xC0C1;&#xD0DC;(HEAD)&#xB85C; &#xB418;&#xB3CC;&#xB9B0;&#xB2E4;. <ul>
-<li>&#xB2E4;&#xB9CC; &#xC774;&#xBBF8; &#xC778;&#xB371;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xB41C; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xACFC; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xD55C; &#xD30C;&#xC77C;&#xC740; &#xADF8;&#xB300;&#xB85C; &#xB0A8;&#xB294;&#xB2E4;.</li>
-</ul>
-</li>
-<li>&#xB85C;&#xCEEC;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xBCC0;&#xACBD; &#xB0B4;&#xC6A9;&#xACFC; &#xD655;&#xC815;&#xBCF8;&#xC744; &#xD3EC;&#xAE30;&#xD558;&#xB824;&#xBA74; <code>git fetch origin || git reset --hard origin/master</code>&#xC73C;&#xB85C; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; &#xCD5C;&#xC2E0; &#xC774;&#xB825;&#xC744; &#xAC00;&#xC838;&#xC624;&#xACE0; &#xB85C;&#xCEEC; master &#xBE0C;&#xB79C;&#xCE58;&#xAC00; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; master &#xBE0C;&#xB79C;&#xCE58; &#xC774;&#xB825;&#xC744; &#xAC00;&#xB9AC;&#xD0AC; &#xC218; &#xC787;&#xB2E4;.</li>
-</ul>
-<h2 id="git-fork-to-pull-request"><a href="#git-fork-to-pull-request" class="headerlink" title="git fork to pull request"></a>git fork to pull request</h2><ul class="ui list">
-<li>origin remote repo&#xC5D0;&#xC11C; fork&#xB97C; &#xD558;&#xC5EC; &#xC790;&#xC2E0;&#xC758; remote repo&#xC5D0; &#xBCF5;&#xC0AC;&#xD55C;&#xB2E4;.<ul>
-<li>&#xC2E4;&#xC81C;&#xB85C; fork&#xB294; git&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBA85;&#xB839;&#xC5B4;&#xAC00; &#xC544;&#xB2C8;&#xBA70; github&#xAC19;&#xC740; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C; &#xB0B4;&#xC5D0;&#xC11C;&#xC758; clone&#xACFC; &#xBE44;&#xC2B7;&#xD558;&#xB2E4;&#xACE0; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</li>
+<h2 id="로컬-변경-내용-되돌리기"><a href="#로컬-변경-내용-되돌리기" class="headerlink" title="로컬 변경 내용 되돌리기"></a>로컬 변경 내용 되돌리기</h2><ul>
+<li><code>git checkout -- &lt;파일 이름&gt;</code> 명령어는 로컬의 변경 내용을 되돌릴 수 있습니다. 로컬의 변경 내용을 변경 전 상태(HEAD)로 되돌린다. <ul>
+<li>다만 이미 인덱스에 추가된 변경 내용과 새로 생성한 파일은 그대로 남는다.</li>
 </ul>
 </li>
-<li>&#xB098;&#xC758; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C; &#xB85C;&#xCEEC;&#xB85C; git clone&#xD55C;&#xB2E4;.</li>
-<li>&#xB85C;&#xCEEC;&#xC5D0;&#xC11C; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xC791;&#xC5C5; &#xD6C4; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; master&#xB85C; merge&#xD6C4; master&#xB97C; push &#xD55C;&#xB2E4;.</li>
-<li>&#xB098;&#xC758; remote repo&#xC758; master&#xBE0C;&#xB79C;&#xCE58;&#xB97C; fork&#xD55C; origin remote repo&#xC5D0; PR&#xC744; &#xB0A0;&#xB9B0;&#xB2E4;.</li>
-<li>&#xBB3C;&#xB860; origin remote repo&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xBE0C;&#xB79C;&#xCE6D;&#xC744; &#xD558;&#xB290;&#xB0D0;&#xC5D0; &#xB530;&#xB77C; &#xC704;&#xC758; &#xACFC;&#xC815;&#xC740; &#xB9E4;&#xC6B0; &#xB2EC;&#xB77C;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>로컬에 있는 모든 변경 내용과 확정본을 포기하려면 <code>git fetch origin || git reset --hard origin/master</code>으로 원격 저장소의 최신 이력을 가져오고 로컬 master 브랜치가 원격 저장소의 master 브랜치 이력을 가리킬 수 잇다.</li>
 </ul>
-<h2 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h2><ul class="ui list">
-<li><code>git pull</code>&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xAC00;&#xC838;&#xC640; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBCD1;&#xD569; &#xC791;&#xC5C5;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xB2E8;&#xC21C;&#xD788; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xD655;&#xC778;&#xB9CC; &#xD558;&#xACE0; &#xB85C;&#xCEEC; &#xB370;&#xC774;&#xD130;&#xC640; &#xBCD1;&#xD569;&#xC740; &#xD558;&#xACE0; &#xC2F6;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; <code>git fetch</code> &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>fetch&#xD55C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xC758; master &#xBE0C;&#xB79C;&#xCE58;&#xC5D0; &#xD1B5;&#xD569;&#xD558;&#xACE0; &#xC2F6;&#xC740; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;, &#x201C;FETCH_HEAD&#x201D; &#xBE0C;&#xB79C;&#xCE58;&#xB97C; merge&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. pull &#xBA85;&#xB839;&#xC5B4;&#xB294; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; fetch + merge &#xC785;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<h2 id="github-fork&#xC5D0;&#xC11C;-pull-request&#xAE4C;&#xC9C0;"><a href="#github-fork&#xC5D0;&#xC11C;-pull-request&#xAE4C;&#xC9C0;" class="headerlink" title="github fork&#xC5D0;&#xC11C; pull request&#xAE4C;&#xC9C0;"></a>github fork&#xC5D0;&#xC11C; pull request&#xAE4C;&#xC9C0;</h2><ul class="ui list">
-<li>&#xC6D0;&#xBCF8; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C;&#xB85C; &#xBCF5;&#xC0AC;(fork) &#xD568;<ul>
-<li>&#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C; git clone. &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xB0B4;&#xC758; &#xAE30;&#xB2A5;</li>
+<h2 id="git-fork-to-pull-request"><a href="#git-fork-to-pull-request" class="headerlink" title="git fork to pull request"></a>git fork to pull request</h2><ul>
+<li>origin remote repo에서 fork를 하여 자신의 remote repo에 복사한다.<ul>
+<li>실제로 fork는 git에 존재하는 명령어가 아니며 github같은 원격저장소 내에서의 clone과 비슷하다고 볼 수 있다.</li>
 </ul>
 </li>
-<li>&#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790; &#xAC1C;&#xC778; &#xB85C;&#xCEEC;&#xC800;&#xC7A5;&#xC18C;&#xB85C; &#xBCF5;&#xC0AC;(clone) &#xD568;</li>
-<li>&#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C; &#xC791;&#xC5C5; &#xD6C4; add &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC774;&#xC6A9;&#xD574; stage&#xC5D0; &#xC62C;&#xB9BC;</li>
-<li>commit &#xBA85;&#xB839;&#xC5B4;&#xB85C; stage&#xC5D0; &#xC62C;&#xB77C;&#xAC04; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC744; &#xD655;&#xC815;</li>
-<li>push&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xB85C;&#xCEEC; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; commit&#xB41C; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC744; &#xC6D0;&#xACA9; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xBC18;&#xC601;</li>
-<li>pull request(PR)&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xAC1C;&#xC778; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C;&#xC758; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC744; &#xC6D0;&#xBCF8; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xBC18;&#xC601;&#xC694;&#xCCAD;<ul>
-<li>&#xC774;&#xB54C; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0;&#xC758; &#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB77C; &#xBE0C;&#xB79C;&#xCE58;&#xAC04;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4; &#xC9C8; &#xC218; &#xC788;&#xC74C;</li>
+<li>나의 원격 저장소에서 로컬로 git clone한다.</li>
+<li>로컬에서 브랜치를 생성하여 작업 후 브랜치를 master로 merge후 master를 push 한다.</li>
+<li>나의 remote repo의 master브랜치를 fork한 origin remote repo에 PR을 날린다.</li>
+<li>물론 origin remote repo가 어떻게 브랜칭을 하느냐에 따라 위의 과정은 매우 달라질 수 있다.</li>
+</ul>
+<h2 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h2><ul>
+<li><code>git pull</code>을 실행하면 원격 저장소의 내용을 가져와 자동으로 병합 작업을 실행하게 됩니다.</li>
+<li>단순히 원격 저장소의 내용을 확인만 하고 로컬 데이터와 병합은 하고 싶지 않은 경우에는 <code>git fetch</code> 명령어를 사용할 수 있습니다.</li>
+<li>fetch한 상태에서 원격 저장소의 내용을 로컬 저장소의 master 브랜치에 통합하고 싶은 경우에는, “FETCH_HEAD” 브랜치를 merge하면 됩니다. pull 명령어는 내부적으로 fetch + merge 입니다.</li>
+</ul>
+<h2 id="github-fork에서-pull-request까지"><a href="#github-fork에서-pull-request까지" class="headerlink" title="github fork에서 pull request까지"></a>github fork에서 pull request까지</h2><ul>
+<li>원본 원격저장소에서 사용자의 원격저장소로 복사(fork) 함<ul>
+<li>실질적으로 git clone. 원격 저장소내의 기능</li>
 </ul>
 </li>
-<li>&#xC2B9;&#xC778;&#xC774; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xBA74; &#xC6D0;&#xACA9;&#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D; &#xBC18;&#xC601;</li>
+<li>사용자의 원격 저장소에서 사용자 개인 로컬저장소로 복사(clone) 함</li>
+<li>로컬 저장소에서 작업 후 add 명령어를 이용해 stage에 올림</li>
+<li>commit 명령어로 stage에 올라간 변경사항을 확정</li>
+<li>push를 이용해 로컬 저장소에 commit된 변경사항을 원격 저장소에 반영</li>
+<li>pull request(PR)를 이용해 개인 원격저장소의 변경 사항을 원본 원격저장소에 반영요청<ul>
+<li>이때 여러가지의 상황에 따라 브랜치간으로 이루어 질 수 있음</li>
 </ul>
-<h2 id="git-add-&#xC640;-git-commit-&#xC2DC;-git&#xC758;-&#xB0B4;&#xBD80;"><a href="#git-add-&#xC640;-git-commit-&#xC2DC;-git&#xC758;-&#xB0B4;&#xBD80;" class="headerlink" title="git add &#xC640; git commit &#xC2DC; git&#xC758; &#xB0B4;&#xBD80;"></a>git add &#xC640; git commit &#xC2DC; git&#xC758; &#xB0B4;&#xBD80;</h2><ul class="ui list">
-<li><code>git add</code> &#xB3D9;&#xC791;&#xC744; &#xC218;&#xD589;&#xD558;&#xBA74; index(&#xC2A4;&#xD14C;&#xC774;&#xC9C0;) &#xC5D0; object &#xC774;&#xB984;&#xACFC; &#xC2E4;&#xC81C; &#xD30C;&#xC77C; &#xC774;&#xB984;&#xC774; &#xCD94;&#xAC00;&#xB418;&#xACE0;, &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC5D0; blob &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC774; &#xCD94;&#xAC00;&#xB428;</li>
-<li>blob &#xD30C;&#xC77C;&#xC774;&#xB780; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xB77C;&#xC9C0; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC57D;&#xC790;&#xB85C;, &#xB300;&#xC6A9;&#xB7C9; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC774;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xBAA8;&#xC784;&#xC744; &#xB9D0;&#xD568; </li>
-<li><code>git commit</code> &#xB3D9;&#xC791;&#xC744; &#xC218;&#xD589;&#xD558;&#xBA74; object&#xC5D0; commit &#xAC1D;&#xCCB4;&#xC640; tree&#xAC1D;&#xCCB4;&#xAC00; &#xCD94;&#xAC00;&#xB428; </li>
-<li>tree &#xAC1D;&#xCCB4;&#xB294; &#xC2A4;&#xD14C;&#xC774;&#xC9C0;&#xC5D0; &#xC62C;&#xB77C;&#xC628; &#xAC83;&#xB4E4;&#xC744; snapshot &#xC744; &#xCC0D;&#xC5B4; &#xC800;&#xC7A5;&#xD558;&#xACE0;, commit&#xAC1D;&#xCCB4;&#xB294; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; tree &#xAC1D;&#xCCB4;&#xC640; &#xBD80;&#xAC00;&#xC801;&#xC778; &#xC815;&#xBCF4;&#xB97C; &#xC800;&#xC7A5;&#xD568;</li>
+</li>
+<li>승인이 이루어지면 원격저장소에 변경 사항 반영</li>
 </ul>
-<h2 id="git-workflow"><a href="#git-workflow" class="headerlink" title="git-workflow"></a>git-workflow</h2><ul class="ui list">
-<li>git-workflow&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC774;&#xC720;&#xB294; &#xC548;&#xC804;&#xD55C; &#xAC1C;&#xBC1C;&#xC744; &#xC704;&#xD574;&#xC11C;&#xC784;</li>
-<li>&#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC790;&#xC720;&#xB86D;&#xACE0; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xAC1C;&#xBC1C;&#xD560; &#xC218; &#xC788;&#xC5B4; &#xAC1C;&#xBC1C; &#xC0DD;&#xC0B0;&#xC131;&#xC744; &#xD5A5;&#xC0C1;&#xC2DC;&#xD0B4;</li>
-<li>&#xB300;&#xD45C;&#xC801;&#xC778; git-branch &#xC804;&#xB7B5;&#xC740; master&#xC640; develop, feature, release, hotfix&#xB85C; &#xAD6C;&#xBD84;&#xD574;&#xC11C; &#xD544;&#xC694;&#xC5D0;&#xB530;&#xB77C; &#xC0DD;&#xC131;&#xD574; &#xC791;&#xC5C5;&#xD558;&#xB294; &#xC804;&#xB7B5;&#xC744; &#xB9D0;&#xD568;</li>
-<li><code>develop</code> &#xBE0C;&#xB79C;&#xCE58;&#xC758; &#xACBD;&#xC6B0; &#xB2E4;&#xC74C; &#xCD9C;&#xC2DC; &#xBC84;&#xC804;&#xC744; &#xAC1C;&#xBC1C;&#xD558;&#xB294; &#xBE0C;&#xB79C;&#xCE58;</li>
-<li><code>feature</code> &#xBE0C;&#xB79C;&#xCE58;&#xC758; &#xACBD;&#xC6B0; &#xAE30;&#xB2A5;&#xC744; &#xAC1C;&#xBC1C;&#xD558;&#xB294; &#xBE0C;&#xB79C;&#xCE58;</li>
-<li><code>release</code> &#xBE0C;&#xB79C;&#xCE58;&#xB294; &#xC774;&#xC804; &#xCD9C;&#xC2DC; &#xBC84;&#xC804;&#xC744; &#xC900;&#xBE44;&#xD558;&#xB294; &#xBE0C;&#xB79C;&#xCE58;</li>
-<li><code>hotfix</code> &#xBE0C;&#xB79C;&#xCE58;&#xB294; &#xCD9C;&#xC2DC; &#xBC84;&#xC804;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD55C; &#xBC84;&#xADF8;&#xB97C; &#xC218;&#xC815;&#xD558;&#xB294; &#xBE0C;&#xB79C;&#xCE58;</li>
-<li>&#xD300;&#xC758; &#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB77C; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0;&#xB85C; branch&#xB97C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC74C;</li>
+<h2 id="git-add-와-git-commit-시-git의-내부"><a href="#git-add-와-git-commit-시-git의-내부" class="headerlink" title="git add 와 git commit 시 git의 내부"></a>git add 와 git commit 시 git의 내부</h2><ul>
+<li><code>git add</code> 동작을 수행하면 index(스테이지) 에 object 이름과 실제 파일 이름이 추가되고, 오브젝트에 blob 타입으로 파일 내용이 추가됨</li>
+<li>blob 파일이란 바이너리 라지 오브젝트의 약자로, 대용량 데이터를 저장하기 위한 이진 데이터의 모임을 말함 </li>
+<li><code>git commit</code> 동작을 수행하면 object에 commit 객체와 tree객체가 추가됨 </li>
+<li>tree 객체는 스테이지에 올라온 것들을 snapshot 을 찍어 저장하고, commit객체는 만들어진 tree 객체와 부가적인 정보를 저장함</li>
 </ul>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-07-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/git/" title="git">git </a><a class="tag" href="/tags/github/" title="github">github </a><a class="tag" href="/tags/깃/" title="깃">깃 </a><a class="tag" href="/tags/깃허브/" title="깃허브">깃허브 </a><a class="tag" href="/tags/깃헙/" title="깃헙">깃헙 </a><a class="tag" href="/tags/버전관리/" title="버전관리">버전관리 </a><a class="tag" href="/tags/SVN/" title="SVN">SVN </a><a class="tag" href="/tags/개발/" title="개발">개발 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/07/18/es6-basics/" title="es6 basics">Previous Post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/04/브라우저-뒤에서-일어나는일/" title="브라우저 뒤에서 일어나는 일">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+<h2 id="git-workflow"><a href="#git-workflow" class="headerlink" title="git-workflow"></a>git-workflow</h2><ul>
+<li>git-workflow가 필요한 이유는 안전한 개발을 위해서임</li>
+<li>개발자가 자유롭고 안전하게 개발할 수 있어 개발 생산성을 향상시킴</li>
+<li>대표적인 git-branch 전략은 master와 develop, feature, release, hotfix로 구분해서 필요에따라 생성해 작업하는 전략을 말함</li>
+<li><code>develop</code> 브랜치의 경우 다음 출시 버전을 개발하는 브랜치</li>
+<li><code>feature</code> 브랜치의 경우 기능을 개발하는 브랜치</li>
+<li><code>release</code> 브랜치는 이전 출시 버전을 준비하는 브랜치</li>
+<li><code>hotfix</code> 브랜치는 출시 버전에서 발생한 버그를 수정하는 브랜치</li>
+<li>팀의 상황에 따라 여러가지로 branch를 유지할 수 있음</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-07-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/git/" title="git">git </a><a class="tag" href="/tags/github/" title="github">github </a><a class="tag" href="/tags/SVN/" title="SVN">SVN </a><a class="tag" href="/tags/깃/" title="깃">깃 </a><a class="tag" href="/tags/깃허브/" title="깃허브">깃허브 </a><a class="tag" href="/tags/깃헙/" title="깃헙">깃헙 </a><a class="tag" href="/tags/버전관리/" title="버전관리">버전관리 </a><a class="tag" href="/tags/개발/" title="개발">개발 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/07/18/es6-basics/" title="es6 basics">Previous Post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/04/브라우저-뒤에서-일어나는일/" title="브라우저 뒤에서 일어나는 일">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
