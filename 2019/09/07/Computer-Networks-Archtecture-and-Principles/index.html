@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Computer Networks - Archtecture and Principles · younguna</title><meta name="description" content="Computer Networking - Architecture and Principles
+https://www.udacity.com/course/computer-networking--ud436
+
+1 Lession 2 Intro
+Early internet architec"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Computer Networks - Archtecture and Principles</a></h3></div><div class="post-content"><h1 id="Computer-Networking-Architecture-and-Principles"><a href="#Computer-Networking-Architecture-and-Principles" class="headerlink" title="Computer Networking - Architecture and Principles"></a>Computer Networking - Architecture and Principles</h1><blockquote>
+<p><a href="https://www.udacity.com/course/computer-networking--ud436" target="_blank" rel="noopener">https://www.udacity.com/course/computer-networking--ud436</a></p>
+</blockquote>
+<h2 id="1-Lession-2-Intro"><a href="#1-Lession-2-Intro" class="headerlink" title="1 Lession 2 Intro"></a>1 Lession 2 Intro</h2><ul>
+<li>Early internet architect set out with clear goals and allowed flexibility in ahcieving them.<h2 id="2-A-Breif-History-of-the-Internet"><a href="#2-A-Breif-History-of-the-Internet" class="headerlink" title="2 A Breif History of the Internet"></a>2 A Breif History of the Internet</h2></li>
+<li>ARPANET (1966-67) UCLA, SRI, UCSB, Utah (1969)<ul>
+<li>goal : network academic computer</li>
+</ul>
+</li>
+<li>NPL net in UK became online around same time</li>
+<li>1971 -&gt; around 20 ARPANET Nodes.<ul>
+<li>Speed of around 50 Kbps<h2 id="3-Problems-and-Growing-Pains"><a href="#3-Problems-and-Growing-Pains" class="headerlink" title="3 Problems and Growing Pains"></a>3 Problems and Growing Pains</h2></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Running out of addresses -&gt; IPv4 has only 2^(32) addresses.</li>
+<li>Congestion Control -&gt; insufficient dynamic range (wireless, high-speed intercontinental paths)</li>
+<li>Routing -&gt; no security, easy to misconfigure, poor convergence, non-determinism</li>
+<li>Secruity -&gt; bad key management, secure software deployemnt</li>
+<li>Denial of service -&gt; too easy to send traffic to destination</li>
+</ol>
+<h2 id="4-Architectual-Design-Principles"><a href="#4-Architectual-Design-Principles" class="headerlink" title="4 Architectual Design Principles"></a>4 Architectual Design Principles</h2><ul>
+<li>Design Philosopy of the DARPA Internet Protocols, Dave Clark 1988</li>
+<li>Conceptual Lessons -&gt; principles designed for a certain type of network</li>
+<li>Technical Lessons -&gt; <ul>
+<li>1 packet switching</li>
+<li>2 fate sharing or soft state</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-Goal"><a href="#5-Goal" class="headerlink" title="5 Goal"></a>5 Goal</h2><p>The fundamental design Goal of the Internet </p>
+<ul>
+<li><p>“Multiplexed utilization of existing interconnected networks”</p>
+<ul>
+<li>“Multiplexed” : sharing problem - Solution: statistical multiplexing / packet switching</li>
+<li>“Interconnection” : Solution :narrow waist</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-Packet-Switching"><a href="#6-Packet-Switching" class="headerlink" title="6 Packet Switching"></a>6 Packet Switching</h2><ul>
+<li>Information for forwarding traffic contained in destination addess of packet.<ul>
+<li>shared resources (shared ndoes)</li>
+<li>could cause delay or loss of packet</li>
+</ul>
+</li>
+<li>In contrast to “circuit switching” <ul>
+<li>out of band signaling sets up dedicated path</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-Quiz-Packet-Switching-VS-Circuit-Switching"><a href="#7-Quiz-Packet-Switching-VS-Circuit-Switching" class="headerlink" title="7 Quiz: Packet Switching VS Circuit Switching"></a>7 Quiz: Packet Switching VS Circuit Switching</h2><ul>
+<li>Variable Delay - Packet Switching</li>
+<li>Busy Signals - Circuit Switching</li>
+<li>Sharing of network resources - Packet Switching</li>
+<li>Dedicated resources between sender and receiver - Circuit Switching</li>
+</ul>
+<h2 id="8-Narrow-Waist"><a href="#8-Narrow-Waist" class="headerlink" title="8 Narrow Waist"></a>8 Narrow Waist</h2><h3 id="Interconnection-Narrow-Waist"><a href="#Interconnection-Narrow-Waist" class="headerlink" title="Interconnection : Narrow Waist"></a>Interconnection : Narrow Waist</h3><ul>
+<li>Goal : Interconnect many existing networks. Hide underlying technology from applications.</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Layer numbering</th>
+<th>Protocol</th>
+<th>Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>HTTP, SMTP,…</td>
+<td>Application Layer</td>
+</tr>
+<tr>
+<td>Usually don’t refer layers by number above this layer</td>
+<td>TCP, UDP</td>
+<td>Transport Layer</td>
+</tr>
+<tr>
+<td>3</td>
+<td>IP</td>
+<td>Network Layer, <strong>only protocol in this layer</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ethernet</td>
+<td>Link Layer</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sonet</td>
+<td>Physical Layer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Every Internet device must speak IP.</li>
+<li>Link Layer provides p2p connectivity to Network Layer</li>
+<li>Network Layer provides end to end connectivity to Transport Layer</li>
+<li>Transport Layer provides reliable transport and congestion control to application layer</li>
+<li>Difficult to change in IP</li>
+</ul>
+<h2 id="9-Goal-Survivability"><a href="#9-Goal-Survivability" class="headerlink" title="9 Goal Survivability"></a>9 Goal Survivability</h2><ul>
+<li>survivality : network works even if soem devices fail.<ul>
+<li>replication</li>
+<li>fate sharing<ul>
+<li>easier to withstand complex failure</li>
+<li>easier engineering</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-Goal-Heterogeneity"><a href="#10-Goal-Heterogeneity" class="headerlink" title="10 Goal Heterogeneity"></a>10 Goal Heterogeneity</h2><ul>
+<li>Heterogeneity<ul>
+<li>1 TCP/IP</li>
+<li>2 “Best Effort”</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-Goals-Distributed-Management"><a href="#11-Goals-Distributed-Management" class="headerlink" title="11 Goals Distributed Management"></a>11 Goals Distributed Management</h2><ul>
+<li>Distributed Management<ul>
+<li>Addressing(ARIN, RIPE, …)</li>
+<li>Naming(DNS)</li>
+<li>Routing(BGP)</li>
+</ul>
+</li>
+<li>Good<ul>
+<li>organic growth</li>
+<li>stable management</li>
+</ul>
+</li>
+<li>Bad<ul>
+<li>no owner</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-What’s-Missing-in-Clark’s-paper"><a href="#12-What’s-Missing-in-Clark’s-paper" class="headerlink" title="12 What’s Missing (in Clark’s paper)"></a>12 What’s Missing (in Clark’s paper)</h2><ul>
+<li>no discussion of security</li>
+<li>no discussion of availablity</li>
+<li>no discussion of mobility</li>
+<li>no discussion of scaling</li>
+</ul>
+<h2 id="13-Quiz-DARPA-Paper-Quiz"><a href="#13-Quiz-DARPA-Paper-Quiz" class="headerlink" title="13 Quiz: DARPA Paper Quiz"></a>13 Quiz: DARPA Paper Quiz</h2><p>Clark’s paper includes following</p>
+<ul>
+<li>No security</li>
+<li>YES Heterogeneity</li>
+<li>YES Interconnection</li>
+<li>YES Sharing</li>
+<li>NO Mobility</li>
+</ul>
+<h2 id="14-End-to-End-Argument"><a href="#14-End-to-End-Argument" class="headerlink" title="14 End to End Argument"></a>14 End to End Argument</h2><p>“The function in question can completely and correctly be implemented only with the knowledge and help of the application standing <strong>at the end points of the communication system</strong>. Therefore, providing that questioned function as a feature of the communication system itself <strong>is not possible</strong>. (Sometimes an incomplete version of the function provided by the communication system may be useful as a performance enhancement.)”</p>
+<h3 id="examples"><a href="#examples" class="headerlink" title="examples"></a>examples</h3><ol>
+<li>Error handling in file transfer</li>
+<li>End-to-end encryption</li>
+<li>TCP/IP Split error handling<blockquote>
+<p>“Dumb network, intelligent endpoints”</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="15-File-Transfer-example-from-above"><a href="#15-File-Transfer-example-from-above" class="headerlink" title="15 File Transfer (example from above)"></a>15 File Transfer (example from above)</h2><ol>
+<li>read file from disk</li>
+<li>communication system sends file</li>
+<li>transmits pakcets</li>
+<li>give file to file transfer program</li>
+<li>write to disk</li>
+</ol>
+<h3 id="What-can-go-wrong"><a href="#What-can-go-wrong" class="headerlink" title="What can go wrong?"></a>What can go wrong?</h3><ol>
+<li>read/write</li>
+<li>breaking up / assembling</li>
+<li>communication system</li>
+</ol>
+<blockquote>
+<p>we can handle error each problems above but it still needs application level checking.</p>
+<p>End to end checking and resending could have better performance</p>
+</blockquote>
+<h2 id="16-End-to-End-Argument-Violation"><a href="#16-End-to-End-Argument-Violation" class="headerlink" title="16 End to End Argument Violation"></a>16 End to End Argument Violation</h2><ul>
+<li>Still an argument</li>
+<li>Violations:<ul>
+<li>NAT</li>
+<li>VPN tunnels</li>
+<li>TCP splitting</li>
+<li>Spam</li>
+<li>P2P systems</li>
+<li>Caches</li>
+</ul>
+</li>
+<li>Question?:<ul>
+<li>what’s in/out?<ul>
+<li>Routing</li>
+<li>Multicast</li>
+<li>QoS</li>
+<li>NAT</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="17-18-Violation-NAT"><a href="#17-18-Violation-NAT" class="headerlink" title="17-18 Violation NAT"></a>17-18 Violation NAT</h2><ul>
+<li>NAT(Network Address Translation) ususally that is used in home network blocks endpoints behind it from globally addressing or routing.</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-09-07</span><i class="fa fa-tag"></i><a class="tag" href="/tags/networks/" title="networks">networks </a><a class="tag" href="/tags/네트워크/" title="네트워크">네트워크 </a><a class="tag" href="/tags/인터넷/" title="인터넷">인터넷 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/08/12/Git-add-and-commit/" title="Git add and commit">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
