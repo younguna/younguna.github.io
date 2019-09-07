@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Computer Networks - Switching · younguna</title><meta name="description" content="Computer Networking - Switching
+https://www.udacity.com/course/computer-networking--ud436
+
+1 Intro
+At its core, a network serves to route packets betw"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">younguna</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Computer Networks - Switching</a></h3></div><div class="post-content"><h1 id="Computer-Networking-Switching"><a href="#Computer-Networking-Switching" class="headerlink" title="Computer Networking - Switching"></a>Computer Networking - Switching</h1><blockquote>
+<p><a href="https://www.udacity.com/course/computer-networking--ud436" target="_blank" rel="noopener">https://www.udacity.com/course/computer-networking--ud436</a></p>
+</blockquote>
+<h2 id="1-Intro"><a href="#1-Intro" class="headerlink" title="1 Intro"></a>1 Intro</h2><ul>
+<li><p>At its core, a network serves to route packets between machines on the network in complicated but quire fascinating way.</p>
+</li>
+<li><p>Packets  likely traveled across at least four or five networks, if not more.</p>
+</li>
+</ul>
+<h2 id="2-Switching-and-Bridging"><a href="#2-Switching-and-Bridging" class="headerlink" title="2 Switching and Bridging"></a>2 Switching and Bridging</h2><ul>
+<li>Problems<ul>
+<li>How hosts find each other on a subnet</li>
+<li>How subnets are interconnected</li>
+</ul>
+</li>
+<li>Also<ul>
+<li>switches vs hubs</li>
+<li>swithces vs routers</li>
+</ul>
+</li>
+<li>How to scale Ethernet</li>
+</ul>
+<h2 id="3-Bootstrapping-Network-Two-Hosts"><a href="#3-Bootstrapping-Network-Two-Hosts" class="headerlink" title="3 Bootstrapping: Network Two Hosts"></a>3 Bootstrapping: Network Two Hosts</h2><p>Case:</p>
+<ul>
+<li>Host 1 and Host 2 are interconnected by two ethernet adapters or network interfaces.</li>
+<li>Each has LAN/MAC/Physical Address</li>
+<li>Host 1 wants to send datagram to host 2.</li>
+<li>This can be done by sending frame to a broadcast destination MAC address - which means that the datagram would be send to every host in LAN.</li>
+<li>Typically a host knows a DNS name or an IP address but may not know the hardware or MAC address of an another host.</li>
+<li>We need to provide a way for a host to learn the MAC address of another -&gt; <strong>ARP (Address Resolution Protocol)</strong></li>
+</ul>
+<h2 id="4-ARP-Address-Resolution-Protocol"><a href="#4-ARP-Address-Resolution-Protocol" class="headerlink" title="4 ARP: Address Resolution Protocol"></a>4 ARP: Address Resolution Protocol</h2><ul>
+<li>Host queries with an IP address: “who has IP address 130.207.23.48”?</li>
+<li>The host who has that IP address will respond its MAC address.</li>
+</ul>
+<blockquote>
+<p>ARP Query is a broadcast that goes to every host on the LAN, and response is a unicast response with the MAC address as the answer.</p>
+</blockquote>
+<ul>
+<li>The host receives a reply starts to build ARP table. ARP table includes map of IP address and MAC address.</li>
+<li>The host that sends the packet prepares a packet that contains destination ip address, and encapsulate that packet by Ethernet frame that contains destination MAC address. that MAC address comes from its local ARP table.</li>
+</ul>
+<h2 id="5-Quiz-ARP-Quiz"><a href="#5-Quiz-ARP-Quiz" class="headerlink" title="5 Quiz: ARP Quiz"></a>5 Quiz: ARP Quiz</h2><ul>
+<li>Query : Broadcast asking about IP</li>
+<li>Response : Unitcast with MAC address</li>
+</ul>
+<h2 id="6-Interconnecting-LANs-with-Hubs"><a href="#6-Interconnecting-LANs-with-Hubs" class="headerlink" title="6 Interconnecting LANs with Hubs"></a>6 Interconnecting LANs with Hubs</h2><ul>
+<li>The simplest way that a LAN can be connected is with something called hub.</li>
+<li><p>These days, hubs don’t exist because you can build a switch for essentially the same price</p>
+</li>
+<li><p>Hub: Broadcast medium</p>
+<ul>
+<li>a host sends a frame that’s destined for some other host on the LAN, then a hub will simply boradcast the frame to every outgoing port.</li>
+<li>All packets are seen everywhere.</li>
+<li>A lot of flooding</li>
+<li>collision of frames -&gt; latency</li>
+<li>failures / misconfiguration<ul>
+<li>one misconfigured host can cause a lot of unwanted traffic</li>
+<li>may need some amount of isolation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-Switchies-Traffic-Isolation"><a href="#7-Switchies-Traffic-Isolation" class="headerlink" title="7 Switchies: Traffic Isolation"></a>7 Switchies: Traffic Isolation</h2><ul>
+<li><p>switch provides some amount of isolation.</p>
+</li>
+<li><p>Imagine each of three hubs has three hosts and all of the hubs are connected to a switch.</p>
+</li>
+<li>If one host wants to send a frame to another host in same hub, then the hub broadcasts the frame but <em>*the switch knows that destination host is within the hub, so does not send the frame</em> to other hubs.</li>
+<li>To allow above, <strong>switch requires switch table</strong> -&gt; maps destination MAC to output port</li>
+</ul>
+<h2 id="8-Learning-Switches"><a href="#8-Learning-Switches" class="headerlink" title="8 Learning Switches"></a>8 Learning Switches</h2><ul>
+<li>learning switches maintains a table of destination and port.</li>
+</ul>
+<ol>
+<li>A sends to C.</li>
+<li>If no entry in forwarding table =&gt; flood</li>
+<li>Now switch knows that sender A has port 1, so records it to the table.</li>
+<li>After flood, when C replies, the switch records C’s port number.</li>
+</ol>
+<h3 id="when-there-is-cycle-in-topology"><a href="#when-there-is-cycle-in-topology" class="headerlink" title="when there is cycle in topology"></a>when there is cycle in topology</h3><ul>
+<li>causes loops</li>
+<li>causes Broadcast storms<blockquote>
+<p>Therefore, switch needs some kinds of protocol to create a logical forwarding tree on top of the underlying physical topology</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="9-Quiz-Learning-Switches-Quiz"><a href="#9-Quiz-Learning-Switches-Quiz" class="headerlink" title="9 Quiz: Learning Switches Quiz"></a>9 Quiz: Learning Switches Quiz</h2><p>When switch table is empty and one host wants to send a frame, a switch records that requester and requester’s port in the table for future forwarding.</p>
+<h2 id="10-Spanning-Tree"><a href="#10-Spanning-Tree" class="headerlink" title="10 Spanning Tree"></a>10 Spanning Tree</h2><ul>
+<li>Allow loop-free forwarding on a topology that may contain cycles.</li>
+<li>Switches pickout spanning tree edges from topology that will assures loop-free forwarding. Switches wont’ forward to edges that are not member of spanning tree.<h3 id="Construct-Spanning-Tree"><a href="#Construct-Spanning-Tree" class="headerlink" title="Construct Spanning Tree"></a>Construct Spanning Tree</h3></li>
+</ul>
+<ol>
+<li>Elect a root(e.g. switch with smallest ID)</li>
+<li>At each switch: exclude link if not on shortest path to root.</li>
+</ol>
+<blockquote>
+<p>Initially: every node thinks it is the root. </p>
+<ol>
+<li>update view of root</li>
+<li>compute distance to new root</li>
+</ol>
+</blockquote>
+<h2 id="11-Spanning-Tree-Example"><a href="#11-Spanning-Tree-Example" class="headerlink" title="11 Spanning Tree Example"></a>11 Spanning Tree Example</h2><p>Format : (Y, d, X)</p>
+<ul>
+<li>X : orogin</li>
+<li>d : distance</li>
+<li>Y : claimed root</li>
+</ul>
+<p>Initially : every switch in the network broadcast a message “(X, 0, X)” to indicate  it thinks itself is the root.</p>
+<ul>
+<li>When other switches hear this message, they compare the ID of the sender to their own ID, and they update their opinion of who the root is based on the comparison of this ID.</li>
+</ul>
+<h2 id="12-Switches-VS-Routers"><a href="#12-Switches-VS-Routers" class="headerlink" title="12 Switches VS Routers"></a>12 Switches VS Routers</h2><ul>
+<li>switch (Layer 2 / “ethernet”)<ul>
+<li>Auto-configuring</li>
+<li>forwarding tends to be fast</li>
+</ul>
+</li>
+<li>Router (Layer 3 / IP)<ul>
+<li>Not restricted to spanning tree</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Major limitation of Layer 2 is broadcast and ARP queries are pretty heavy load on the network.</p>
+<p>SDN(Software Defined Network) blurs the boundary between layer 2 and 3 which will be covered in the future.</p>
+</blockquote>
+<h2 id="13-Buffer-Sizing"><a href="#13-Buffer-Sizing" class="headerlink" title="13 Buffer Sizing"></a>13 Buffer Sizing</h2><ul>
+<li><p>Question : How much buffering do routers/switches need?</p>
+</li>
+<li><p>Let’s say round-trip propagation delay is 2T and the capacity to bottleneck link is C.</p>
+<ul>
+<li>Rule of Thumb</li>
+<li>Buffer = 2T * C</li>
+</ul>
+</li>
+<li><p>However a router in a typical backbone network has more than 20,000 flows. </p>
+</li>
+<li>And it turns out that this rule of thumb only really holds if all of the those 20,000 flows are perfectly synchronized. </li>
+<li>If the flows are desynchronized, then it turns out that this router can get away, with much less buffering.</li>
+<li>instead of the required buffering, needing to be <code>2T * C</code>, we can get away with much less buffering, in particular, <code>2T * C / (N)^(1/2)</code>, where N is the number of flows, passing through the router.</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-09-07</span><i class="fa fa-tag"></i><a class="tag" href="/tags/networks/" title="networks">networks </a><a class="tag" href="/tags/네트워크/" title="네트워크">네트워크 </a><a class="tag" href="/tags/인터넷/" title="인터넷">인터넷 </a><a class="tag" href="/tags/Switch/" title="Switch">Switch </a><a class="tag" href="/tags/스위치/" title="스위치">스위치 </a><a class="tag" href="/tags/Router/" title="Router">Router </a><a class="tag" href="/tags/라우터/" title="라우터">라우터 </a><a class="tag" href="/tags/Hub/" title="Hub">Hub </a><a class="tag" href="/tags/허브/" title="허브">허브 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/09/07/Computer-Networks-Archtecture-and-Principles/" title="Computer Networks - Archtecture and Principles">Next Post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
